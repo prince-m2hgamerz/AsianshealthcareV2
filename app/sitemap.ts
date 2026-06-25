@@ -6,7 +6,7 @@ import { fallbackTreatments } from "@/lib/fallback-data";
 import { fallbackSpecialties } from "@/lib/fallback-data";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://medsolutionhealthcare.com";
 
   const staticPages = [
     { url: baseUrl, priority: 1 },

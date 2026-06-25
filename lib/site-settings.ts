@@ -34,18 +34,18 @@ export const SETTING_KEYS = [
 ] as const;
 
 export const DEFAULT_SETTINGS: SiteSettings = {
-  site_name: "Asians Healthcare",
-  whatsapp_number: "919650928250",
-  contact_phone: "+919650928250",
-  contact_email: "info@asianshealthcare.com",
-  admin_email: "admin@asianshealthcare.com",
+  site_name: "Med Solution Healthcare",
+  whatsapp_number: "918285068544",
+  contact_phone: "+918285068544",
+  contact_email: "info@medsolutionhealthcare.com",
+  admin_email: "admin@medsolutionhealthcare.com",
   hero_title: "Your Health Journey Starts in India",
   hero_subtitle: "Connect with India's top-rated hospitals and specialist doctors.",
-  about_short: "Asians Healthcare is India's premier medical tourism facilitator.",
-  facebook_url: "https://facebook.com/asianshealthcare",
-  instagram_url: "https://instagram.com/asianshealthcare",
-  twitter_url: "https://twitter.com/asianshealthcare",
-  youtube_url: "https://youtube.com/@asianshealthcare",
+  about_short: "Med Solution Healthcare is India's premier medical tourism facilitator.",
+  facebook_url: "https://facebook.com/medsolutionhealthcare",
+  instagram_url: "https://instagram.com/medsolutionhealthcare",
+  twitter_url: "https://twitter.com/medsolutionhealthcare",
+  youtube_url: "https://youtube.com/@medsolutionhealthcare",
   images: {},
 };
 

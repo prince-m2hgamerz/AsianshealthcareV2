@@ -1,9 +1,8 @@
--- Enable UUID extension
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- gen_random_uuid() is built into PostgreSQL 13+
 
 -- Hospitals table (must be before doctors due to FK reference)
 CREATE TABLE hospitals (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
   logo_url TEXT,
@@ -18,7 +17,7 @@ CREATE TABLE hospitals (
 
 -- Doctors table
 CREATE TABLE doctors (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
   photo_url TEXT,
@@ -33,7 +32,7 @@ CREATE TABLE doctors (
 
 -- Treatments table
 CREATE TABLE treatments (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
   category TEXT NOT NULL,
@@ -53,7 +52,7 @@ CREATE TABLE doctor_hospital (
 
 -- Specialties table
 CREATE TABLE specialties (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
   icon_url TEXT,
@@ -69,7 +68,7 @@ CREATE TABLE doctor_specialties (
 
 -- Blogs table
 CREATE TABLE blogs (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   title TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
   content TEXT NOT NULL,
@@ -82,7 +81,7 @@ CREATE TABLE blogs (
 
 -- Insurance Companies table
 CREATE TABLE insurance_companies (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
   logo_url TEXT,
@@ -91,7 +90,7 @@ CREATE TABLE insurance_companies (
 
 -- Hotels table
 CREATE TABLE hotels (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   address TEXT NOT NULL,
   hospital_id UUID REFERENCES hospitals(id) ON DELETE SET NULL,
@@ -103,7 +102,7 @@ CREATE TABLE hotels (
 
 -- Testimonials table
 CREATE TABLE testimonials (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   patient_name TEXT NOT NULL,
   country TEXT NOT NULL,
   treatment TEXT NOT NULL,
@@ -115,7 +114,7 @@ CREATE TABLE testimonials (
 
 -- Leads table
 CREATE TABLE leads (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   form_type TEXT NOT NULL,
   name TEXT NOT NULL,
   age INTEGER,
@@ -137,7 +136,7 @@ CREATE TABLE leads (
 
 -- Admin Users table
 CREATE TABLE admin_users (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   email TEXT UNIQUE NOT NULL,
   role TEXT DEFAULT 'editor' CHECK (role IN ('super_admin', 'editor', 'viewer')),
   created_at TIMESTAMPTZ DEFAULT NOW()
@@ -145,7 +144,7 @@ CREATE TABLE admin_users (
 
 -- Site Settings table
 CREATE TABLE site_settings (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   key TEXT UNIQUE NOT NULL,
   value TEXT NOT NULL,
   updated_at TIMESTAMPTZ DEFAULT NOW()

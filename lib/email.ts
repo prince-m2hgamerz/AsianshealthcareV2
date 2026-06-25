@@ -2,8 +2,8 @@ import { Resend } from "resend";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const from = process.env.RESEND_FROM_EMAIL || "Asians Healthcare <noreply@asianshealthcare.com>";
-const fallbackAdminEmail = process.env.ADMIN_EMAIL || "admin@asianshealthcare.com";
+const from = process.env.RESEND_FROM_EMAIL || "Med Solution Healthcare <noreply@medsolutionhealthcare.com>";
+const fallbackAdminEmail = process.env.ADMIN_EMAIL || "admin@medsolutionhealthcare.com";
 
 async function getAdminEmail(): Promise<string> {
   try {
@@ -20,7 +20,7 @@ async function getWhatsAppNumber(): Promise<string> {
     const { data } = await supabase.from("site_settings").select("value").eq("key", "whatsapp_number").single();
     if (data?.value) return data.value.replace(/[^0-9]/g, "");
   } catch {}
-  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^0-9]/g, "") || "919650928250";
+  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^0-9]/g, "") || "918285068544";
 }
 
 export async function sendLeadNotification(lead: Record<string, unknown>) {
@@ -37,14 +37,14 @@ export async function sendLeadNotification(lead: Record<string, unknown>) {
   const html = `
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
       <div style="background:#000;padding:24px;text-align:center">
-        <h1 style="color:#86efac;margin:0;font-size:20px">Asians Healthcare</h1>
+        <h1 style="color:#86efac;margin:0;font-size:20px">Med Solution Healthcare</h1>
       </div>
       <div style="padding:24px;background:#fbfbf5">
         <h2 style="margin:0 0 16px;font-size:18px;color:#111">New ${formType} Lead</h2>
         <table style="width:100%;border-collapse:collapse">
           ${fields}
         </table>
-        <p style="margin-top:24px;font-size:13px;color:#666">This notification was sent automatically from Asians Healthcare.</p>
+        <p style="margin-top:24px;font-size:13px;color:#666">This notification was sent automatically from Med Solution Healthcare.</p>
       </div>
     </div>
   `;
@@ -82,7 +82,7 @@ export async function sendCustomerConfirmation(lead: Record<string, unknown>) {
   const html = `
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
       <div style="background:#000;padding:24px;text-align:center">
-        <h1 style="color:#86efac;margin:0;font-size:20px">Asians Healthcare</h1>
+        <h1 style="color:#86efac;margin:0;font-size:20px">Med Solution Healthcare</h1>
       </div>
       <div style="padding:24px;background:#fbfbf5">
         <h2 style="margin:0 0 16px;font-size:18px;color:#111">Thank You, ${name}!</h2>
@@ -100,7 +100,7 @@ export async function sendCustomerConfirmation(lead: Record<string, unknown>) {
         </div>
         <div style="border-top:1px solid #e0e0e0;padding-top:16px;margin-top:16px">
           <p style="font-size:12px;color:#999;line-height:1.5">
-            Asians Healthcare | Delhi, India<br>
+            Med Solution Healthcare | Delhi, India<br>
             This is an automated confirmation. Please do not reply to this email.
           </p>
         </div>
@@ -112,7 +112,7 @@ export async function sendCustomerConfirmation(lead: Record<string, unknown>) {
     await resend.emails.send({
       from,
       to: email,
-      subject: `We received your ${label} - Asians Healthcare`,
+      subject: `We received your ${label} - Med Solution Healthcare`,
       html,
     });
   } catch (err) {

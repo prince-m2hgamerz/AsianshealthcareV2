@@ -17,13 +17,13 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://medsolutionhealthcare.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Asians Healthcare - Medical Tourism in India",
-    template: "%s | Asians Healthcare",
+    default: "Med Solution Healthcare - Medical Tourism in India",
+    template: "%s | Med Solution Healthcare",
   },
   description:
     "Connect with India's top hospitals and doctors. Affordable medical treatments, world-class healthcare, and personalized care for international patients.",
@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Asians Healthcare - Medical Tourism in India",
+    title: "Med Solution Healthcare - Medical Tourism in India",
     description:
       "Connect with India's top hospitals and doctors. Affordable medical treatments, world-class healthcare.",
-    siteName: "Asians Healthcare",
+    siteName: "Med Solution Healthcare",
     type: "website",
     locale: "en_US",
     url: siteUrl,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asians Healthcare - Medical Tourism in India",
+    title: "Med Solution Healthcare - Medical Tourism in India",
     description: "Connect with India's top hospitals and doctors for affordable, world-class medical treatment.",
     images: ["/opengraph-image"],
   },
@@ -67,7 +67,7 @@ export default function RootLayout({
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL?.split("/").slice(0, 3).join("/") || "https://imhukfivfelxfltzqxtx.supabase.co"} />
         <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL?.split("/").slice(0, 3).join("/") || "https://imhukfivfelxfltzqxtx.supabase.co"} />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="alternate" type="application/rss+xml" title="Asians Healthcare Blog" href="/api/rss" />
+        <link rel="alternate" type="application/rss+xml" title="Med Solution Healthcare Blog" href="/api/rss" />
       </head>
       <body className="font-sans antialiased">
         <RollbarProvider>

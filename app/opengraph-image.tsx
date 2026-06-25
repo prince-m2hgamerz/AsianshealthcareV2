@@ -1,7 +1,7 @@
 import { ImageResponse } from "@vercel/og";
 
 export const runtime = "edge";
-export const alt = "Asians Healthcare - Medical Tourism in India";
+export const alt = "Med Solution Healthcare - Medical Tourism in India";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -64,7 +64,7 @@ export default async function OGImage() {
           </svg>
         </div>
         <h1 style={{ fontSize: 56, fontWeight: 600, letterSpacing: "-0.02em", marginBottom: 12, textAlign: "center", lineHeight: 1.2 }}>
-          Asians Healthcare
+          Med Solution Healthcare
         </h1>
         <p style={{ fontSize: 24, color: "#90BE6D", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8 }}>
           Medical Tourism in India

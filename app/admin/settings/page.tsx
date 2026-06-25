@@ -14,8 +14,8 @@ interface Setting {
 
 const defaultSettings: Setting[] = [
   { label: "Site Name", key: "site_name", value: "Asians Healthcare" },
-  { label: "WhatsApp Number", key: "whatsapp_number", value: "+919650928250" },
-  { label: "Contact Phone", key: "contact_phone", value: "+919650928250" },
+  { label: "WhatsApp Number", key: "whatsapp_number", value: "+918285068544" },
+  { label: "Contact Phone", key: "contact_phone", value: "+918285068544" },
   { label: "Contact Email", key: "contact_email", value: "info@asianshealthcare.com" },
   { label: "Admin Email", key: "admin_email", value: "admin@asianshealthcare.com" },
   { label: "Hero Title", key: "hero_title", value: "Your Health Journey Starts in India" },

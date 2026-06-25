@@ -3,15 +3,15 @@ type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string
 export function organizationSchema(overrides?: Record<string, JsonValue>) {
   return {
     "@type": "MedicalOrganization",
-    name: "Asians Healthcare",
-    alternateName: "Asians Healthcare",
-    url: "https://asianshealthcare.com",
-    telephone: "+919650928250",
-    email: "contact@asianshealthcare.com",
+    name: "Med Solution Healthcare",
+    alternateName: "Med Solution Healthcare",
+    url: "https://medsolutionhealthcare.com",
+    telephone: "+918285068544",
+    email: "contact@medsolutionhealthcare.com",
     description: "India's trusted medical tourism partner connecting international patients with top hospitals and doctors in Delhi NCR.",
     address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" },
     areaServed: "Worldwide",
-    sameAs: ["https://asianshealthcare.com"],
+    sameAs: ["https://medsolutionhealthcare.com"],
     ...overrides,
   } as Record<string, JsonValue>;
 }
@@ -19,13 +19,13 @@ export function organizationSchema(overrides?: Record<string, JsonValue>) {
 export function websiteSchema() {
   return {
     "@type": "WebSite",
-    name: "Asians Healthcare",
-    url: "https://asianshealthcare.com",
+    name: "Med Solution Healthcare",
+    url: "https://medsolutionhealthcare.com",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://asianshealthcare.com/search?q={search_term_string}",
+        urlTemplate: "https://medsolutionhealthcare.com/search?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },
@@ -105,11 +105,11 @@ export function faqPageSchema(questions: { question: string; answer: string }[])
 export function localBusinessSchema(overrides?: Record<string, JsonValue>) {
   return {
     "@type": "LocalBusiness",
-    name: "Asians Healthcare",
+    name: "Med Solution Healthcare",
     description: "Medical tourism facilitator connecting international patients with India's top healthcare providers.",
-    url: "https://asianshealthcare.com",
-    telephone: "+919650928250",
-    email: "contact@asianshealthcare.com",
+    url: "https://medsolutionhealthcare.com",
+    telephone: "+918285068544",
+    email: "contact@medsolutionhealthcare.com",
     address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" },
     openingHoursSpecification: [
       { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "18:00" },
@@ -149,9 +149,9 @@ export function medicalProcedureSchema(procedure: {
 export function aboutPageSchema() {
   return {
     "@type": "AboutPage",
-    name: "About Asians Healthcare",
+    name: "About Med Solution Healthcare",
     description: "India's trusted medical tourism facilitator connecting international patients with top hospitals and doctors.",
-    url: "https://asianshealthcare.com/about-us",
+    url: "https://medsolutionhealthcare.com/about-us",
   } as Record<string, JsonValue>;
 }
 
@@ -161,7 +161,7 @@ export function reviewSchema(reviews: { name: string; reviewBody: string; rating
     ratingValue: 4.8,
     bestRating: 5,
     ratingCount: reviews.length,
-    itemReviewed: { "@type": "Organization", name: "Asians Healthcare" },
+    itemReviewed: { "@type": "Organization", name: "Med Solution Healthcare" },
   } as Record<string, JsonValue>;
 }
 

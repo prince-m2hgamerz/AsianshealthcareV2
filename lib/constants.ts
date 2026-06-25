@@ -1,29 +1,29 @@
 export const SITE = {
-  name: "Asians Healthcare",
+  name: "Med Solution Healthcare",
   tagline: "Your Trusted Partner in Medical Tourism",
   description:
-    "Asians Healthcare connects you with top hospitals and doctors in India for world-class medical treatments at affordable prices.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com",
-  phone: "+91-9650928250",
-  whatsapp: "919650928250",
-  email: "info@asianshealthcare.com",
-  address: "India",
+    "Med Solution Healthcare connects you with top hospitals and doctors in India for world-class medical treatments at affordable prices.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://medsolutionhealthcare.com",
+  phone: "+91-8285068544",
+  whatsapp: "918285068544",
+  email: "info@medsolutionhealthcare.com",
+  address: "Unit No. 36, Living Style Mall, Jasola, New Delhi - 110025",
 } as const;
 
 export const SOCIAL = {
-  facebook: "https://facebook.com/asianshealthcare",
-  twitter: "https://twitter.com/asianshealthcare",
-  instagram: "https://instagram.com/asianshealthcare",
-  linkedin: "https://linkedin.com/company/asianshealthcare",
-  youtube: "https://youtube.com/@asianshealthcare",
+  facebook: "https://facebook.com/medsolutionhealthcare",
+  twitter: "https://twitter.com/medsolutionhealthcare",
+  instagram: "https://instagram.com/medsolutionhealthcare",
+  linkedin: "https://linkedin.com/company/medsolutionhealthcare",
+  youtube: "https://youtube.com/@medsolutionhealthcare",
 } as const;
 
 export const CONTACT = {
   phone: SITE.phone,
   whatsapp: SITE.whatsapp,
   email: SITE.email,
-  consultationEmail: "consult@asianshealthcare.com",
-  supportEmail: "support@asianshealthcare.com",
+  consultationEmail: "consult@medsolutionhealthcare.com",
+  supportEmail: "support@medsolutionhealthcare.com",
 } as const;
 
 export const WHATSAPP_MESSAGE = {
@@ -126,8 +126,8 @@ export const COUNTRIES = [
 
 export const META = {
   home: {
-    title: "Asians Healthcare - Best Medical Tourism in India",
+    title: "Med Solution Healthcare - Best Medical Tourism in India",
     description:
-      "Asians Healthcare offers world-class medical treatments in India. Connect with top hospitals, doctors, and affordable healthcare services.",
+      "Med Solution Healthcare offers world-class medical treatments in India. Connect with top hospitals, doctors, and affordable healthcare services.",
   },
 } as const;

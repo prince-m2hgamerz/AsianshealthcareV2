@@ -273,7 +273,7 @@ ADMIN_EMAIL=                     # Where lead notifications are sent
 
 # Site
 M2H_PUBLIC_SITE_URL=            # https://asianshealthcare.com
-M2H_PUBLIC_WHATSAPP_NUMBER=     # +919650928250
+M2H_PUBLIC_WHATSAPP_NUMBER=     # +918285068544
 ```
 
 ---

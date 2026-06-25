@@ -8,9 +8,9 @@ export default function EmergencyBanner() {
     <div className="bg-surface border-b border-hairline-light py-2 px-4 relative z-40">
       <div className="container-cinematic flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 sm:gap-5 text-xs sm:text-sm">
-          <a href="tel:+919650928250" className="inline-flex items-center gap-1.5 text-shade-60 hover:text-accent transition-colors">
+          <a href="tel:+918285068544" className="inline-flex items-center gap-1.5 text-shade-60 hover:text-accent transition-colors">
             <Phone size={12} className="sm:w-3.5 sm:h-3.5" />
-            <span className="font-semibold">+91-9650928250</span>
+            <span className="font-semibold">+91-8285068544</span>
           </a>
           <span className="hidden sm:inline-flex items-center gap-1.5 text-shade-40">
             <Clock size={13} />

@@ -16,8 +16,8 @@ export async function sendLeadNotification(data: SendLeadNotificationProps) {
 
   try {
     await resend.emails.send({
-      from: "Asians Healthcare <noreply@asianshealthcare.com>",
-      to: process.env.ADMIN_EMAIL || "admin@asianshealthcare.com",
+      from: "Med Solution Healthcare <noreply@medsolutionhealthcare.com>",
+      to: process.env.ADMIN_EMAIL || "admin@medsolutionhealthcare.com",
       subject: `New Lead: ${formType} - ${name}`,
       html: `
         <h2>New Lead Submission</h2>

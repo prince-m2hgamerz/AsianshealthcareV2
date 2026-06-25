@@ -118,8 +118,8 @@ export default function QuickInquiryForm() {
             </div>
             <div className="mt-8 pt-8 border-t border-hairline-light">
               <p className="text-sm text-shade-40">Or call us directly:</p>
-              <a href="tel:+919650928250" className="font-display text-heading-xl text-accent hover:text-accent/80 transition-colors mt-2 inline-block">
-                +91-9650928250
+              <a href="tel:+918285068544" className="font-display text-heading-xl text-accent hover:text-accent/80 transition-colors mt-2 inline-block">
+                +91-8285068544
               </a>
             </div>
           </motion.div>

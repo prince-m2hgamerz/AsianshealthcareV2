@@ -7,8 +7,8 @@ const MESSAGE = "Hi! I'm interested in medical treatment in India. Can you help?
 
 export default function FloatingButtons() {
   const { whatsapp_number, contact_phone } = useSiteSettings();
-  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "919650928250";
-  const phoneNumber = contact_phone || "+919650928250";
+  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "918285068544";
+  const phoneNumber = contact_phone || "+918285068544";
   const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(MESSAGE)}`;
 
   return (

@@ -415,7 +415,7 @@ export const fallbackTestimonials = [
     country: "Kenya",
     treatment: "Knee Replacement",
     text:
-      "I had been suffering from knee pain for years. Asians Healthcare made everything easy - from my visa to hospital stay. The doctors were exceptional.",
+      "I had been suffering from knee pain for years. Med Solution Healthcare made everything easy - from my visa to hospital stay. The doctors were exceptional.",
     rating: 5,
     videoId: "oB2GzmHqVBM",
   },
@@ -424,7 +424,7 @@ export const fallbackTestimonials = [
     country: "Iraq",
     treatment: "Liver Transplant",
     text:
-      "Finding a reliable medical tourism facilitator was my biggest concern. Asians Healthcare exceeded all expectations and coordinated everything perfectly.",
+      "Finding a reliable medical tourism facilitator was my biggest concern. Med Solution Healthcare exceeded all expectations and coordinated everything perfectly.",
     rating: 5,
     videoId: "3rUulNKF26s",
   },
@@ -433,7 +433,7 @@ export const fallbackTestimonials = [
     country: "Nigeria",
     treatment: "IVF Treatment",
     text:
-      "After years of trying, Asians Healthcare helped us start our family. The entire team was supportive and professional.",
+      "After years of trying, Med Solution Healthcare helped us start our family. The entire team was supportive and professional.",
     rating: 5,
     videoId: "O-Dp9aHZldA",
   },
@@ -442,7 +442,7 @@ export const fallbackTestimonials = [
     country: "Kenya",
     treatment: "Cardiac Bypass",
     text:
-      "My heart surgery at Medanta was life-changing. The coordination by Asians Healthcare was flawless from Nairobi to Delhi and back.",
+      "My heart surgery at Medanta was life-changing. The coordination by Med Solution Healthcare was flawless from Nairobi to Delhi and back.",
     rating: 5,
     videoId: "",
   },
@@ -451,7 +451,7 @@ export const fallbackTestimonials = [
     country: "United Kingdom",
     treatment: "Hip Replacement",
     text:
-      "The cost savings were substantial but the quality of care was world-class. I would recommend Asians Healthcare to anyone considering treatment in India.",
+      "The cost savings were substantial but the quality of care was world-class. I would recommend Med Solution Healthcare to anyone considering treatment in India.",
     rating: 5,
     videoId: "",
   },
@@ -460,7 +460,7 @@ export const fallbackTestimonials = [
     country: "Bangladesh",
     treatment: "Kidney Transplant",
     text:
-      "My brother received a life-saving kidney transplant through Asians Healthcare. The coordination, hospital selection, and follow-up were outstanding.",
+      "My brother received a life-saving kidney transplant through Med Solution Healthcare. The coordination, hospital selection, and follow-up were outstanding.",
     rating: 5,
     videoId: "",
   },
@@ -683,7 +683,7 @@ export const fallbackBlogs = [
     title: "Why Medical Tourism in India Is Growing: A Complete Guide",
     slug: "medical-tourism-india-guide",
     category: "Treatment Blog",
-    author: "Asians Healthcare",
+    author: "Med Solution Healthcare",
     published_at: "2025-12-15T00:00:00Z",
     thumbnail_url: "https://safartibbi.com/wp-content/uploads/2022/11/apolo-1.jpg",
     content: `<h2>Why India Is a Top Destination for Medical Tourism</h2>
@@ -699,7 +699,7 @@ export const fallbackBlogs = [
     title: "Top 10 Hospitals in Delhi NCR for International Patients",
     slug: "top-hospitals-delhi-international-patients",
     category: "Medical Visa Guide",
-    author: "Asians Healthcare",
+    author: "Med Solution Healthcare",
     published_at: "2025-11-20T00:00:00Z",
     thumbnail_url: "https://getwellgo.com/uploads/hospitals/medanta-gurgaon.jpg",
     content: `<h2>Best Hospitals in Delhi NCR</h2>
@@ -719,7 +719,7 @@ export const fallbackBlogs = [
     title: "Understanding Medical Visa Procedures for India",
     slug: "medical-visa-india-procedures",
     category: "Medical Visa Guide",
-    author: "Asians Healthcare",
+    author: "Med Solution Healthcare",
     published_at: "2025-10-10T00:00:00Z",
     thumbnail_url: "https://satyughealthcare.com/uploads/hospitals/1609996048_moolchand-medcity-hospital-sikandra-agra-hospitals-8xp1twzhgx.jpg",
     content: `<h2>Medical Visa for India: Step-by-Step Guide</h2>

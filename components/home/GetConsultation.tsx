@@ -32,7 +32,7 @@ export default function GetConsultation() {
               <ArrowRight size={18} />
             </Link>
             <a
-              href="https://api.whatsapp.com/send?phone=919650928250&text=Hello%2C+I+need+medical+assistance"
+              href="https://api.whatsapp.com/send?phone=918285068544&text=Hello%2C+I+need+medical+assistance"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-hairline-light text-shade-60 hover:bg-white transition-all text-base font-medium w-full sm:w-auto justify-center"
@@ -43,9 +43,9 @@ export default function GetConsultation() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 text-shade-60">
-            <a href="tel:+919650928250" className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors">
+            <a href="tel:+918285068544" className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors">
               <Phone size={16} />
-              <span className="text-body-md">+91-9650928250</span>
+              <span className="text-body-md">+91-8285068544</span>
             </a>
             <span className="hidden sm:inline text-shade-60">|</span>
             <p className="text-body-md">Available 24/7 for International Patients</p>

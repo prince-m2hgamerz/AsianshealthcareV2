@@ -22,7 +22,7 @@ const responseSteps = [
 export default async function ContactPage() {
   const settings = await getSiteSettings();
   const { contact_phone, contact_email, whatsapp_number, images } = settings;
-  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "919650928250";
+  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "918285068544";
 
   const contactInfo = [
     { icon: MapPin, title: "Address", value: "New Delhi, India", href: null },
@@ -35,7 +35,7 @@ export default async function ContactPage() {
     <>
       <JsonLd data={
         localBusinessSchema({
-          telephone: contact_phone || "+919650928250",
+          telephone: contact_phone || "+918285068544",
           email: contact_email || "contact@asianshealthcare.com",
         })
       } />
