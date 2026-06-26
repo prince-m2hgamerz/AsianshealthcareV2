@@ -21,6 +21,7 @@ export default async function TestimonialsPage() {
     treatment: t.treatment,
     text: t.text_content,
     rating: t.rating || 5,
+    imageUrl: t.image_url,
   })) || [];
 
   return (
@@ -42,6 +43,11 @@ export default async function TestimonialsPage() {
             {testimonials.map((t, i) => (
               <div key={i} className="bg-canvas-cream rounded-xl p-8 border border-hairline-light relative hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300">
                 <Quote className="absolute top-6 right-6 text-aloe-10/20" size={40} />
+                {t.imageUrl && (
+                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src={t.imageUrl} alt={t.name} className="w-full h-full object-cover" />
+                  </div>
+                )}
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <Star key={j} size={16} className="fill-yellow-400 text-yellow-400" />

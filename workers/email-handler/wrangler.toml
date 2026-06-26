@@ -1,0 +1,11 @@
+name = "medsolution-email-handler"
+main = "src/index.ts"
+compatibility_date = "2025-02-14"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "medsolution-emails"
+database_id = "eec44544-5d25-4818-ac7c-081ae5d6b579"
+
+[env.production]
+vars = { API_TOKEN = "" }

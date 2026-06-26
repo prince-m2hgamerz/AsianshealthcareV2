@@ -35,7 +35,7 @@ import type { SiteImageKey } from "@/lib/site-images";
 
 export default async function HomePage() {
   let treatments: { name: string; costMin: number; costMax: number; usCost: number; slug: string; category: string; image_url: string | null }[] = [];
-  let testimonials: { name: string; country: string; treatment: string; text: string; rating: number; videoId?: string }[] = [];
+  let testimonials: { name: string; country: string; treatment: string; text: string; rating: number; image_url?: string; videoId?: string }[] = [];
   let insurances: string[] = [];
   let images: Record<SiteImageKey, string> = { ...SITE_IMAGE_DEFAULTS };
 
@@ -64,6 +64,7 @@ export default async function HomePage() {
       treatment: t.treatment,
       text: t.text_content,
       rating: t.rating || 5,
+      image_url: t.image_url || undefined,
       videoId: t.video_url?.match(/(?:v=|youtu\.be\/)([\w-]+)/)?.[1] || undefined,
     })) || [];
 

@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { ImagePlus, Trash2, Upload } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
 
 interface ImageUploadFieldProps {
   label: string;
@@ -12,8 +11,6 @@ interface ImageUploadFieldProps {
   folder: string;
   helper?: string;
 }
-
-const BUCKET = "site-images";
 
 export default function ImageUploadField({ label, value, onChange, folder, helper }: ImageUploadFieldProps) {
   const [uploading, setUploading] = useState(false);
@@ -27,41 +24,34 @@ export default function ImageUploadField({ label, value, onChange, folder, helpe
       return;
     }
 
-    const supabase = createClient();
-    const extension = file.name.split(".").pop() || "jpg";
-    const safeName = file.name
-      .replace(/\.[^/.]+$/, "")
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-    const path = `${folder}/${Date.now()}-${safeName || "image"}.${extension}`;
-
     setUploading(true);
     setError("");
 
-    const { error: uploadError } = await supabase.storage.from(BUCKET).upload(path, file, {
-      cacheControl: "3600",
-      upsert: false,
-    });
+    const body = new FormData();
+    body.append("file", file);
+    body.append("folder", folder);
+
+    const res = await fetch("/api/admin/upload", { method: "POST", body });
 
     setUploading(false);
 
-    if (uploadError) {
-      setError(uploadError.message);
+    if (!res.ok) {
+      const err = await res.json();
+      setError(err.error || "Upload failed");
       return;
     }
 
-    const { data } = supabase.storage.from(BUCKET).getPublicUrl(path);
-    onChange(data.publicUrl);
+    const data = await res.json();
+    onChange(data.url);
   };
 
   const handleRemove = async () => {
-    const path = getStoragePath(value);
-    if (path) {
-      const supabase = createClient();
-      await supabase.storage.from(BUCKET).remove([path]);
-    }
-    onChange("");
+    const res = await fetch("/api/admin/upload", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: value }),
+    });
+    if (res.ok) onChange("");
   };
 
   return (
@@ -128,9 +118,4 @@ export default function ImageUploadField({ label, value, onChange, folder, helpe
   );
 }
 
-function getStoragePath(url: string) {
-  const marker = `/storage/v1/object/public/${BUCKET}/`;
-  const markerIndex = url.indexOf(marker);
-  if (markerIndex === -1) return null;
-  return decodeURIComponent(url.slice(markerIndex + marker.length).split("?")[0]);
-}
+

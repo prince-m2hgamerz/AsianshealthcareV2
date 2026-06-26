@@ -1,4 +1,5 @@
-import { Star } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Star } from "lucide-react";
 
 interface Testimonial {
   name: string;
@@ -6,6 +7,7 @@ interface Testimonial {
   treatment: string;
   text: string;
   rating: number;
+  image_url?: string;
   videoId?: string;
 }
 
@@ -25,6 +27,11 @@ export default function PatientTestimonials({ testimonials = [] }: { testimonial
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visible.map((t, i) => (
             <div key={i} className="bg-white rounded-xl p-6 flex flex-col shadow-elevation-1">
+              {t.image_url && (
+                <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                  <img src={t.image_url} alt={t.name} className="w-full h-full object-cover" />
+                </div>
+              )}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, ri) => (
                   <Star key={ri} size={16} className="fill-yellow-400 text-yellow-400" />
@@ -39,6 +46,16 @@ export default function PatientTestimonials({ testimonials = [] }: { testimonial
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/testimonials"
+            className="inline-flex items-center gap-2 text-button-md font-semibold text-aloe-60 hover:text-aloe-70 transition-colors"
+          >
+            View All Stories
+            <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </section>

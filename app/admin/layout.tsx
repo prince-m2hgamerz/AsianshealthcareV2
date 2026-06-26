@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/client";
 import {
   ArrowLeft,
   Bell,
+  Inbox,
   LayoutDashboard,
   Users,
   Building2,
@@ -52,6 +53,7 @@ const sidebarGroups = [
       { label: "Users", href: "/admin/users", icon: UserCog },
       { label: "Subscribers", href: "/admin/subscribers", icon: Mail },
       { label: "Email Marketing", href: "/admin/email-marketing", icon: Send },
+      { label: "Email Inbox", href: "/admin/emails", icon: Inbox },
     ],
   },
 ];
