@@ -18,7 +18,7 @@ import MedicalCareGallery from "@/components/home/MedicalCareGallery";
 import GetConsultation from "@/components/home/GetConsultation";
 import QuickInquiryForm from "@/components/home/QuickInquiryForm";
 
-import PatientTestimonials from "@/components/home/PatientTestimonials";
+import BestTestimonials from "@/components/home/BestTestimonials";
 import InsuranceLogos from "@/components/home/InsuranceLogos";
 import TravelProcess from "@/components/home/TravelProcess";
 import NewsletterSignup from "@/components/home/NewsletterSignup";
@@ -35,7 +35,7 @@ import type { SiteImageKey } from "@/lib/site-images";
 
 export default async function HomePage() {
   let treatments: { name: string; costMin: number; costMax: number; usCost: number; slug: string; category: string; image_url: string | null }[] = [];
-  let testimonials: { name: string; country: string; treatment: string; text: string; rating: number; image_url?: string; videoId?: string }[] = [];
+  let testimonials: { name: string; country: string; treatment: string; text: string; rating: number; image_url?: string; videoId?: string; video_url?: string }[] = [];
   let insurances: string[] = [];
   let images: Record<SiteImageKey, string> = { ...SITE_IMAGE_DEFAULTS };
 
@@ -58,7 +58,7 @@ export default async function HomePage() {
       image_url: t.image_url || null,
     })) || [];
 
-    testimonials = testimonialsRes.data?.map((t) => ({
+    const allTestimonials = testimonialsRes.data?.map((t) => ({
       name: t.patient_name,
       country: t.country,
       treatment: t.treatment,
@@ -66,7 +66,13 @@ export default async function HomePage() {
       rating: t.rating || 5,
       image_url: t.image_url || undefined,
       videoId: t.video_url?.match(/(?:v=|youtu\.be\/)([\w-]+)/)?.[1] || undefined,
+      video_url: (t.video_url && !/(?:v=|youtu\.be\/)/.test(t.video_url)) ? t.video_url : undefined,
     })) || [];
+
+    const withVideo = allTestimonials.filter((t) => t.video_url).slice(0, 2);
+    const withImage = allTestimonials.filter((t) => !t.video_url && t.image_url);
+    const firstImage = withImage.slice(0, 1);
+    testimonials = [...withVideo, ...firstImage];
 
     insurances = insuranceRes.data?.map((i) => i.name).filter(Boolean) || [];
     images = mergeSiteImages(settingsRes.data || undefined) as Record<SiteImageKey, string>;
@@ -88,6 +94,7 @@ export default async function HomePage() {
       <HeroSection imageUrl={images.image_home_hero} />
       <CountriesTicker />
       <StatsCounter />
+      <BestTestimonials testimonials={testimonials.length > 0 ? testimonials : fallbackTestimonials} />
       <WhoWeAre />
       <TopSpecialties />
       <TreatmentCostShowcase />
@@ -98,7 +105,6 @@ export default async function HomePage() {
       <FeaturedHospitals hospitals={fallbackHospitals} />
       <CostComparison imageUrl={images.image_home_cost} />
 
-      <PatientTestimonials testimonials={testimonials.length > 0 ? testimonials : fallbackTestimonials} />
       <QuickInquiryForm />
       <PatientSupportServices imageUrl={images.image_home_support} />
       <InsuranceLogos insurances={insurances.length > 0 ? insurances : fallbackInsurances} />

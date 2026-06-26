@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Play } from "lucide-react";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import PageHero from "@/components/layout/PageHero";
 import BreadcrumbNav from "@/components/shared/BreadcrumbNav";
@@ -22,6 +22,9 @@ export default async function TestimonialsPage() {
     text: t.text_content,
     rating: t.rating || 5,
     imageUrl: t.image_url,
+    videoUrl: t.video_url?.match(/(?:v=|youtu\.be\/)([\w-]+)/)?.[1]
+      ? undefined
+      : t.video_url || undefined,
   })) || [];
 
   return (
@@ -43,9 +46,20 @@ export default async function TestimonialsPage() {
             {testimonials.map((t, i) => (
               <div key={i} className="bg-canvas-cream rounded-xl p-8 border border-hairline-light relative hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300">
                 <Quote className="absolute top-6 right-6 text-aloe-10/20" size={40} />
-                {t.imageUrl && (
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                {(t.imageUrl || t.videoUrl) && (
                   <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden mb-4">
-                    <img src={t.imageUrl} alt={t.name} className="w-full h-full object-cover" />
+                    {t.videoUrl ? (
+                      <video
+                        src={t.videoUrl}
+                        className="w-full h-full object-cover"
+                        controls
+                        playsInline
+                        poster={t.imageUrl || undefined}
+                      />
+                    ) : (
+                      <img src={t.imageUrl!} alt={t.name} className="w-full h-full object-cover" />
+                    )}
                   </div>
                 )}
                 <div className="flex gap-1 mb-4">

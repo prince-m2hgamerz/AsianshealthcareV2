@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { Lock, Mail, Shield } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
 export default function AdminLoginPage() {
@@ -39,59 +41,77 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-primary flex items-center justify-center p-6">
-      <div className="w-full max-w-sm">
-        <div className="text-center mb-10">
-          <h1 className="font-display text-display-md text-white mb-2">
+    <div className="min-h-screen bg-surface flex items-center justify-center p-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-md"
+      >
+        <div className="text-center mb-8">
+          <span className="pill-tag mb-4 inline-flex items-center gap-2">
+            <Shield size={12} />
+            Admin Panel
+          </span>
+          <h1 className="font-display text-display-md text mb-2">
             Med Solution <span className="text-accent">Admin</span>
           </h1>
-          <p className="text-caption text-text-muted">Sign in to your account</p>
+          <p className="text-caption text-shade-50">Sign in to your account</p>
         </div>
 
-        <form onSubmit={handleLogin} className="space-y-5">
-          {error && (
-            <div className="bg-red-500/10 border border-red-500/20 rounded-md px-4 py-3 text-caption text-red-400">
-              {error}
+        <div className="bg-white rounded-2xl p-8 border border-hairline-light shadow-elevation-2">
+          <form onSubmit={handleLogin} className="space-y-5">
+            {error && (
+              <div className="bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3 text-caption text-red-600 flex items-center gap-2">
+                <Shield size={14} className="shrink-0" />
+                {error}
+              </div>
+            )}
+
+            <div>
+              <label className="block text-caption text-shade-50 mb-2">Email</label>
+              <div className="relative">
+                <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-shade-30" />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full pl-11 pr-4 py-3.5 rounded-lg bg-white border border-hairline-light text placeholder:text-shade-30 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all"
+                />
+              </div>
             </div>
-          )}
 
-          <div>
-            <label className="block text-caption text-text-muted mb-2">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="test@example.com"
-              required
-              className="w-full bg-primary-mid border border-border text-white rounded-md px-4 py-3 text-body-md placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
-            />
-          </div>
+            <div>
+              <label className="block text-caption text-shade-50 mb-2">Password</label>
+              <div className="relative">
+                <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-shade-30" />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  required
+                  className="w-full pl-11 pr-4 py-3.5 rounded-lg bg-white border border-hairline-light text placeholder:text-shade-30 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all"
+                />
+              </div>
+            </div>
 
-          <div>
-            <label className="block text-caption text-text-muted mb-2">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-              className="w-full bg-primary-mid border border-border text-white rounded-md px-4 py-3 text-body-md placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
-            />
-          </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-accent w-full text-center disabled:opacity-50"
+            >
+              {loading ? "Signing in..." : "Sign In"}
+            </button>
+          </form>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="btn-accent w-full text-center disabled:opacity-50"
-          >
-            {loading ? "Signing in..." : "Sign In"}
-          </button>
-        </form>
-
-        <p className="text-center text-micro text-text-muted mt-8">
-          Protected area. Authorized personnel only.
-        </p>
-      </div>
+          <p className="text-center text-micro text-shade-40 mt-6">
+            Protected area. Authorized personnel only.
+          </p>
+        </div>
+      </motion.div>
     </div>
   );
 }
