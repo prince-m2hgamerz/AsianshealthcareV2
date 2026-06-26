@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
 
 export interface SiteSettings {
   site_name: string;
@@ -31,24 +30,18 @@ const DEFAULTS: SiteSettings = {
   youtube_url: "https://youtube.com/@medsolutionhealthcare",
 };
 
-const SETTING_KEYS = Object.keys(DEFAULTS);
-
 let cached: SiteSettings | null = null;
 let pending: Promise<SiteSettings> | null = null;
 
 async function fetchSettings(): Promise<SiteSettings> {
-  const supabase = createClient();
-  const { data } = await supabase.from("site_settings").select("key, value").in("key", SETTING_KEYS);
-
-  if (!data) return DEFAULTS;
-
-  const settings = { ...DEFAULTS };
-  for (const row of data) {
-    if (row.key in settings) {
-      (settings as Record<string, string>)[row.key] = row.value;
-    }
+  try {
+    const res = await fetch("/api/site-settings");
+    if (!res.ok) return DEFAULTS;
+    const data = await res.json();
+    return { ...DEFAULTS, ...data };
+  } catch {
+    return DEFAULTS;
   }
-  return settings;
 }
 
 export function useSiteSettings(): SiteSettings {

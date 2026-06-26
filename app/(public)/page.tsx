@@ -1,4 +1,5 @@
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getSiteImages } from "@/lib/site-settings";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { organizationSchema, websiteSchema, faqPageSchema } from "@/lib/json-ld";
 import HeroSection from "@/components/home/HeroSection";
@@ -31,7 +32,7 @@ import {
   fallbackTestimonials,
 } from "@/lib/fallback-data";
 import { hospitalImageBySlug } from "@/lib/doctors-data";
-import { mergeSiteImages, SITE_IMAGE_KEYS, SITE_IMAGE_DEFAULTS } from "@/lib/site-images";
+import { SITE_IMAGE_DEFAULTS } from "@/lib/site-images";
 import type { SiteImageKey } from "@/lib/site-images";
 
 export default async function HomePage() {
@@ -44,13 +45,13 @@ export default async function HomePage() {
 
   try {
     const supabase = await createServerSupabaseClient();
-    const [treatmentsRes, testimonialsRes, insuranceRes, settingsRes, hospitalsRes] = await Promise.all([
+    const [treatmentsRes, testimonialsRes, insuranceRes, hospitalsRes] = await Promise.all([
       supabase.from("treatments").select("*").eq("is_featured", true).limit(6),
       supabase.from("testimonials").select("*").eq("is_approved", true).limit(10),
       supabase.from("insurance_companies").select("name"),
-      supabase.from("site_settings").select("key, value").in("key", SITE_IMAGE_KEYS),
       supabase.from("hospitals").select("*").limit(50),
     ]);
+    images = await getSiteImages();
 
     treatments = treatmentsRes.data?.map((t) => ({
       name: t.name,
@@ -88,7 +89,7 @@ export default async function HomePage() {
       photo_url: (hospital as any).logo_overridden ? hospital.logo_url : (hospitalImageBySlug[hospital.slug] || hospital.logo_url || "/images/hospital-apollo.webp"),
     }));
 
-    images = mergeSiteImages(settingsRes.data || undefined) as Record<SiteImageKey, string>;
+
   } catch {
     console.warn("Supabase unavailable, using fallback data");
   }

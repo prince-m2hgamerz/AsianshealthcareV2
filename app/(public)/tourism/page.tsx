@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CalendarDays, Car, HeartPulse, Hotel, Languages, MapPinned, Plane, ShieldCheck } from "lucide-react";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { mergeSiteImages, SITE_IMAGE_KEYS } from "@/lib/site-images";
+import { getSiteImages } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
   title: "Medical Tourism in India | Med Solution Healthcare",
@@ -53,9 +52,7 @@ const planningSteps = [
 ];
 
 export default async function TourismPage() {
-  const supabase = await createServerSupabaseClient();
-  const { data: settings } = await supabase.from("site_settings").select("key, value").in("key", SITE_IMAGE_KEYS);
-  const images = mergeSiteImages(settings || undefined);
+  const images = await getSiteImages();
   const destinations = destinationCopy.map((destination) => ({
     ...destination,
     image: images[destination.imageKey],

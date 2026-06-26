@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Med Solution Healthcare terms of service for medical tourism services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

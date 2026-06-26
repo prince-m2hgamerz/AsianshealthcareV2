@@ -17,6 +17,7 @@ import BreadcrumbNav from "@/components/shared/BreadcrumbNav";
 export const metadata: Metadata = {
   title: "Search Results - Med Solution Healthcare",
   description: "Search results for medical treatments, doctors, hospitals, and more.",
+  alternates: { canonical: "/search" },
 };
 
 const categoryColors: Record<string, string> = {

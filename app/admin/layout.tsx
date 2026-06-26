@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -62,6 +62,14 @@ const allLinks = sidebarGroups.flatMap((g) => g.links);
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [mobileSidebar, setMobileSidebar] = useState(false);
+
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => meta.remove();
+  }, []);
   const router = useRouter();
   const pathname = usePathname();
   const supabase = createClient();

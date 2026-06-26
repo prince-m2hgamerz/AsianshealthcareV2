@@ -1,4 +1,4 @@
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
 import { mergeSiteImages, SITE_IMAGE_KEYS } from "@/lib/site-images";
 
 export interface SiteSettings {
@@ -49,8 +49,16 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   images: {},
 };
 
+function createAdminClient() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { auth: { persistSession: false } }
+  );
+}
+
 export async function getSiteSettings(): Promise<SiteSettings> {
-  const supabase = await createServerSupabaseClient();
+  const supabase = createAdminClient();
   const { data } = await supabase.from("site_settings").select("key, value").in("key", SETTING_KEYS as unknown as string[]);
 
   if (!data) return DEFAULT_SETTINGS;
@@ -79,7 +87,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
 }
 
 export async function getSiteImages() {
-  const supabase = await createServerSupabaseClient();
+  const supabase = createAdminClient();
   const { data } = await supabase.from("site_settings").select("key, value").in("key", SITE_IMAGE_KEYS);
   return mergeSiteImages(data || undefined);
 }

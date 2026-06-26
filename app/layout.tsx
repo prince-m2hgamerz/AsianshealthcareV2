@@ -46,11 +46,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@medsolutionhc",
+    creator: "@medsolutionhc",
     title: "Med Solution Healthcare - Medical Tourism in India",
     description: "Connect with India's top hospitals and doctors for affordable, world-class medical treatment.",
     images: ["/opengraph-image"],
   },
   other: {
+    "google-site-verification": "REPLACE_WITH_YOUR_GSC_CODE",
     "geo.region": "IN-DL",
     "geo.placename": "New Delhi",
   },

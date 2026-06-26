@@ -2,7 +2,6 @@
 const nextConfig = {
   poweredByHeader: false,
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -79,6 +78,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.artemishospitals.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.medicaltourismco.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.hexahealth.com',
       },
     ],
   },

@@ -170,7 +170,7 @@ export default function Navbar() {
               alt=""
               width={26}
               height={32}
-              className="h-8 w-auto shrink-0"
+              className="shrink-0"
               priority
             />
             <div className="flex flex-col">
