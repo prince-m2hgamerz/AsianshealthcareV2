@@ -1,14 +1,20 @@
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import type { PushSubscriptionData } from '@/types/pwa'
 
-export async function getActiveSubscriptions(): Promise<PushSubscriptionData[]> {
+export async function getActiveSubscriptions(role?: string): Promise<PushSubscriptionData[]> {
   const supabase = createServiceRoleClient()
 
-  const { data, error } = await supabase
+  let query = supabase
     .from('push_subscriptions')
     .select('*')
     .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
     .order('created_at', { ascending: false })
+
+  if (role) {
+    query = query.eq('role', role)
+  }
+
+  const { data, error } = await query
 
   if (error) {
     console.error('Failed to fetch subscriptions:', error)
@@ -22,7 +28,8 @@ export async function saveSubscription(
   endpoint: string,
   p256dh: string,
   auth: string,
-  userAgent: string | null
+  userAgent: string | null,
+  role?: string
 ): Promise<boolean> {
   const supabase = createServiceRoleClient()
 
@@ -32,6 +39,7 @@ export async function saveSubscription(
       p256dh,
       auth,
       user_agent: userAgent,
+      role: role ?? 'user',
     },
     { onConflict: 'endpoint' }
   )

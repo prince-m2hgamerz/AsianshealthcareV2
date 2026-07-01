@@ -4,7 +4,7 @@ import { saveSubscription } from '@/lib/pwa'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { endpoint, keys } = body
+    const { endpoint, keys, role } = body
 
     if (!endpoint || !keys?.p256dh || !keys?.auth) {
       return NextResponse.json(
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     const userAgent = request.headers.get('user-agent')
-    const saved = await saveSubscription(endpoint, keys.p256dh, keys.auth, userAgent)
+    const saved = await saveSubscription(endpoint, keys.p256dh, keys.auth, userAgent, role)
 
     if (!saved) {
       return NextResponse.json(

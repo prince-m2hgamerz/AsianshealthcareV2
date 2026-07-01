@@ -23,8 +23,10 @@ import {
   LogOut,
   Menu,
   X,
+  Download,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import InstallAdminPWA from "@/components/admin/InstallAdminPWA";
 
 const sidebarGroups = [
   {
@@ -68,7 +70,20 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     meta.name = "robots";
     meta.content = "noindex, nofollow";
     document.head.appendChild(meta);
-    return () => meta.remove();
+
+    const existingManifest = document.querySelector('link[rel="manifest"]');
+    if (existingManifest) {
+      existingManifest.remove();
+    }
+    const adminManifest = document.createElement("link");
+    adminManifest.rel = "manifest";
+    adminManifest.href = "/manifest-admin.json";
+    document.head.appendChild(adminManifest);
+
+    return () => {
+      meta.remove();
+      adminManifest.remove();
+    };
   }, []);
   const router = useRouter();
   const pathname = usePathname();
@@ -143,6 +158,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
         ))}
       </nav>
+
+      <InstallAdminPWA />
 
       <div className="space-y-1 border-t border-border p-3">
         <Link

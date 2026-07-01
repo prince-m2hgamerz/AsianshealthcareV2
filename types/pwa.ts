@@ -4,6 +4,7 @@ export interface PushSubscriptionData {
   p256dh: string
   auth: string
   user_agent: string | null
+  role: string | null
   created_at: string
   expires_at: string | null
 }

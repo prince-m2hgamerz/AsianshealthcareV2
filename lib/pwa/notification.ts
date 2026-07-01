@@ -2,7 +2,7 @@ import webpush from 'web-push'
 import { configureWebPush } from './vapid'
 import type { NotificationPayload } from '@/types/pwa'
 
-interface PushSubscriptionRow {
+export interface PushSubscriptionRow {
   id: string
   endpoint: string
   p256dh: string
