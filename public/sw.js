@@ -127,32 +127,43 @@ async function networkFirstNavigationStrategy(request) {
 }
 
 self.addEventListener('push', (event) => {
-  if (!event.data) return
+  const payload = event.data ? event.data.text() : null
 
-  try {
-    const data = event.data.json()
-    const options = {
-      body: data.body ?? '',
-      icon: data.icon ?? '/icons/icon-192x192.png',
-      badge: data.badge ?? '/icons/icon-72x72.png',
-      data: data.data ?? {},
-      tag: data.tag ?? 'default',
-      requireInteraction: data.requireInteraction ?? true,
-      vibrate: data.vibrate ?? [200, 100, 200],
-      actions: data.actions ?? [],
-    }
-
-    event.waitUntil(
-      self.registration.showNotification(data.title, options)
-    )
-  } catch {
-    event.waitUntil(
-      self.registration.showNotification('MedSolution Healthcare', {
-        body: event.data.text(),
-        icon: '/icons/icon-192x192.png',
-      })
-    )
+  let title = 'MedSolution Healthcare'
+  let body = ''
+  let options = {
+    icon: '/icons/icon-192x192.png',
+    badge: '/icons/icon-72x72.png',
+    data: {},
+    tag: 'default',
+    requireInteraction: true,
+    vibrate: [200, 100, 200],
+    actions: [],
   }
+
+  if (payload) {
+    try {
+      const data = JSON.parse(payload)
+      title = data.title ?? title
+      body = data.body ?? ''
+      options = {
+        body: data.body ?? '',
+        icon: data.icon ?? options.icon,
+        badge: data.badge ?? options.badge,
+        data: data.data ?? {},
+        tag: data.tag ?? options.tag,
+        requireInteraction: data.requireInteraction ?? true,
+        vibrate: data.vibrate ?? options.vibrate,
+        actions: data.actions ?? [],
+      }
+    } catch {
+      body = payload
+    }
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(title, options)
+  )
 })
 
 self.addEventListener('notificationclick', (event) => {

@@ -18,6 +18,7 @@ export interface NotificationPayload {
   tag?: string
   requireInteraction?: boolean
   vibrate?: number[]
+  actions?: { action: string; title: string; icon?: string }[]
 }
 
 export interface InstallPromptEvent extends Event {
