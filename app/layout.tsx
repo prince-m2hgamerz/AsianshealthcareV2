@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.png"],
   },
   other: {
-    "google-site-verification": "REPLACE_WITH_YOUR_GSC_CODE",
+    "google-site-verification": "G-CD5HKSSMK1",
     "geo.region": "IN-DL",
     "geo.placename": "New Delhi",
   },
@@ -79,6 +79,10 @@ export default function RootLayout({
         }} />
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL?.split("/").slice(0, 3).join("/") || "https://cjqfgshjpqpfcjdvfpgc.supabase.co"} />
         <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL?.split("/").slice(0, 3).join("/") || "https://cjqfgshjpqpfcjdvfpgc.supabase.co"} />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CD5HKSSMK1" />
+        <script dangerouslySetInnerHTML={{
+          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CD5HKSSMK1');`
+        }} />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="alternate" type="application/rss+xml" title="Med Solution Healthcare Blog" href="/api/rss" />
         <meta name="mobile-web-app-capable" content="yes" />
