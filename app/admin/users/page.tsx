@@ -24,10 +24,14 @@ interface AdminUser {
 }
 
 async function fetchManage(action: string, body?: Record<string, unknown>) {
-  const res = await fetch("/api/admin/manage", {
-    method: action === "list" ? "GET" : "POST",
+  const isGet = action === "list";
+  const url = isGet && body?.table
+    ? `/api/admin/manage?table=${encodeURIComponent(body.table as string)}&order=${encodeURIComponent((body as any).order || "id")}`
+    : "/api/admin/manage";
+  const res = await fetch(url, {
+    method: isGet ? "GET" : "POST",
     headers: { "Content-Type": "application/json" },
-    body: action === "list" ? undefined : JSON.stringify(body),
+    body: isGet ? undefined : JSON.stringify(body),
   });
   if (!res.ok) throw new Error((await res.json()).error);
   return res.json();
@@ -56,14 +60,14 @@ export default function UsersPage() {
     }
   }
 
-  async function handleInvite(email: string) {
+  async function handleInvite(email: string, role: string) {
     const res = await fetch("/api/admin/manage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         action: "create",
         table: "admin_users",
-        data: { email, role: "admin" },
+        data: { email, role },
       }),
     });
     if (!res.ok) throw new Error((await res.json()).error);
@@ -155,23 +159,25 @@ export default function UsersPage() {
   );
 }
 
-function InviteDialog({ onInvite }: { onInvite: (email: string) => Promise<void> }) {
+function InviteDialog({ onInvite }: { onInvite: (email: string, role: string) => Promise<void> }) {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [role, setRole] = useState("editor");
 
   return (
     <>
       <Button onClick={() => setOpen(true)}>Invite Admin</Button>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent>
+        <DialogContent aria-describedby={undefined}>
           <DialogHeader>
             <DialogTitle>Invite Admin</DialogTitle>
           </DialogHeader>
           <form
             onSubmit={async (e) => {
               e.preventDefault();
-              await onInvite(email);
+              await onInvite(email, role);
               setEmail("");
+              setRole("editor");
               setOpen(false);
             }}
             className="space-y-4"
@@ -183,6 +189,15 @@ function InviteDialog({ onInvite }: { onInvite: (email: string) => Promise<void>
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+            <select
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            >
+              <option value="editor">Editor</option>
+              <option value="super_admin">Super Admin</option>
+              <option value="viewer">Viewer</option>
+            </select>
             <Button type="submit" className="w-full">
               Send Invite
             </Button>
