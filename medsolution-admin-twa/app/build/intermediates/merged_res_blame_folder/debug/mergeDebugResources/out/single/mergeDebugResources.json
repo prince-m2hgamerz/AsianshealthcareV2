@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "medsolution.admin.pwa.app-debug-7:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "medsolution.admin.pwa.app-main-9:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "medsolution.admin.pwa.app-debug-7:/xml_asset_statements.xml.flat",
+        "source": "medsolution.admin.pwa.app-main-9:/xml/asset_statements.xml"
+    },
+    {
+        "merged": "medsolution.admin.pwa.app-debug-7:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "medsolution.admin.pwa.app-main-9:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "medsolution.admin.pwa.app-debug-7:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "medsolution.admin.pwa.app-main-9:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "medsolution.admin.pwa.app-debug-7:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "medsolution.admin.pwa.app-main-9:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "medsolution.admin.pwa.app-debug-7:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "medsolution.admin.pwa.app-main-9:/mipmap-mdpi/ic_launcher.png"
+    }
+]

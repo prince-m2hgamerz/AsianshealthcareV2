@@ -3,43 +3,56 @@ package com.medsolution.admin
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.os.Build
-import com.medsolution.admin.data.api.ApiClient
-import com.medsolution.admin.util.SessionManager
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
+import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
-class MedSolutionApp : Application() {
+@HiltAndroidApp
+class MedSolutionApp : Application(), Configuration.Provider {
 
-    lateinit var sessionManager: SessionManager
-        private set
-    lateinit var apiClient: ApiClient
-        private set
+    @Inject lateinit var workerFactory: HiltWorkerFactory
+
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .setMinimumLoggingLevel(android.util.Log.INFO)
+            .build()
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
-        sessionManager = SessionManager(this)
-        apiClient = ApiClient(sessionManager)
-        createNotificationChannel()
+        createNotificationChannels()
     }
 
-    private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_ID,
-                getString(R.string.channel_notifications),
-                NotificationManager.IMPORTANCE_HIGH
-            ).apply {
-                description = getString(R.string.channel_description)
-                enableVibration(true)
-            }
-            val nm = getSystemService(NotificationManager::class.java)
-            nm.createNotificationChannel(channel)
+    private fun createNotificationChannels() {
+        val manager = getSystemService(NotificationManager::class.java)
+
+        val adminChannel = NotificationChannel(
+            NOTIFICATION_CHANNEL_ADMIN,
+            "Admin Alerts",
+            NotificationManager.IMPORTANCE_HIGH
+        ).apply {
+            description = "Administrative notifications and alerts"
+            enableVibration(true)
+            enableLights(true)
+            setShowBadge(true)
         }
+
+        val promoChannel = NotificationChannel(
+            NOTIFICATION_CHANNEL_PROMO,
+            "Promotions",
+            NotificationManager.IMPORTANCE_DEFAULT
+        ).apply {
+            description = "Marketing and promotional notifications"
+            setShowBadge(false)
+        }
+
+        manager.createNotificationChannel(adminChannel)
+        manager.createNotificationChannel(promoChannel)
     }
 
     companion object {
-        lateinit var instance: MedSolutionApp
-            private set
-        const val CHANNEL_ID = "medsolution_admin_updates"
+        const val NOTIFICATION_CHANNEL_ADMIN = "admin_alerts"
+        const val NOTIFICATION_CHANNEL_PROMO = "promotions"
     }
 }

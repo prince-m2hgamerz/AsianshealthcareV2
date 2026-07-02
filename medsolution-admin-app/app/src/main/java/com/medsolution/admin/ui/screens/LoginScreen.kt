@@ -2,189 +2,107 @@ package com.medsolution.admin.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.MedicalServices
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.medsolution.admin.ui.theme.Gold
-import com.medsolution.admin.ui.theme.MedicalBlue
-import com.medsolution.admin.ui.theme.MedicalBlueDark
-import com.medsolution.admin.ui.theme.MedicalTeal
-import com.medsolution.admin.ui.viewmodel.AuthViewModel
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.medsolution.admin.ui.viewmodel.LoginViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
     onLoginSuccess: () -> Unit,
-    viewModel: AuthViewModel = viewModel()
+    viewModel: LoginViewModel = hiltViewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsState()
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-    val focusManager = LocalFocusManager.current
+    val state by viewModel.state.collectAsState()
 
-    LaunchedEffect(uiState.isLoggedIn) {
-        if (uiState.isLoggedIn) onLoginSuccess()
+    LaunchedEffect(state.isSuccess) {
+        if (state.isSuccess) onLoginSuccess()
     }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(MedicalBlueDark, MedicalBlue, MedicalTeal)
-                )
-            )
+            .background(MaterialTheme.colorScheme.background),
+        contentAlignment = Alignment.Center
     ) {
-        Column(
+        Card(
             modifier = Modifier
-                .fillMaxSize()
+                .widthIn(max = 400.dp)
                 .padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            shape = RoundedCornerShape(16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
         ) {
-            Box(
-                modifier = Modifier
-                    .size(72.dp)
-                    .clip(CircleShape)
-                    .background(Color.White.copy(alpha = 0.2f)),
-                contentAlignment = Alignment.Center
+            Column(
+                modifier = Modifier.padding(32.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Icon(
-                    imageVector = Icons.Filled.MedicalServices,
-                    contentDescription = null,
-                    modifier = Modifier.size(40.dp),
-                    tint = Color.White
-                )
-            }
-            Spacer(modifier = Modifier.height(20.dp))
-            Text(
-                text = "MedSolution",
-                style = MaterialTheme.typography.headlineLarge.copy(
+                Text(
+                    text = "MedSolution",
+                    fontSize = 28.sp,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 36.sp
-                ),
-                color = Color.White
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = "Admin Portal",
-                style = MaterialTheme.typography.titleMedium.copy(
-                    fontWeight = FontWeight.Light,
-                    letterSpacing = 4.sp
-                ),
-                color = Gold.copy(alpha = 0.9f)
-            )
-            Spacer(modifier = Modifier.height(48.dp))
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = "Admin Panel",
+                    fontSize = 16.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(32.dp))
 
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color.White
-                ),
-                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-            ) {
-                Column(
+                OutlinedTextField(
+                    value = state.email,
+                    onValueChange = viewModel::onEmailChanged,
+                    label = { Text("Email") },
+                    singleLine = true,
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+
+                OutlinedTextField(
+                    value = state.password,
+                    onValueChange = viewModel::onPasswordChanged,
+                    label = { Text("Password") },
+                    singleLine = true,
+                    visualTransformation = PasswordVisualTransformation(),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                )
+
+                if (state.error != null) {
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = state.error ?: "",
+                        color = MaterialTheme.colorScheme.error,
+                        fontSize = 14.sp
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                Button(
+                    onClick = viewModel::login,
+                    enabled = !state.isLoading,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(24.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                        .height(50.dp),
+                    shape = RoundedCornerShape(12.dp)
                 ) {
-                    OutlinedTextField(
-                        value = email,
-                        onValueChange = { email = it },
-                        label = { Text("Email") },
-                        singleLine = true,
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Email,
-                            imeAction = ImeAction.Next
-                        ),
-                        modifier = Modifier.fillMaxWidth(),
-                        enabled = !uiState.isLoading,
-                        shape = RoundedCornerShape(12.dp)
-                    )
-                    Spacer(modifier = Modifier.height(16.dp))
-
-                    OutlinedTextField(
-                        value = password,
-                        onValueChange = { password = it },
-                        label = { Text("Password") },
-                        singleLine = true,
-                        visualTransformation = PasswordVisualTransformation(),
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Password,
-                            imeAction = ImeAction.Done
-                        ),
-                        keyboardActions = KeyboardActions(
-                            onDone = {
-                                focusManager.clearFocus()
-                                viewModel.login(email, password)
-                            }
-                        ),
-                        modifier = Modifier.fillMaxWidth(),
-                        enabled = !uiState.isLoading,
-                        shape = RoundedCornerShape(12.dp)
-                    )
-                    Spacer(modifier = Modifier.height(24.dp))
-
-                    Button(
-                        onClick = {
-                            focusManager.clearFocus()
-                            viewModel.login(email, password)
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp),
-                        enabled = !uiState.isLoading,
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Gold,
-                            contentColor = Color.White
-                        ),
-                        shape = RoundedCornerShape(12.dp)
-                    ) {
-                        if (uiState.isLoading) {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(24.dp),
-                                color = Color.White,
-                                strokeWidth = 2.dp
-                            )
-                        } else {
-                            Text(
-                                "Sign In",
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 16.sp
-                            )
-                        }
-                    }
-
-                    if (uiState.error != null) {
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(
-                            text = uiState.error!!,
-                            color = MaterialTheme.colorScheme.error,
-                            style = MaterialTheme.typography.bodySmall,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.fillMaxWidth()
+                    if (state.isLoading) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(20.dp),
+                            color = MaterialTheme.colorScheme.onPrimary,
+                            strokeWidth = 2.dp
                         )
+                    } else {
+                        Text("Sign In", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
                     }
                 }
             }

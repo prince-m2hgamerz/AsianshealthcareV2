@@ -1,212 +1,190 @@
 package com.medsolution.admin
 
-import android.Manifest
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.medsolution.admin.notification.PollingService
-import com.medsolution.admin.ui.components.BottomNavBar
-import com.medsolution.admin.ui.navigation.NavRoutes
+import com.medsolution.admin.ui.navigation.Screen
 import com.medsolution.admin.ui.screens.*
 import com.medsolution.admin.ui.theme.MedSolutionAdminTheme
-import com.medsolution.admin.ui.viewmodel.AuthViewModel
-import com.medsolution.admin.ui.viewmodel.EmailsViewModel
-import com.medsolution.admin.ui.viewmodel.LeadsViewModel
+import com.medsolution.admin.ui.viewmodel.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    private val notificationPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        requestNotificationPermission()
-
+        enableEdgeToEdge()
         setContent {
             MedSolutionAdminTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    AppContent()
-                }
+                MainApp()
             }
         }
-    }
-
-    private fun requestNotificationPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(
-                    this, Manifest.permission.POST_NOTIFICATIONS
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-            }
-        }
-    }
-
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
     }
 }
 
 @Composable
-fun AppContent() {
+fun MainApp() {
     val navController = rememberNavController()
-    val authViewModel: AuthViewModel = viewModel()
-    val context = LocalContext.current
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.destination?.route
+    var isLoggedIn by remember { mutableStateOf(false) }
+    val loginViewModel: LoginViewModel = hiltViewModel()
+    val loginState by loginViewModel.state.collectAsState()
 
-    val showBottomBar = currentRoute in listOf(
-        NavRoutes.DASHBOARD,
-        NavRoutes.LEADS,
-        NavRoutes.EMAILS
-    )
+    LaunchedEffect(loginState.isSuccess) {
+        if (loginState.isSuccess) {
+            isLoggedIn = true
+            navController.navigate(Screen.Dashboard.route) {
+                popUpTo(0) { inclusive = true }
+            }
+        }
+    }
+
+    val startDestination = if (isLoggedIn) Screen.Dashboard.route else Screen.Login.route
 
     Scaffold(
         bottomBar = {
-            if (showBottomBar) {
-                BottomNavBar(
-                    currentRoute = currentRoute,
-                    onTabSelected = { route ->
-                        navController.navigate(route) {
-                            popUpTo(NavRoutes.DASHBOARD) { saveState = true }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    }
-                )
+            if (isLoggedIn) {
+                BottomNavBar(navController = navController)
             }
         }
-    ) { innerPadding ->
+    ) { padding ->
         NavHost(
             navController = navController,
-            startDestination = NavRoutes.LOGIN,
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
+            startDestination = startDestination,
+            modifier = Modifier.padding(padding)
         ) {
-            composable(NavRoutes.LOGIN) {
+            composable(Screen.Login.route) {
                 LoginScreen(
                     onLoginSuccess = {
-                        context.startForegroundService(Intent(context, PollingService::class.java))
-                        navController.navigate(NavRoutes.DASHBOARD) {
-                            popUpTo(NavRoutes.LOGIN) { inclusive = true }
-                        }
-                    },
-                    viewModel = authViewModel
-                )
-            }
-
-            composable(NavRoutes.DASHBOARD) {
-                DashboardScreen(
-                    onLogout = {
-                        authViewModel.logout()
-                        context.stopService(Intent(context, PollingService::class.java))
-                        navController.navigate(NavRoutes.LOGIN) {
+                        isLoggedIn = true
+                        navController.navigate(Screen.Dashboard.route) {
                             popUpTo(0) { inclusive = true }
                         }
                     }
                 )
             }
-
-            composable(NavRoutes.LEADS) {
-                val parentEntry = remember(it) {
-                    navController.getBackStackEntry(NavRoutes.DASHBOARD)
-                }
-                val leadsViewModel: LeadsViewModel = viewModel(parentEntry)
-                LeadsListScreen(
-                    onLeadClick = { leadId ->
-                        navController.navigate(NavRoutes.leadDetail(leadId))
-                    },
-                    viewModel = leadsViewModel
+            composable(Screen.Dashboard.route) {
+                DashboardScreen(
+                    onNavigateToLeads = { navController.navigate(Screen.Leads.route) },
+                    onNavigateToEmails = { navController.navigate(Screen.Emails.route) },
+                    onNavigateToSubscribers = { navController.navigate(Screen.Subscribers.route) }
                 )
             }
-
+            composable(Screen.Leads.route) {
+                LeadsScreen(
+                    onLeadClick = { leadId ->
+                        navController.navigate("lead_detail/$leadId")
+                    }
+                )
+            }
             composable(
-                route = NavRoutes.LEAD_DETAIL,
-                arguments = listOf(navArgument("leadId") { type = NavType.StringType })
+                route = Screen.LeadDetail.route,
+                arguments = listOf(navArgument("leadId") { type = NavType.IntType })
             ) { backStackEntry ->
-                val leadId = backStackEntry.arguments?.getString("leadId") ?: return@composable
-                val parentEntry = remember(backStackEntry) {
-                    navController.getBackStackEntry(NavRoutes.DASHBOARD)
-                }
-                val leadsViewModel: LeadsViewModel = viewModel(parentEntry)
+                val leadId = backStackEntry.arguments?.getInt("leadId") ?: return@composable
                 LeadDetailScreen(
                     leadId = leadId,
-                    onBack = { navController.popBackStack() },
-                    viewModel = leadsViewModel
+                    onBack = { navController.popBackStack() }
                 )
             }
+            composable(Screen.Emails.route) {
+                EmailsScreen()
+            }
+            composable(Screen.Subscribers.route) {
+                SubscribersScreen()
+            }
+            composable(Screen.Notifications.route) {
+                NotificationsScreen()
+            }
+            composable(Screen.Profile.route) {
+                ProfileScreen(
+                    onLogout = {
+                        isLoggedIn = false
+                        navController.navigate(Screen.Login.route) {
+                            popUpTo(0) { inclusive = true }
+                        }
+                    }
+                )
+            }
+            composable(Screen.Settings.route) {
+                SettingsScreen(onBack = { navController.popBackStack() })
+            }
+        }
+    }
+}
 
-            composable(NavRoutes.EMAILS) {
-                val parentEntry = remember(it) {
-                    navController.getBackStackEntry(NavRoutes.DASHBOARD)
-                }
-                val emailsViewModel: EmailsViewModel = viewModel(parentEntry)
-                EmailsListScreen(
-                    onEmailClick = { emailId ->
-                        navController.navigate(NavRoutes.emailDetail(emailId))
-                    },
-                    onComposeEmail = {
-                        navController.navigate(NavRoutes.COMPOSE_EMAIL)
-                    },
-                    viewModel = emailsViewModel
-                )
-            }
+data class BottomNavItem(
+    val label: String,
+    val selectedIcon: ImageVector,
+    val unselectedIcon: ImageVector,
+    val route: String
+)
 
-            composable(
-                route = NavRoutes.EMAIL_DETAIL,
-                arguments = listOf(navArgument("emailId") { type = NavType.IntType })
-            ) { backStackEntry ->
-                val emailId = backStackEntry.arguments?.getInt("emailId") ?: return@composable
-                val parentEntry = remember(backStackEntry) {
-                    navController.getBackStackEntry(NavRoutes.DASHBOARD)
-                }
-                val emailsViewModel: EmailsViewModel = viewModel(parentEntry)
-                EmailDetailScreen(
-                    emailId = emailId,
-                    onBack = { navController.popBackStack() },
-                    viewModel = emailsViewModel
-                )
-            }
+private val bottomNavItems = listOf(
+    BottomNavItem("Dashboard", Icons.Filled.Dashboard, Icons.Outlined.Dashboard, Screen.Dashboard.route),
+    BottomNavItem("Leads", Icons.Filled.People, Icons.Outlined.People, Screen.Leads.route),
+    BottomNavItem("Emails", Icons.Filled.Email, Icons.Outlined.Email, Screen.Emails.route),
+    BottomNavItem("Notifications", Icons.Filled.Notifications, Icons.Outlined.Notifications, Screen.Notifications.route),
+    BottomNavItem("Profile", Icons.Filled.Person, Icons.Outlined.Person, Screen.Profile.route)
+)
 
-            composable(NavRoutes.COMPOSE_EMAIL) {
-                val parentEntry = remember(it) {
-                    navController.getBackStackEntry(NavRoutes.DASHBOARD)
+@Composable
+private fun BottomNavBar(navController: NavHostController) {
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
+
+    NavigationBar {
+        bottomNavItems.forEach { item ->
+            val selected = currentRoute == item.route
+            NavigationBarItem(
+                selected = selected,
+                onClick = {
+                    if (currentRoute != item.route) {
+                        navController.navigate(item.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                },
+                icon = {
+                    Icon(
+                        imageVector = if (selected) item.selectedIcon else item.unselectedIcon,
+                        contentDescription = item.label
+                    )
+                },
+                label = {
+                    Text(
+                        text = item.label,
+                        fontSize = if (selected) 12.sp else 11.sp,
+                        fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal
+                    )
                 }
-                val emailsViewModel: EmailsViewModel = viewModel(parentEntry)
-                ComposeEmailScreen(
-                    onBack = { navController.popBackStack() },
-                    onSent = { navController.popBackStack() },
-                    viewModel = emailsViewModel
-                )
-            }
+            )
         }
     }
 }

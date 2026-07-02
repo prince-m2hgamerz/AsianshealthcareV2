@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.MedSolutionPWA" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#2563eb</item>
+        <item name="android:navigationBarColor">#ffffff</item>
+    </style>
+</resources>

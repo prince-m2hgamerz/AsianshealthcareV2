@@ -1,0 +1,10 @@
+medsolution.admin.pwa.app-core-1.1.0-0 C:\Users\m2hga\.gradle\caches\8.11.1\transforms\291f5e15d163d2d15ddc3318bba1500b\transformed\core-1.1.0\res
+medsolution.admin.pwa.app-browser-1.4.0-1 C:\Users\m2hga\.gradle\caches\8.11.1\transforms\b061fc98b0b9e48c844a631d0c119389\transformed\browser-1.4.0\res
+medsolution.admin.pwa.app-androidbrowserhelper-2.5.0-2 C:\Users\m2hga\.gradle\caches\8.11.1\transforms\b0c2b0dae30d739ba3dc41dbf6e0f2fb\transformed\androidbrowserhelper-2.5.0\res
+medsolution.admin.pwa.app-pngs-3 C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\build\generated\res\pngs\debug
+medsolution.admin.pwa.app-resValues-4 C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\build\generated\res\resValues\debug
+medsolution.admin.pwa.app-packageDebugResources-5 C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+medsolution.admin.pwa.app-packageDebugResources-6 C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+medsolution.admin.pwa.app-debug-7 C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\build\intermediates\merged_res\debug\mergeDebugResources
+medsolution.admin.pwa.app-debug-8 C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\debug\res
+medsolution.admin.pwa.app-main-9 C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\res

@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "medsolution.admin.pwa",
+    "sha256_cert_fingerprints": [
+      "38:D3:34:2A:DE:25:23:18:7E:12:7E:BF:EF:DB:26:25:B2:CE:8D:98:61:45:87:D7:54:0E:9B:ED:17:A3:67:DB"
+    ]
+  }
+}]

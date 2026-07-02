@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "medsolution.admin.pwa.app-mergeDebugResources-5:/values-hi/values-hi.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\m2hga\\.gradle\\caches\\8.11.1\\transforms\\291f5e15d163d2d15ddc3318bba1500b\\transformed\\core-1.1.0\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "478",
+                        "endColumns": "100",
+                        "endOffsets": "574"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\m2hga\\.gradle\\caches\\8.11.1\\transforms\\b061fc98b0b9e48c844a631d0c119389\\transformed\\browser-1.4.0\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,161,263,375",
+                        "endColumns": "105,101,111,102",
+                        "endOffsets": "156,258,370,473"
+                    }
+                }
+            ]
+        }
+    ]
+}

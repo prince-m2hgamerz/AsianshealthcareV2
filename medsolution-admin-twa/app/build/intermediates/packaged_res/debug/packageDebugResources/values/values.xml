@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MedSolution Healthcare</string>
+    <style name="Theme.MedSolutionPWA" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#2563eb</item>
+        <item name="android:navigationBarColor">#ffffff</item>
+    </style>
+</resources>

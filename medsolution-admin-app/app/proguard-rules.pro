@@ -2,3 +2,4 @@
 -keep class com.google.gson.** { *; }
 -keepattributes Signature
 -keepattributes *Annotation*
+-keep class com.medsolution.admin.di.** { *; }
