@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { sendLeadNotification, sendCustomerConfirmation } from "@/lib/email";
 import { sendPushNotification } from "@/lib/pwa/notification";
 import { getActiveSubscriptions } from "@/lib/pwa/subscription-manager";
+import { sendFcmAlert } from "@/lib/fcm/alert";
 
 export async function POST(request: Request) {
   try {
@@ -47,6 +48,7 @@ export async function POST(request: Request) {
     Promise.allSettled([
       sendLeadNotification(lead),
       sendCustomerConfirmation(lead),
+      sendFcmAlert(lead),
       getActiveSubscriptions().then((subscriptions) =>
         sendPushNotification(subscriptions, {
           title: "New Patient Inquiry: " + (lead.name || "Unknown"),

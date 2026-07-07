@@ -21,6 +21,14 @@
 /medsolution-admin-app/build/
 /medsolution-admin-app/local.properties
 
+# Android TWA (medsolution-admin-twa)
+/medsolution-admin-twa/.gradle/
+/medsolution-admin-twa/app/build/
+/medsolution-admin-twa/build/
+/medsolution-admin-twa/local.properties
+/medsolution-admin-twa/google-services.json
+/medsolution-admin-twa/app/google-services.json
+
 # misc
 .DS_Store
 Thumbs.db
@@ -37,6 +45,10 @@ yarn-debug.log*
 yarn-error.log*
 *.log
 next-dev*.log
+
+# Firebase service account (contains private key - DO NOT COMMIT)
+*firebase-adminsdk*
+*-firebase-*.json
 
 # local env files
 .env

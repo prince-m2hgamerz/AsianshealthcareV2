@@ -3,6 +3,8 @@ import { checkAdmin } from '@/lib/admin-auth'
 import { getActiveSubscriptions } from '@/lib/pwa'
 import { sendPushNotification } from '@/lib/pwa/notification'
 import { sendTelegramAlert } from '@/lib/telegram'
+import { sendToAllDevices } from '@/lib/fcm/send'
+import { createClient } from '@supabase/supabase-js'
 import type { NotificationPayload } from '@/types/pwa'
 
 export async function POST(request: Request) {
@@ -21,6 +23,26 @@ export async function POST(request: Request) {
 
     // Send Telegram as well
     await sendTelegramAlert({ name: 'Admin', form_type: 'Broadcast', message: `${body.title}: ${body.body}` } as Record<string, unknown>)
+
+    // Send FCM broadcast
+    try {
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!
+      )
+      const { data: fcmTokens } = await supabase.from('fcm_tokens').select('token')
+      if (fcmTokens && fcmTokens.length > 0) {
+        const allTokens = fcmTokens.map((t: { token: string }) => t.token)
+        sendToAllDevices(allTokens, {
+          title: body.title,
+          body: body.body,
+          url: body.data?.url as string | undefined,
+          icon: body.icon,
+        }).catch(() => {})
+      }
+    } catch {
+      // FCM broadcast is non-critical
+    }
 
     const subscriptions = await getActiveSubscriptions('admin')
 

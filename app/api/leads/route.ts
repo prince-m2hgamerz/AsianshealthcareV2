@@ -4,6 +4,7 @@ import { sendLeadNotification, sendCustomerConfirmation } from "@/lib/email";
 import { sendPushNotification } from "@/lib/pwa/notification";
 import { getActiveSubscriptions } from "@/lib/pwa/subscription-manager";
 import { sendTelegramAlert } from "@/lib/telegram";
+import { sendFcmAlert } from "@/lib/fcm/alert";
 
 export async function POST(request: Request) {
   try {
@@ -49,6 +50,7 @@ export async function POST(request: Request) {
       sendLeadNotification(lead),
       sendCustomerConfirmation(lead),
       sendTelegramAlert(lead),
+      sendFcmAlert(lead),
       getActiveSubscriptions().then((subscriptions) =>
         sendPushNotification(subscriptions, {
           title: "New Lead: " + (lead.name || "Unknown"),
