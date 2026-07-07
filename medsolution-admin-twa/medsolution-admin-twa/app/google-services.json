@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774403749576",
+    "project_id": "med-solution-healthcare",
+    "storage_bucket": "med-solution-healthcare.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774403749576:android:7317fee455a591cca157fd",
+        "android_client_info": {
+          "package_name": "medsolution.admin.pwa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAthJX_Fc90oGewtjxuVTHMWYCHy-bPoHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

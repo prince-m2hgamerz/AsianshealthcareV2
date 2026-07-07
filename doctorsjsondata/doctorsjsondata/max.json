@@ -1,0 +1,883 @@
+{
+    {
+      "@type": "Physician",
+      "name": "Dr. Pradeep Chowbey",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Pradeep_Chowbey_edcdbaebbd.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-pradeep-chowbey",
+      "medicalSpecialty": "General Surgery, Laparoscopic / Minimal Access Surgery, Bariatric Surgery / Metabolic, Institute of Laparoscopic, Endoscopic &amp; Bariatric Surgery, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,
+    {
+      "@type": "Physician",
+      "name": "Prof (Dr.) Subhash Gupta",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_SG_da91d515bc.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/prof-dr-subhash-gupta",
+      "medicalSpecialty": "Liver Transplant and Biliary Sciences, Robotic Surgery, Gastrointestinal Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Dinesh Khullar",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/dr_dinesh_khullar_054ca506c6.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-dinesh-khullar",
+      "medicalSpecialty": "Nephrology, Kidney Transplant",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. S.K.S. Marya",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/sks_marya_6b4c17da24.png",
+      "url": "https://www.maxhealthcare.in/doctor/sks-marya",
+      "medicalSpecialty": "Orthopaedics &amp; Joint Replacement, Arthroscopy &amp; Sports Injury, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Ambrish Mithal",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Ambrish_4b333d76bd.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-ambrish-mithal",
+      "medicalSpecialty": "Endocrinology &amp; Diabetes",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Balbir Singh",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/dr_balbir_singh_f6b4fadefe.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-balbir-singh",
+      "medicalSpecialty": "Cardiac Sciences, Cardiology, Interventional Cardiology, Cardiac Electrophysiology-Pacemaker",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. (Prof.) Anil Arora",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/27_E00348_1_0899c28334.JPG",
+      "url": "https://www.maxhealthcare.in/doctor/prof-dr-anil-arora",
+      "medicalSpecialty": "Orthopaedics &amp; Joint Replacement",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Anupam Bhargava",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Anupam_Bhargava_af980e8ec8.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-anupam-bhargava",
+      "medicalSpecialty": "Urology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr Sujoy Bhattacharjee",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Screenshot_2025_06_07_at_2_30_06_PM_4843b0e29e.png",
+      "url": "https://www.maxhealthcare.in/doctor/dr-sujoy-bhattacharjee",
+      "medicalSpecialty": "Orthopaedics &amp; Joint Replacement, Arthroscopy &amp; Sports Injury, Robotic Joint Replacement",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Subhash Chandra",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Subhash_Chandra_54605fb64d.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/subhash-chandra",
+      "medicalSpecialty": "Cardiac Sciences, Cardiology, Interventional Cardiology, Cardiac Electrophysiology-Pacemaker",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Abhideep Chaudhary",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Abhideep_Chaudhary_9f61965dec.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/abhideep-chaudhary",
+      "medicalSpecialty": "Liver Transplant and Biliary Sciences, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Sunil Choudhary",
+      "image": "https://d35oenyzp35321.cloudfront.net/dr_sunil_chaudhary_b65abac2d4.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-sunil-choudhary",
+      "medicalSpecialty": "Aesthetic And Reconstructive Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr Dharma Choudhary",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/dr_dharma_choudhary_6265df738f.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dharma-choudhary",
+      "medicalSpecialty": "Bone Marrow Transplant, Haematology, Hematology Oncology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Kulbhushan Singh Dagar",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_K_S_Dagar_852db50cf7.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-kulbhushan-singh-dagar",
+      "medicalSpecialty": "Cardiac Sciences, Paediatric (Ped) Cardiac Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr (Prof) SVS Deo",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Deo_with_BG_06bdb5c043.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-svs-deo",
+      "medicalSpecialty": "Cancer Care / Oncology, Surgical Oncology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. T. S. Kler",
+      "image": "https://d35oenyzp35321.cloudfront.net/dr_kler_cffd222dcd.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-t-s-kler",
+      "medicalSpecialty": "Cardiac Sciences, Cardiology, Interventional Cardiology, Cardiac Electrophysiology-Pacemaker, Cardiac Arrhythmia",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Anurag Krishna",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Anurag_Krishna_5af9ccc16f.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-anurag-krishna",
+      "medicalSpecialty": "Paediatric (Ped) Surgery, Paediatric (Ped) Urology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Viveka Kumar",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Viveka_Kumar_1_6a7c69b96b.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-viveka-kumar",
+      "medicalSpecialty": "Cardiology, Interventional Cardiology, Cardiac Electrophysiology-Pacemaker",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Anant Kumar",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Anant_Kumar_new_picture_8602360343.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-anant-kumar",
+      "medicalSpecialty": "Urology, Kidney Transplant, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Ajay Kumar",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Ajay_Kumar_596bc3cfd4.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-ajay-kumar",
+      "medicalSpecialty": "Gastroenterology, Hepatology &amp; Endoscopy",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Ramneek Mahajan",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Ramneek_Mahajan_f8682aed23.JPG",
+      "url": "https://www.maxhealthcare.in/doctor/dr-ramneek-mahajan",
+      "medicalSpecialty": "Orthopaedics &amp; Joint Replacement, Arthroscopy &amp; Sports Injury, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Rajneesh Malhotra",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Rajneesh_Malhotra_2_a43f0d88cb.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-rajneesh-malhotra",
+      "medicalSpecialty": "Cardiac Sciences, Cardiac Surgery (CTVS), Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Ganesh Kumar Mani",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_G_K_Mani_b87d18216c.JPG",
+      "url": "https://www.maxhealthcare.in/doctor/dr-ganesh-kumar-mani",
+      "medicalSpecialty": "Cardiac Sciences, Cardiac Surgery (CTVS)",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. (Col) Joy Dev Mukherji",
+      "image": "https://d35oenyzp35321.cloudfront.net/JD_Mukherji_2743111636.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-col-joy-dev-mukherji",
+      "medicalSpecialty": "Neurosciences, Neurology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Bhushan Nariani",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/DSC_07836_6a6856c481.JPG",
+      "url": "https://www.maxhealthcare.in/doctor/bhushan-nariani",
+      "medicalSpecialty": "Orthopaedics &amp; Joint Replacement, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Sanjay Sachdeva",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/dr_sanjay_sachdeva_953305518c.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-sanjay-sachdeva",
+      "medicalSpecialty": "ENT(Ear Nose Throat)",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Prof.(Dr.) Atul Sharma",
+      "image": "https://d35oenyzp35321.cloudfront.net/27_E06005_4d3dd25d5b.JPG",
+      "url": "https://www.maxhealthcare.in/doctor/dr-atul-sharma",
+      "medicalSpecialty": "Medical Oncology, Cancer Care / Oncology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Sameer Shrivastava",
+      "image": "https://d35oenyzp35321.cloudfront.net/dr_d2af0278b1.png",
+      "url": "https://www.maxhealthcare.in/doctor/dr-sameer-shrivastava",
+      "medicalSpecialty": "Cardiac Sciences, Cardiology, Interventional Cardiology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Randeep Wadhawan",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Randeep_Wadhawan_024c8c12c3.JPG",
+      "url": "https://www.maxhealthcare.in/doctor/dr-randeep-wadhawan",
+      "medicalSpecialty": "General Surgery, Laparoscopic / Minimal Access Surgery, Bariatric Surgery / Metabolic, Gastrointestinal Surgery, Institute of Laparoscopic, Endoscopic &amp; Bariatric Surgery, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Prof. (Col.) Dr. Bipin Walia",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Bipin_Walia_fe7e8f9811.JPG",
+      "url": "https://www.maxhealthcare.in/doctor/prof-col-dr-bipin-walia",
+      "medicalSpecialty": "Neurosurgery, Neurosciences, Spine Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Meenu Walia",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Meenu_Walia_c40a5b9f97.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-meenu-walia",
+      "medicalSpecialty": "Medical Oncology, Cancer Care / Oncology, Breast Cancer, Thoracic Oncology, Gynecologic Oncology, Gastrointestinal &amp; Hepatobiliary Oncology",
+      "gender": "Female",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Vikas Singla",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Vikas_4919a739c9.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-vikas-singla",
+      "medicalSpecialty": "Gastroenterology, Hepatology &amp; Endoscopy",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Puneet Agarwal",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Puneet_sq_3be6907e0c.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-puneet-agarwal",
+      "medicalSpecialty": "Neurosciences, Neurology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Rajiv Agarwal",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Rajiv_Agarwal_822ab4c3f6.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-rajiv-agarwal",
+      "medicalSpecialty": "Cardiac Sciences, Cardiology, Interventional Cardiology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Neeru Praveer Aggarwal",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Neeru_P_Aggarwal_686bb07528.jpeg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-neeru-praveer-aggarwal-1",
+      "medicalSpecialty": "Nephrology, Kidney Transplant",
+      "gender": "Female",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Rayaz Ahmed",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/dr_rayaz_ahmed_28e812fb8d.jpeg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-rayaz-ahmed",
+      "medicalSpecialty": "Cancer Care / Oncology, Bone Marrow Transplant, Haematology, Hematology Oncology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Rajiv Anand",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Rajiv_Anand_b68a0e3d46.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-rajiv-anand",
+      "medicalSpecialty": "Neurosciences, Interventional Neurology, Neurology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Devavrat Arya",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/dr_devavrat_arya_ae561206d1.jpeg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-devavrat-arya",
+      "medicalSpecialty": "Cancer Care / Oncology, Musculoskeletal Oncology, Breast Cancer, Thoracic Oncology, Head &amp; Neck Oncology, Medical Oncology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Sandeep Batra",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Sandeep_Batra_184b102e40.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-sandeep-batra",
+      "medicalSpecialty": "Medical Oncology, Cancer Care / Oncology, Uro-Oncology, Breast Cancer, Thoracic Oncology, Gynecologic Oncology, Gastrointestinal &amp; Hepatobiliary Oncology, Musculoskeletal Oncology, Molecular Oncology &amp; Cancer Genetics, Head &amp; Neck Oncology, Neuro Oncology, Hematology Oncology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr Mano Bhadauria",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/XH_2_X5344_low_c48e87d375.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-mano-bhadauria",
+      "medicalSpecialty": "Radiation Oncology, Cancer Care / Oncology",
+      "gender": "Female",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Naveen Bhamri",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Naveen_Bhamri_e81cdf64c1.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-naveen-bhamri",
+      "medicalSpecialty": "Cardiac Sciences, Cardiology, Interventional Cardiology, Cardiac Electrophysiology-Pacemaker",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Deepak Chaudhary",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Deepak_Chaudhary_be92a72b70.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/deepak-choudhary",
+      "medicalSpecialty": "Arthroscopy &amp; Sports Injury",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr (Prof) Debashish Chowdhury",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Debashish_Chwdhary_Dr_Neurology_copy_Digital_02_fe469689c3.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-prof-debashish-chowdhury",
+      "medicalSpecialty": "Neurology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr P K Das",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_PK_Das_for_web_c550a53471.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-p-k-das",
+      "medicalSpecialty": "Medical Oncology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Sanjeev Dua",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Sanjeev_Dua1_092b1f8bd6.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/sanjeev-dua",
+      "medicalSpecialty": "Neurosurgery, Neurosciences, Spine Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Bipin Kumar Dubey",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Bipin_Dubey_2121ed5850.jpeg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-bipin-kumar-dubey",
+      "medicalSpecialty": "Cardiac Sciences, Cardiology, Interventional Cardiology",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Charu Garg",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/charu_76718db191.jpeg",
+      "url": "https://www.maxhealthcare.in/doctor/dr-charu-garg",
+      "medicalSpecialty": "Radiation Oncology, Cancer Care / Oncology, Breast Cancer, Thoracic Oncology, Gynecologic Oncology, Paediatric (Ped) Oncology, Uro-Oncology, Paediatric (Ped)/Medical Oncology, Musculoskeletal Oncology, Head &amp; Neck Oncology, Neuro Oncology, Gastrointestinal &amp; Hepatobiliary Oncology",
+      "gender": "Female",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Puneet Girdhar",
+      "image": "https://max-website20-images.s3.ap-south-1.amazonaws.com/Dr_Puneet_Girdhar_452aac4cb4.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/puneet-girdhar",
+      "medicalSpecialty": "Spine Surgery, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    } ,      
+    {
+      "@type": "Physician",
+      "name": "Dr. Deep Goel",
+      "image": "https://d35oenyzp35321.cloudfront.net/Dr_Deep_Goel_fbda879c5d.jpg",
+      "url": "https://www.maxhealthcare.in/doctor/deep-goel",
+      "medicalSpecialty": "Laparoscopic / Minimal Access Surgery, Bariatric Surgery / Metabolic, Gastrointestinal Surgery, Robotic Surgery",
+      "gender": "Male",
+      "telephone": "+918285068544",
+      "priceRange": "₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "India",
+        "postalCode": "",
+        "addressCountry": "IN"
+      }
+    }}

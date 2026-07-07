@@ -1,0 +1,506 @@
+[
+  {
+    "id": 584,
+    "name": "Alka Kriplani",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-06017.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 603,
+    "name": "Anurag Khaitan",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-04598.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 497,
+    "name": "M V Padma Srivastava",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/MVPADMA.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 746,
+    "name": "R Ranga Rao",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-06752R.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 758,
+    "name": "Rajnish Monga",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-00394.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1980,
+    "name": "Sushant Srivastava",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/September2025/z5mLvnjqUUSfSVP7pJnZ.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 562,
+    "name": "V S Mehta",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-00003.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 687,
+    "name": "Manmohan Singh",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/DRMANMOHAN.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2340,
+    "name": "Niranjan Naik",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/April2026/aXP7r4kK7YBoAa98nKey.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 576,
+    "name": "Abhay Kapoor",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/ETysQg3kb7oZ6wVOEHHf.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 588,
+    "name": "Amit Bhushan Sharma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/BsShzZzXRWA94vJ9xnwp.png",
+    "profileUrl": null
+  },
+  {
+    "id": 573,
+    "name": "Amitava Sengupta",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-00897.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1897,
+    "name": "Ankur Garg",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/August2025/St0QTyoYJuZCoaBLkRz7.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 607,
+    "name": "Arunesh Kumar",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/xVjU8PzVnMkfQCi2Um00.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 608,
+    "name": "Arvind Mehra",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-02438.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 619,
+    "name": "Bharat B Kukreti",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/qWXs3VQsmLcNw83e66GC.png",
+    "profileUrl": null
+  },
+  {
+    "id": 652,
+    "name": "Indu Bansal Aggarwal",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-09429.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 679,
+    "name": "Mandeep Singh",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/CON-DRMSH.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 722,
+    "name": "Nitin Jain",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/5fowtUTIIz83GtlfN0Lv.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 726,
+    "name": "P N Gupta",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-03047.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2341,
+    "name": "Puneet Rana",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/April2026/9VTVeoZi7abe4ILNcUIs.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 755,
+    "name": "Rajesh Kumar",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-03248.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 802,
+    "name": "Seema Sharma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-06109.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1930,
+    "name": "Shaarang Sachdev",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/January2026/cKiIPFlaw1MPLN8p6tCY.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 819,
+    "name": "Sumit Bhatia",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-07750.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2430,
+    "name": "Sumit Sharma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2026/fokVBYuQGdzMzkSGxiDI.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 839,
+    "name": "Vaibhaw Kumar",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/lAvtefzB9lsgBz5ijnZY.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 849,
+    "name": "Vivek Logani",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/8bYlJT0MxgOWkYynmCQj.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2435,
+    "name": "Sanjay Gupta",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2026/74PgeqBCkdeUDR4WcTBq.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 844,
+    "name": "Vikash Goyal",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/August2024/LpoR6l1SNforXOugfmZ8.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 592,
+    "name": "Amitabh Malik",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/CON-DRAMK.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 683,
+    "name": "Manish Mannan",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2025/x7VmaMk5iTpFODihIAD7.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 693,
+    "name": "Meenakshi Sharma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-00302.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 745,
+    "name": "R R Dutta",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-01302.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 784,
+    "name": "Sageer Aazaz",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/CON-DRSAGEER.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2250,
+    "name": "V Anand Naik",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/February2026/ncZ9T7Hl9zQvlIm8cbLd.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 600,
+    "name": "Anu Daber",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/Qf9Nlb0sCdkGeP0KdILH.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1985,
+    "name": "Anupam Sharma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/January2026/9irhnhugrdHieUg6aHaL.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 611,
+    "name": "Ashutosh Goyal",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-05144.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2338,
+    "name": "Devasheesh Kamra",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/April2026/9jA4gWvqr36p7CPg9Eb3.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 638,
+    "name": "Ekta Nigam",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/ONvmv8XZ39fnOXoQ5caw.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 645,
+    "name": "Gaurav Kataria",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-05936.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1924,
+    "name": "Gowhar Ahmad Shigan",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/September2025/hiotmTDTTyz34sbbWVKv.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 664,
+    "name": "Kandarp Vidyarthi",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-06229.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1898,
+    "name": "Kapil Dev Yadav",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/August2025/Wlhse5qJVFh6TGkroo78.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 688,
+    "name": "Manpreet Sodhi",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-06655.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 689,
+    "name": "Mayank Goel",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-02707.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 707,
+    "name": "Namita Jain",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/August2024/CCVFb4Wq7J7jYbGcTllB.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 711,
+    "name": "Naveen Satija",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-01930.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 728,
+    "name": "Parminder Bir Singh",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/m2iQWtxkWL8XgTs7LD2Y.png",
+    "profileUrl": null
+  },
+  {
+    "id": 740,
+    "name": "Preeti Singh",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/CON-DRPSH.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 749,
+    "name": "Raghav Singla",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/DRRAGHAV.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 751,
+    "name": "Rahul Kumar",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-05331.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 759,
+    "name": "Rakesh Tiwari",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-00852.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 761,
+    "name": "Ram Chander Jiloha",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2025/49pXGFDeVVnQAavRupoF.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 770,
+    "name": "Ravi Sharma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/vzkoMZmLRigZBU9Ts1V0.png",
+    "profileUrl": null
+  },
+  {
+    "id": 798,
+    "name": "Satish Chander Wasoori",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/August2024/w9x9ij5Ux7GZS17hufJB.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2429,
+    "name": "Saurabh Shukla",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2026/sQ2laEnD3YtVa5BmAjG7.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 574,
+    "name": "Aakashneel Bhattacharya",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/October2024/qTAXnsYhalovV2RpJwUP.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 578,
+    "name": "Abhimanyu Sangwan",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/jjBU2KFESABdh9uZDOXw.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2446,
+    "name": "Abhishek Dixit",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2026/dzh58leyOGwoObFdnNwP.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 597,
+    "name": "Anil Kumar",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2025/Ter7QzGu4xbGxVCtmipF.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2314,
+    "name": "Arun Poudel Chhetri",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/April2026/mm9SqwBZIVWSEupOx6Yu.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 654,
+    "name": "Isha Kriplani",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/LpIcOG8GgurpeWxIKdzK.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2149,
+    "name": "Khushboo Madaan",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2026/hC7axQ7hFuqkU7IW3DHt.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 675,
+    "name": "Madhuri Jaitley",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-08438.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1723,
+    "name": "Nadeem U Rehman",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2025/UCIKlbYCSwqluKiCe76t.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 706,
+    "name": "Nainika Goel",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/March2025/3QqyjyflwmJyDGiazMz3.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 709,
+    "name": "Nandini Baruah",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/ytFShYZJCR4F9xCPBNat.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 715,
+    "name": "Nidhi Aggarwal",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2026/kOZmvADiY4ouau9Y0rgI.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 732,
+    "name": "Pooja Anand",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/8EkhLcX7sxbWRiQU4xdg.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 735,
+    "name": "Prachi Gupta",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2024/GG-GUR-07207.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 739,
+    "name": "Prakruti Shah",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/August2024/Si5DGoi6lalBVAr1qePr.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1900,
+    "name": "Raghav Bansal",
+    "image": null,
+    "profileUrl": null
+  },
+  {
+    "id": 763,
+    "name": "Rama Yadav",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/September2024/jEZAa1JzN0Gb32TeSn3p.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 775,
+    "name": "Ritesh Yadav",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/May2024/GG-GUR-09339.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 810,
+    "name": "Shubham Joshi",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2024/WjxKaqaqE9ICDcDPVFpa.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1991,
+    "name": "Siddharth Verma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/January2026/57pg3M828Aiysw2HZNrR.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1551,
+    "name": "Bornali Mukherji",
+    "image": null,
+    "profileUrl": null
+  },
+  {
+    "id": 1710,
+    "name": "Devanshee Aakash Shah",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/September2025/KZ37aYzKN9nE4t287901.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1711,
+    "name": "Kartika Gulati",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2025/MORLm5RppAUZmKzJEOoJ.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 690,
+    "name": "Mayank Kapur",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/July2025/kbhT1VX6JNBqJ7nRKrxy.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 1903,
+    "name": "Amit Jha",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/October2025/t3XuUKBCWM1aN78j54Z9.jpg",
+    "profileUrl": null
+  },
+  {
+    "id": 2438,
+    "name": "Sanjeev Kumar Sharma",
+    "image": "https://parashospitals-web.s3.ap-south-1.amazonaws.com/doctor-lists/June2026/Marbc1D9YVH1XcLx22IS.jpg",
+    "profileUrl": null
+  }
+]

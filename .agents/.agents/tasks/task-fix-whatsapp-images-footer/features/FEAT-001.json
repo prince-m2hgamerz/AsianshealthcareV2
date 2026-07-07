@@ -1,0 +1,25 @@
+{
+  "id": "FEAT-001",
+  "type": "fix",
+  "description": "Fix duplicate floating WhatsApp buttons and replace AI-generated home page images with real Unsplash images, and improve footer mobile responsiveness",
+  "status": "completed",
+  "steps": [
+    "STEP 1 - Remove duplicate WhatsApp button: In app/(public)/page.tsx, remove the import and usage of <WhatsAppFloat /> component (lines importing from '@/components/shared/WhatsAppFloat' and the <WhatsAppFloat /> JSX). The AppShell already renders FloatingButtons (from components/layout/WhatsAppButton.tsx) globally for all public pages, so the page-level one is redundant.",
+    "STEP 2 - Replace AI-generated images in home page sections with real Unsplash URLs. The components that use images on the home page are: (a) HeroSection.tsx - uses a Wikimedia AIIMS image as default, replace with a better quality Unsplash hospital image. (b) WhoWeAre.tsx - uses Wikimedia Apollo Hospital image, replace with a high-quality real hospital/healthcare image from Unsplash. (c) TreatmentCostShowcase.tsx - uses 8 images from satyughealthcare.com which are real medical images but from a third-party site; replace these with appropriate Unsplash healthcare/medical images. (d) FeaturedDoctors.tsx - fallback uses satyughealthcare.com doctor photo; replace with a professional Unsplash doctor portrait. (e) FeaturedHospitals.tsx - fallback uses Wikimedia Apollo Hospital; replace with an appropriate Unsplash hospital building image. Update next.config.mjs to add 'images.unsplash.com' to remotePatterns.",
+    "STEP 3 - Improve Footer layout and mobile responsiveness in components/layout/Footer.tsx: (a) On mobile, make the 5-column grid stack better - use a 2-column grid on small screens for the link columns while keeping the brand/contact area full-width. (b) Add proper spacing and padding for mobile readability. (c) Make the bottom copyright bar work better on very small screens. (d) Add social media links section. (e) Ensure text sizes and touch targets are mobile-friendly."
+  ],
+  "acceptance_criteria": [
+    "Only ONE floating WhatsApp button appears on the home page (the one from AppShell/FloatingButtons)",
+    "Home page images in HeroSection, WhoWeAre, TreatmentCostShowcase, FeaturedDoctors, and FeaturedHospitals use real Unsplash image URLs instead of AI-generated or third-party images",
+    "next.config.mjs includes images.unsplash.com in remotePatterns",
+    "Footer renders well on mobile (320px-768px widths) with proper stacking, spacing, and readable text",
+    "Footer renders correctly on desktop with multi-column layout",
+    "npm run build completes without errors"
+  ],
+  "verification": [
+    "Run: cd /projects/sandbox/M2H-Healthcare && npm run build",
+    "Run: cd /projects/sandbox/M2H-Healthcare && npm run lint"
+  ],
+  "blocked_reason": null,
+  "findings": "Build fails on base branch due to missing Resend API key (pre-existing issue unrelated to changes). TypeScript compilation and ESLint pass cleanly. lucide-react v1.17.0 does not include brand icons (Facebook, Instagram, Youtube) so inline SVGs were used instead for the footer social media links."
+}
