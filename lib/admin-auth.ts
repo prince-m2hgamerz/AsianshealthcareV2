@@ -2,25 +2,11 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
-function parseCookies(header: string | null): Record<string, string> {
-  const result: Record<string, string> = {};
-  if (!header) return result;
-  for (const part of header.split(";")) {
-    const eq = part.indexOf("=");
-    if (eq > 0) {
-      const key = part.slice(0, eq).trim();
-      const val = part.slice(eq + 1).trim();
-      result[key] = val;
-    }
-  }
-  return result;
-}
-
 export async function checkAdmin(request?: Request): Promise<NextResponse | null> {
   let session: string | undefined;
 
   if (request) {
-    session = parseCookies(request.headers.get("cookie"))["admin_session"];
+    session = (request as any).cookies?.get?.("admin_session")?.value;
   } else {
     const cookieStore = await cookies();
     session = cookieStore.get("admin_session")?.value;
