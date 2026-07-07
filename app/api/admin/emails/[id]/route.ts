@@ -8,7 +8,7 @@ export async function GET(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(_request);
   if (unauthorized) return unauthorized;
 
   try {
@@ -35,7 +35,7 @@ export async function DELETE(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(_request);
   if (unauthorized) return unauthorized;
 
   try {
