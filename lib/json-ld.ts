@@ -29,7 +29,7 @@ function sameAs(s: SchemaSettings): string[] {
   return [s.facebook_url, s.twitter_url, s.instagram_url, s.linkedin_url, s.youtube_url].filter(Boolean);
 }
 
-function schemaDefaults(s: SchemaSettings): SchemaSettings {
+function schemaDefaults(s: Partial<SchemaSettings>): SchemaSettings {
   return { ...DEFAULT_SETTINGS, ...s };
 }
 
