@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server'
 import { checkAdmin } from '@/lib/admin-auth'
 import { sendTelegramAlert } from '@/lib/telegram'
 
-export async function POST() {
-  const authError = await checkAdmin()
+export async function POST(request: Request) {
+  const authError = await checkAdmin(request)
   if (authError) return authError
 
   const token = process.env.TELEGRAM_BOT_TOKEN

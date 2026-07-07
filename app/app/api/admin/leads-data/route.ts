@@ -14,8 +14,8 @@ function timeAgo(dateStr: string): string {
   return `${days}d ago`;
 }
 
-export async function GET() {
-  const unauthorized = await checkAdmin();
+export async function GET(request: Request) {
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const supabase = createClient(

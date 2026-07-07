@@ -21,7 +21,7 @@ function getSupabase() {
 }
 
 export async function GET(request: NextRequest) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const { searchParams } = new URL(request.url);
@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: Request) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const body = await request.json();

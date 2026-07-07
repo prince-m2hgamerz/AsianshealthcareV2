@@ -6,7 +6,7 @@ import { getStoragePath } from "@/lib/storage-utils";
 const BUCKET = "site-images";
 
 export async function POST(request: NextRequest) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const formData = await request.formData();
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const { url } = await request.json();

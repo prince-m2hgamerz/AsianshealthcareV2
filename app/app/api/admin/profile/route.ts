@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { checkAdmin, getAdminUser } from "@/lib/admin-auth";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
-export async function GET() {
-  const unauthorized = await checkAdmin();
+export async function GET(request: Request) {
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const admin = await getAdminUser();
@@ -15,7 +15,7 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const admin = await getAdminUser();

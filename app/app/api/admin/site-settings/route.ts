@@ -3,8 +3,8 @@ import { createClient } from "@supabase/supabase-js";
 import { checkAdmin, requireAdminRole } from "@/lib/admin-auth";
 import { getEnvOverriddenKeys } from "@/lib/site-settings";
 
-export async function GET() {
-  const unauthorized = await checkAdmin();
+export async function GET(request: Request) {
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const supabase = createClient(
@@ -22,7 +22,7 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
-  const unauthorized = await checkAdmin();
+  const unauthorized = await checkAdmin(request);
   if (unauthorized) return unauthorized;
 
   const forbidden = await requireAdminRole("super_admin");
