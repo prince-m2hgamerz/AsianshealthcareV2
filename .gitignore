@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+node_modules/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -20,6 +21,7 @@
 /medsolution-admin-app/app/.cxx/
 /medsolution-admin-app/build/
 /medsolution-admin-app/local.properties
+medsolution-admin-app/medsolution-admin-app/
 
 # Android TWA (medsolution-admin-twa)
 /medsolution-admin-twa/.gradle/
