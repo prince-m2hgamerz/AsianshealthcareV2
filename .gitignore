@@ -58,7 +58,13 @@ next-dev*.log
 
 # vercel
 .vercel
+.env.vercel
+
+# test artifacts
+cookies.txt
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
