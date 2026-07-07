@@ -53,12 +53,12 @@ export default async function HospitalDetailPage({ params }: { params: Promise<{
         city: hospital.city,
         state: hospital.state,
         beds: hospital.beds_count,
-        url: `https://medsolutionhealthcare.com/hospitals/${slug}`,
+        url: `https://asianshealthcare.com/hospitals/${slug}`,
       })} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Hospitals", url: "https://medsolutionhealthcare.com/hospitals" },
-        { name: hospital.name, url: `https://medsolutionhealthcare.com/hospitals/${slug}` },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Hospitals", url: "https://asianshealthcare.com/hospitals" },
+        { name: hospital.name, url: `https://asianshealthcare.com/hospitals/${slug}` },
       ])} />
       <section className="bg-canvas-night text-on-primary py-20">
         <div className="container-cinematic">

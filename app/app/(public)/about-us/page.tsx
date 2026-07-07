@@ -8,9 +8,9 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { organizationSchema, aboutPageSchema, breadcrumbSchema } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
-  title: "About Us | Med Solution Healthcare",
-  description: "Med Solution Healthcare is India's trusted medical tourism facilitator. ISO 9001:2015 certified. 500+ patients from 30+ countries. Free medical opinion, zero-cost service, end-to-end support.",
-  alternates: { canonical: "https://medsolutionhealthcare.com/about-us" },
+  title: "About Us | Asians Healthcare",
+  description: "Asians Healthcare is India's trusted medical tourism facilitator. ISO 9001:2015 certified. 500+ patients from 30+ countries. Free medical opinion, zero-cost service, end-to-end support.",
+  alternates: { canonical: "https://asianshealthcare.com/about-us" },
 };
 
 const stats = [
@@ -61,8 +61,8 @@ export default async function AboutPage() {
       <JsonLd data={organizationSchema(settings)} />
       <JsonLd data={aboutPageSchema(settings)} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "About Us", url: "https://medsolutionhealthcare.com/about-us" },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "About Us", url: "https://asianshealthcare.com/about-us" },
       ])} />
       <nav aria-label="Breadcrumb" className="bg-canvas-cream/80 border-b border-hairline-light">
         <div className="container-cinematic py-2.5">
@@ -92,7 +92,7 @@ export default async function AboutPage() {
             <span className="text-link-mint">Medical Tourism Partner</span>
           </h1>
           <p className="text-body-lg text-link-cool-2 max-w-3xl leading-relaxed">
-            Med Solution Healthcare helps international patients choose relevant doctors, compare
+            Asians Healthcare helps international patients choose relevant doctors, compare
             accredited hospitals, estimate treatment cost, and plan a smoother medical trip to India.
           </p>
         </div>

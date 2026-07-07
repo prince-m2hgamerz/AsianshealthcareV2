@@ -18,7 +18,7 @@ export async function POST() {
 
   await sendTelegramAlert({
     name: 'Test',
-    email: 'admin@medsolutionhealthcare.com',
+    email: 'admin@asianshealthcare.com',
     phone: '-',
     country: '-',
     form_type: 'Test',

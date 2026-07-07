@@ -43,14 +43,14 @@ export interface SiteSettings {
 }
 
 export const DEFAULT_SETTINGS: SiteSettings = {
-  site_name: "Med Solution Healthcare",
+  site_name: "Asians Healthcare",
   whatsapp_number: "918285068544",
   contact_phone: "+918285068544",
-  contact_email: "info@medsolutionhealthcare.com",
-  admin_email: "admin@medsolutionhealthcare.com",
+  contact_email: "info@asianshealthcare.com",
+  admin_email: "admin@asianshealthcare.com",
   hero_title: "Your Health Journey Starts in India",
   hero_subtitle: "Connect with India's top-rated hospitals and specialist doctors.",
-  about_short: "Med Solution Healthcare is India's premier medical tourism facilitator.",
+  about_short: "Asians Healthcare is India's premier medical tourism facilitator.",
   facebook_url: "https://facebook.com/medsolutionhealthcare",
   instagram_url: "https://instagram.com/medsolutionhealthcare",
   twitter_url: "https://twitter.com/medsolutionhealthcare",
@@ -66,9 +66,9 @@ export const DEFAULT_SETTINGS: SiteSettings = {
 
   linkedin_url: "https://linkedin.com/company/medsolutionhealthcare",
 
-  meta_description: "Med Solution Healthcare is India's premier medical tourism facilitator. We help international patients access world-class medical treatments in India.",
+  meta_description: "Asians Healthcare is India's premier medical tourism facilitator. We help international patients access world-class medical treatments in India.",
   meta_keywords: "medical tourism, healthcare, India, medical treatment, hospital",
-  meta_title_template: "%s | Med Solution Healthcare",
+  meta_title_template: "%s | Asians Healthcare",
   ga4_measurement_id: "G-CD5HKSSMK1",
   gtm_container_id: "",
 
@@ -78,7 +78,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   foundation_year: "2015",
   opening_hours: "Mon-Sat 9:00 AM - 6:00 PM",
 
-  copyright_text: "Med Solution Healthcare. All rights reserved.",
+  copyright_text: "Asians Healthcare. All rights reserved.",
   footer_tagline: "Bridging the Gap Between You and World-Class Healthcare",
 
   whatsapp_message_default: "Hi! I'm interested in medical treatment in India. Can you help me?",

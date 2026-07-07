@@ -15,7 +15,7 @@ import PageHero from "@/components/layout/PageHero";
 import BreadcrumbNav from "@/components/shared/BreadcrumbNav";
 
 export const metadata: Metadata = {
-  title: "Search Results - Med Solution Healthcare",
+  title: "Search Results - Asians Healthcare",
   description: "Search results for medical treatments, doctors, hospitals, and more.",
   alternates: { canonical: "/search" },
 };

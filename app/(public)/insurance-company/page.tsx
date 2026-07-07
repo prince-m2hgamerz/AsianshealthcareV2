@@ -9,9 +9,9 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { breadcrumbSchema } from "@/lib/json-ld";
  
  export const metadata: Metadata = {
-  title: "Insurance Partners | Med Solution Healthcare",
+  title: "Insurance Partners | Asians Healthcare",
   description: "Accepted international insurance companies for medical treatment in India. Check if your provider covers treatment at our partner hospitals.",
-  alternates: { canonical: "https://medsolutionhealthcare.com/insurance-company" },
+  alternates: { canonical: "https://asianshealthcare.com/insurance-company" },
 };
 
 export default async function InsurancePage() {
@@ -26,8 +26,8 @@ export default async function InsurancePage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Insurance Partners", url: "https://medsolutionhealthcare.com/insurance-company" },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Insurance Partners", url: "https://asianshealthcare.com/insurance-company" },
       ])} />
       <BreadcrumbNav items={[{ label: "Insurance Partners", href: "/insurance-company" }]} />
       <PageHero

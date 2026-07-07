@@ -74,7 +74,7 @@ CREATE TABLE blogs (
   content TEXT NOT NULL,
   category TEXT NOT NULL,
   thumbnail_url TEXT,
-  author TEXT DEFAULT 'Med Solution Healthcare',
+  author TEXT DEFAULT 'Asians Healthcare',
   published_at TIMESTAMPTZ DEFAULT NOW(),
   is_published BOOLEAN DEFAULT false
 );

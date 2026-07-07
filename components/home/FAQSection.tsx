@@ -35,7 +35,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-body-lg text-shade-50 max-w-2xl mx-auto mt-4">
-            Everything you need to know about medical treatment in India with Med Solution Healthcare.
+            Everything you need to know about medical treatment in India with Asians Healthcare.
           </p>
         </motion.div>
 

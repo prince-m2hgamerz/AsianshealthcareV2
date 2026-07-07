@@ -100,8 +100,8 @@ export default async function HomePage() {
       <JsonLd data={[organizationSchema(settings), websiteSchema(settings)]} />
       <JsonLd data={faqPageSchema([
         { question: "Why choose India for medical treatment?", answer: "India offers accredited hospitals, experienced specialists, advanced technology, and significantly lower treatment costs than many Western countries." },
-        { question: "How does Med Solution Healthcare work?", answer: "Share your reports, receive opinion and cost guidance, choose a doctor or hospital, then get support for visa invitation, arrival, stay, admission, interpreter help, and follow-up." },
-        { question: "Is Med Solution Healthcare's service free?", answer: "Yes. Patients pay the hospital directly. Med Solution Healthcare does not add a patient service fee." },
+        { question: "How does Asians Healthcare work?", answer: "Share your reports, receive opinion and cost guidance, choose a doctor or hospital, then get support for visa invitation, arrival, stay, admission, interpreter help, and follow-up." },
+        { question: "Is Asians Healthcare's service free?", answer: "Yes. Patients pay the hospital directly. Asians Healthcare does not add a patient service fee." },
         { question: "Which hospitals do you work with?", answer: "We coordinate with NABH and JCI accredited hospitals across major Indian cities, including Delhi NCR, Mumbai, Chennai, Bangalore, and other medical hubs." },
         { question: "How much can I save?", answer: "Savings depend on the procedure and hospital, but many patients see treatment estimates that are 60-80% lower than US or UK costs." },
       ])} />

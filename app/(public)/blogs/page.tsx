@@ -26,7 +26,7 @@ export default async function BlogsPage({ searchParams }: { searchParams?: Promi
   const fetchedBlogs = raw?.map((b) => ({
     title: b.title,
     category: b.category,
-    author: b.author || "Med Solution Team",
+    author: b.author || "Asians Team",
     date: b.published_at ? new Date(b.published_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "",
     slug: b.slug,
     excerpt: stripHtml(b.content || "").substring(0, 120) + "...",
@@ -42,8 +42,8 @@ export default async function BlogsPage({ searchParams }: { searchParams?: Promi
   return (
     <>
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Blog", url: "https://medsolutionhealthcare.com/blogs" },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Blog", url: "https://asianshealthcare.com/blogs" },
       ])} />
       <PageHero
         eyebrow="Our Blog"

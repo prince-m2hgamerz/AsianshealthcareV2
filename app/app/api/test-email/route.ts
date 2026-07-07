@@ -31,18 +31,18 @@ export async function GET() {
 
   // Check Resend API key format
   results.resend_key_format = process.env.RESEND_API_KEY?.startsWith("re_") ? "✅ valid" : "❌ invalid (should start with re_)";
-  results.resend_from = process.env.RESEND_FROM_EMAIL || "Med Solution Healthcare <noreply@medsolutionhealthcare.com>";
+  results.resend_from = process.env.RESEND_FROM_EMAIL || "Asians Healthcare <noreply@asianshealthcare.com>";
 
   // Try sending a test email
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const from = process.env.RESEND_FROM_EMAIL || "Med Solution Healthcare <noreply@medsolutionhealthcare.com>";
-    const adminEmail = process.env.ADMIN_EMAIL || "admin@medsolutionhealthcare.com";
+    const from = process.env.RESEND_FROM_EMAIL || "Asians Healthcare <noreply@asianshealthcare.com>";
+    const adminEmail = process.env.ADMIN_EMAIL || "admin@asianshealthcare.com";
 
     const { data, error } = await resend.emails.send({
       from,
       to: adminEmail,
-      subject: "Test Email from Med Solution Healthcare",
+      subject: "Test Email from Asians Healthcare",
       html: `<p>If you receive this, email sending is working correctly on ${process.env.NEXT_PUBLIC_SITE_URL || "unknown"}</p>`,
     });
 

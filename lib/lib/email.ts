@@ -125,7 +125,7 @@ export async function sendCustomerConfirmation(lead: Record<string, unknown>) {
     await resend.emails.send({
       from,
       to: email,
-      subject: `We received your ${label} - Med Solution Healthcare`,
+      subject: `We received your ${label} - Asians Healthcare`,
       html,
     });
   } catch (err) {

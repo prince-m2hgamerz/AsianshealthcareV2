@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const treatment = raw || fb;
   if (!treatment) return { title: "Treatment Not Found" };
   const costMin = Number("cost_usd_min" in treatment ? treatment.cost_usd_min : (treatment as unknown as Record<string, number>).costMin || 0);
-  return { title: `${treatment.name} Cost in India | Med Solution Healthcare`, description: `Affordable ${treatment.name} in India starting at $${costMin.toLocaleString()}. Save 60-80% compared to US costs.` };
+  return { title: `${treatment.name} Cost in India | Asians Healthcare`, description: `Affordable ${treatment.name} in India starting at $${costMin.toLocaleString()}. Save 60-80% compared to US costs.` };
 }
 
 export default async function TreatmentDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -51,7 +51,7 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
   return (
     <>
       <JsonLd data={faqPageSchema(faqs)} />
-      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://medsolutionhealthcare.com" }, { name: "Treatments", url: "https://medsolutionhealthcare.com/treatments" }, { name: treatment.name, url: `https://medsolutionhealthcare.com/treatments/${slug}` }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://asianshealthcare.com" }, { name: "Treatments", url: "https://asianshealthcare.com/treatments" }, { name: treatment.name, url: `https://asianshealthcare.com/treatments/${slug}` }])} />
       <section className="bg-canvas-night text-on-primary py-16">
         <div className="max-w-7xl mx-auto px-4">
           <Link href="/treatments" className="inline-flex items-center gap-2 text-on-primary/60 hover:text-on-primary mb-6 transition"><ArrowLeft size={18} /> Back to Treatments</Link>
@@ -123,7 +123,7 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
               </div>
               <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
                 <a href="tel:+918285068544" className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary"><Phone size={14} /> +91-8285068544</a>
-                <a href="mailto:info@medsolutionhealthcare.com" className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary"><Mail size={14} /> info@medsolutionhealthcare.com</a>
+                <a href="mailto:info@asianshealthcare.com" className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary"><Mail size={14} /> info@asianshealthcare.com</a>
               </div>
             </div>
           </div>

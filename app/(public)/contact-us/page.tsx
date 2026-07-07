@@ -8,9 +8,9 @@ import { localBusinessSchema, breadcrumbSchema } from "@/lib/json-ld";
 import { getSiteSettings } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Med Solution Healthcare",
-  description: "Contact Med Solution Healthcare for medical treatment in India. Get a free consultation, cost estimate, and treatment plan within 24 hours.",
-  alternates: { canonical: "https://medsolutionhealthcare.com/contact-us" },
+  title: "Contact Us | Asians Healthcare",
+  description: "Contact Asians Healthcare for medical treatment in India. Get a free consultation, cost estimate, and treatment plan within 24 hours.",
+  alternates: { canonical: "https://asianshealthcare.com/contact-us" },
 };
 
 const responseSteps = [
@@ -35,8 +35,8 @@ export default async function ContactPage() {
     <>
       <JsonLd data={localBusinessSchema(settings)} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Contact Us", url: "https://medsolutionhealthcare.com/contact-us" },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Contact Us", url: "https://asianshealthcare.com/contact-us" },
       ])} />
       <PageHero
         eyebrow="Get in Touch"
@@ -113,7 +113,7 @@ export default async function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Med Solution Healthcare Location"
+              title="Asians Healthcare Location"
             />
           </div>
         </div>

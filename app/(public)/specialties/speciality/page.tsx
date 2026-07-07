@@ -9,9 +9,9 @@ import { getSiteImages } from "@/lib/site-settings";
 import { getSpecialtyImage } from "@/lib/site-images";
 
 export const metadata: Metadata = {
-  title: "Medical Specialties | Med Solution Healthcare",
+  title: "Medical Specialties | Asians Healthcare",
   description: "Explore 30+ medical specialties available in India. Find top specialists, treatments, and hospitals for cardiology, orthopedics, oncology, neurology and more.",
-  alternates: { canonical: "https://medsolutionhealthcare.com/speciality" },
+  alternates: { canonical: "https://asianshealthcare.com/speciality" },
 };
 
 const iconMap: Record<string, typeof Heart> = {

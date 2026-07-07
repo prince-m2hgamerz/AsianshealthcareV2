@@ -13,9 +13,9 @@ import BreadcrumbNav from "@/components/shared/BreadcrumbNav";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Partner Hospitals in India | Med Solution Healthcare",
+  title: "Partner Hospitals in India | Asians Healthcare",
   description: "Explore India's top JCI and NABH accredited hospitals for medical tourism. Apollo, Max, Artemis, BLK-Max, Sir Ganga Ram & more in Delhi NCR.",
-  alternates: { canonical: "https://medsolutionhealthcare.com/hospitals" },
+  alternates: { canonical: "https://asianshealthcare.com/hospitals" },
 };
 
 export default async function HospitalsPage({
@@ -53,8 +53,8 @@ export default async function HospitalsPage({
   return (
     <>
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Hospitals", url: "https://medsolutionhealthcare.com/hospitals" },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Hospitals", url: "https://asianshealthcare.com/hospitals" },
       ])} />
       <BreadcrumbNav items={[
         { label: "Home", href: "/" },

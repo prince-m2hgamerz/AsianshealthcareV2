@@ -102,7 +102,7 @@
 53
 54                <data
 54-->C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\AndroidManifest.xml:31:17-33:64
-55                    android:host="medsolutionhealthcare.com"
+55                    android:host="asianshealthcare.com"
 55-->C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\AndroidManifest.xml:33:21-61
 56                    android:scheme="https" />
 56-->C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\AndroidManifest.xml:32:21-43

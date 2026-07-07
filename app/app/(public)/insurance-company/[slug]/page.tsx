@@ -15,11 +15,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { data } = await supabase.from("insurance_companies").select("name, description").eq("slug", slug).single();
     insurance = data;
   }
-  if (!insurance) return { title: "Insurance Partner | Med Solution Healthcare" };
+  if (!insurance) return { title: "Insurance Partner | Asians Healthcare" };
   return {
-    title: `${insurance.name} Coverage in India | Med Solution Healthcare`,
+    title: `${insurance.name} Coverage in India | Asians Healthcare`,
     description: `${insurance.description || `Check if ${insurance.name} covers your medical treatment in India. Insurance acceptance at top hospitals in Delhi NCR.`}`,
-    alternates: { canonical: `https://medsolutionhealthcare.com/insurance-company/${slug}` },
+    alternates: { canonical: `https://asianshealthcare.com/insurance-company/${slug}` },
   };
 }
 
@@ -33,9 +33,9 @@ export default async function InsuranceDetailPage({ params }: { params: Promise<
   return (
     <>
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Insurance Partners", url: "https://medsolutionhealthcare.com/insurance-company" },
-        { name: insurance.name, url: `https://medsolutionhealthcare.com/insurance-company/${slug}` },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Insurance Partners", url: "https://asianshealthcare.com/insurance-company" },
+        { name: insurance.name, url: `https://asianshealthcare.com/insurance-company/${slug}` },
       ])} />
       <BreadcrumbNav items={[
         { label: "Insurance Partners", href: "/insurance-company" },

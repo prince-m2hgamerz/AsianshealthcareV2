@@ -11,9 +11,9 @@ import { breadcrumbSchema } from "@/lib/json-ld";
 import BreadcrumbNav from "@/components/shared/BreadcrumbNav";
 
 export const metadata: Metadata = {
-  title: "218+ Treatment Packages & Costs in India | Med Solution Healthcare",
+  title: "218+ Treatment Packages & Costs in India | Asians Healthcare",
   description: "Compare 218+ medical treatment costs in India vs. US/UK. Save 60-80% on cardiology, orthopedics, oncology, transplant, IVF, and more at top JCI hospitals.",
-  alternates: { canonical: "https://medsolutionhealthcare.com/treatment-package" },
+  alternates: { canonical: "https://asianshealthcare.com/treatment-package" },
 };
 
 export default async function TreatmentPackagesPage({
@@ -102,8 +102,8 @@ export default async function TreatmentPackagesPage({
   return (
     <>
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Treatment Packages", url: "https://medsolutionhealthcare.com/treatment-package" },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Treatment Packages", url: "https://asianshealthcare.com/treatment-package" },
       ])} />
       <BreadcrumbNav items={[
         { label: "Home", href: "/" },

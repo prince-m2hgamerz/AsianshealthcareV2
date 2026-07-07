@@ -23,7 +23,7 @@ import medsolution.admin.pwa.service.NotificationHelper;
 public class MainActivity extends AppCompatActivity {
 
     private WebView webView;
-    private static final String URL = "https://medsolutionhealthcare.com";
+    private static final String URL = "https://asianshealthcare.com";
     private static final int NOTIFICATION_PERMISSION_CODE = 100;
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 String url = request.getUrl().toString();
-                if (url.startsWith("https://medsolutionhealthcare.com") ||
-                    url.startsWith("https://cjqfgshjpqpfcjdvfpgc.supabase.co")) {
+                if (url.startsWith("https://asianshealthcare.com") ||
+                    url.startsWith("https://imhukfivfelxfltzqxtx.supabase.co")) {
                     return false;
                 }
                 return true;

@@ -19,7 +19,7 @@ type SchemaSettings = Pick<SiteSettings,
   | "youtube_url"
 >;
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://medsolutionhealthcare.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com";
 
 function formatAddress(s: SchemaSettings): string {
   return `${s.address_street}, ${s.address_city}, ${s.address_state} - ${s.address_pin_code}`;

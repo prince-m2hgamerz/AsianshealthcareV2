@@ -57,14 +57,14 @@ export async function POST(request: Request) {
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const from = process.env.RESEND_FROM_EMAIL || "Med Solution Healthcare <noreply@medsolutionhealthcare.com>";
+    const from = process.env.RESEND_FROM_EMAIL || "Asians Healthcare <noreply@asianshealthcare.com>";
 
     const html = `<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:0;background:#f5f5f5">
   <div style="background:#000;padding:24px;text-align:center">
-    <h1 style="color:#86efac;margin:0;font-size:20px">Med Solution Healthcare</h1>
+    <h1 style="color:#86efac;margin:0;font-size:20px">Asians Healthcare</h1>
   </div>
   <div style="background:#ffffff;padding:32px 24px;border:1px solid #e0e0e0;border-top:none">
     <h2 style="margin:0 0 16px;font-size:22px;color:#111">${subject}</h2>
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
   </div>
   <div style="padding:16px 24px;text-align:center">
     <p style="font-size:12px;color:#999;line-height:1.5;margin:0">
-      Med Solution Healthcare | Delhi, India<br/>
+      Asians Healthcare | Delhi, India<br/>
       You received this because you subscribed to our newsletter.
     </p>
   </div>

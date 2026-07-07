@@ -82,22 +82,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: dbError.message }, { status: 500 });
   }
 
-  const loginUrl = `${process.env.NEXT_PUBLIC_BASE_URL || "https://medsolutionhealthcare.com"}/admin/login`;
+  const loginUrl = `${process.env.NEXT_PUBLIC_BASE_URL || "https://asianshealthcare.com"}/admin/login`;
 
   try {
     await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || "Med Solution Healthcare <noreply@medsolutionhealthcare.com>",
+      from: process.env.RESEND_FROM_EMAIL || "Asians Healthcare <noreply@asianshealthcare.com>",
       to: email.toLowerCase(),
-      subject: "You've been invited to Med Solution Healthcare Admin",
+      subject: "You've been invited to Asians Healthcare Admin",
       html: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
           <div style="background:#000;padding:24px;text-align:center">
-            <h1 style="color:#86efac;margin:0;font-size:20px">Med Solution Healthcare</h1>
+            <h1 style="color:#86efac;margin:0;font-size:20px">Asians Healthcare</h1>
           </div>
           <div style="padding:24px;background:#fbfbf5">
             <h2 style="margin:0 0 16px;font-size:18px;color:#111">Admin Access Granted</h2>
             <p style="font-size:14px;color:#333;line-height:1.6">
-              You have been invited to the <strong>Med Solution Healthcare</strong> admin panel with the role of <strong>${escapeHtml(role.replace("_", " "))}</strong>.
+              You have been invited to the <strong>Asians Healthcare</strong> admin panel with the role of <strong>${escapeHtml(role.replace("_", " "))}</strong>.
             </p>
             <div style="background:#fff;border-radius:8px;padding:20px;margin:20px 0;border:1px solid #e0e0e0">
               <p style="margin:0 0 12px;font-size:13px;color:#666;text-transform:uppercase;letter-spacing:0.5px">Your Login Credentials</p>
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
             </p>
             <div style="border-top:1px solid #e0e0e0;padding-top:16px;margin-top:16px">
               <p style="font-size:12px;color:#999;line-height:1.5">
-                Med Solution Healthcare | Delhi, India<br>
+                Asians Healthcare | Delhi, India<br>
                 This is an automated email. Please do not reply.
               </p>
             </div>

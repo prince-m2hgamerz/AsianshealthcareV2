@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://medsolutionhealthcare.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com";
 
   const pages = [
     "", "/about-us", "/doctors", "/hospitals", "/treatment-package",

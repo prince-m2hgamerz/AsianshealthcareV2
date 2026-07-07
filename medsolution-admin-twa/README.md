@@ -1,6 +1,6 @@
 # MedSolution PWA — Android Trusted Web Activity
 
-Wraps https://medsolutionhealthcare.com as a real Android APK with package name `medsolution.admin.pwa`.
+Wraps https://asianshealthcare.com as a real Android APK with package name `medsolution.admin.pwa`.
 
 ## Quick Start (Debug)
 
@@ -42,11 +42,11 @@ keytool -list -v -keystore medsolution-keystore.jks -alias medsolution -storepas
 
 ## Digital Asset Links
 
-For the TWA to work, `https://medsolutionhealthcare.com/.well-known/assetlinks.json` must be served with the correct SHA256 fingerprint of your signing key.
+For the TWA to work, `https://asianshealthcare.com/.well-known/assetlinks.json` must be served with the correct SHA256 fingerprint of your signing key.
 
 - Debug file: `./.well-known/assetlinks.json`
 - Production file: `../public/.well-known/assetlinks.json`
 
 ## Verify the TWA
 
-After installing the APK, visit https://medsolutionhealthcare.com in Chrome. If Digital Asset Links are configured correctly, Chrome will open the TWA (not the browser).
+After installing the APK, visit https://asianshealthcare.com in Chrome. If Digital Asset Links are configured correctly, Chrome will open the TWA (not the browser).

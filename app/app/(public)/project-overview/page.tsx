@@ -61,7 +61,7 @@ function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; del
 function ShareModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [copied, setCopied] = useState(false)
   const url = typeof window !== "undefined" ? window.location.href : ""
-  const title = "Med Solution Healthcare – Project Overview"
+  const title = "Asians Healthcare – Project Overview"
 
   useEffect(() => {
     if (!open) { setCopied(false); return }
@@ -345,7 +345,7 @@ export default function ProjectOverviewPage() {
               Complete Project Overview
             </div>
             <h1 className="font-heading text-display-lg md:text-display-xl text-white leading-tight mb-4">
-              Med Solution Healthcare
+              Asians Healthcare
             </h1>
             <p className="text-xl md:text-2xl text-white/60 font-heading font-normal mb-3">
               Medical Tourism Facilitation Platform
@@ -357,7 +357,7 @@ export default function ProjectOverviewPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://medsolutionhealthcare.com"
+                href="https://asianshealthcare.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-pill bg-accent text-white font-semibold hover:bg-accent/90 transition shadow-btn-accent"
@@ -883,7 +883,7 @@ export default function ProjectOverviewPage() {
                 email system, and monitoring.
               </p>
               <a
-                href="https://medsolutionhealthcare.com"
+                href="https://asianshealthcare.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-pill bg-accent text-white font-semibold hover:bg-accent/90 transition shadow-btn-accent"
@@ -916,15 +916,15 @@ export default function ProjectOverviewPage() {
                 Schedule a Demo <ArrowUpRight size={18} />
               </Link>
               <a
-                href="mailto:info@medsolutionhealthcare.com"
+                href="mailto:info@asianshealthcare.com"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-pill border border-hairline-light text-primary font-semibold hover:bg-neutral-50 transition"
               >
                 <Mail size={18} />
-                info@medsolutionhealthcare.com
+                info@asianshealthcare.com
               </a>
             </div>
             <div className="mt-6 pt-4 border-t border-hairline-light text-xs text-neutral-500">
-              <span className="font-medium">Med Solution Healthcare</span> &nbsp;·&nbsp; Unit No. 36, Living Style Mall, Jasola, New Delhi - 110025 &nbsp;·&nbsp; +91-8285068544
+              <span className="font-medium">Asians Healthcare</span> &nbsp;·&nbsp; Unit No. 36, Living Style Mall, Jasola, New Delhi - 110025 &nbsp;·&nbsp; +91-8285068544
             </div>
           </div>
         </div>

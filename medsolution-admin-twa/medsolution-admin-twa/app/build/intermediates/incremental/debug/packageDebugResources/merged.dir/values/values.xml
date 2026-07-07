@@ -5,8 +5,8 @@
     <string name="google_api_key" translatable="false">AIzaSyAthJX_Fc90oGewtjxuVTHMWYCHy-bPoHU</string>
     <string name="google_app_id" translatable="false">1:774403749576:android:7317fee455a591cca157fd</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAthJX_Fc90oGewtjxuVTHMWYCHy-bPoHU</string>
-    <string name="google_storage_bucket" translatable="false">med-solution-healthcare.firebasestorage.app</string>
-    <string name="project_id" translatable="false">med-solution-healthcare</string>
+    <string name="google_storage_bucket" translatable="false">asians-healthcare.firebasestorage.app</string>
+    <string name="project_id" translatable="false">asians-healthcare</string>
     <style name="Theme.MedSolutionPWA" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#2563eb</item>
         <item name="android:statusBarColor">#2563eb</item>

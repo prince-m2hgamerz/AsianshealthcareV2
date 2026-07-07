@@ -63,7 +63,7 @@ const linkIcon: Record<string, React.ReactNode> = {
 };
 
 // Splits the site name so the last word can be styled in the accent color,
-// matching the "Med Solution Healthcare" -> "Med Solution" + "Healthcare" look.
+// matching the "Asians Healthcare" -> "Asians" + "Healthcare" look.
 // Falls back to rendering the whole name in one color if there's only one
 // word, so short/unusual site names never look broken.
 function splitWordmark(name: string): { lead: string; accent: string } {
@@ -87,10 +87,10 @@ export default function Navbar() {
   const settings = useSiteSettings();
   const exploreRef = useRef<HTMLDivElement>(null);
 
-  // Bug fix: this was hardcoded to "Med Solution Healthcare" before,
+  // Bug fix: this was hardcoded to "Asians Healthcare" before,
   // ignoring the siteName pulled from settings above. Falls back to the
   // same default only when settings haven't loaded yet.
-  const siteName = settings.site_name || "Med Solution Healthcare";
+  const siteName = settings.site_name || "Asians Healthcare";
   const wordmark = splitWordmark(siteName);
 
   const exploreActive = exploreLinks.some(

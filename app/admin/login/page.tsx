@@ -67,7 +67,7 @@ export default function AdminLoginPage() {
             Admin Panel
           </span>
           <h1 className="font-display text-display-md text mb-2">
-            Med Solution <span className="text-accent">Admin</span>
+            Asians <span className="text-accent">Admin</span>
           </h1>
           <p className="text-caption text-shade-50">Sign in to your account</p>
         </div>

@@ -96,7 +96,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
     <div className="flex h-full flex-col">
       <div className="flex items-center justify-between border-b border-border px-6 py-5">
         <Link href="/admin" className="font-display text-heading-sm tracking-wide text-primary">
-          Med Solution <span className="text-accent">Admin</span>
+          Asians <span className="text-accent">Admin</span>
         </Link>
         <button
           onClick={() => setMobileSidebar(false)}

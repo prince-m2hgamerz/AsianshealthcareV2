@@ -57,14 +57,14 @@ export default async function DoctorDetailPage({ params }: { params: Promise<{ s
         description: doctor.about,
         specialty: doctor.specialty,
         image: doctor.photo_url,
-        url: `https://medsolutionhealthcare.com/doctors/${slug}`,
+        url: `https://asianshealthcare.com/doctors/${slug}`,
         qualifications: doctor.qualifications,
         hospitalName: doctor.hospital,
       })} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Doctors", url: "https://medsolutionhealthcare.com/doctors" },
-        { name: doctor.name, url: `https://medsolutionhealthcare.com/doctors/${slug}` },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Doctors", url: "https://asianshealthcare.com/doctors" },
+        { name: doctor.name, url: `https://asianshealthcare.com/doctors/${slug}` },
       ])} />
       <section className="bg-canvas-night text-on-primary py-20">
         <div className="container-cinematic">

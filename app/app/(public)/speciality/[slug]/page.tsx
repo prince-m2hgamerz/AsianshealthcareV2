@@ -22,9 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   if (!specialty) return { title: "Specialty Not Found" };
   return {
-    title: `${specialty.name} Treatment in India | Med Solution Healthcare`,
+    title: `${specialty.name} Treatment in India | Asians Healthcare`,
     description: `${specialty.description || `Expert ${specialty.name} treatment in India at top hospitals with board-certified specialists.`}`,
-    alternates: { canonical: `https://medsolutionhealthcare.com/speciality/${slug}` },
+    alternates: { canonical: `https://asianshealthcare.com/speciality/${slug}` },
   };
 }
 

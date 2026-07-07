@@ -9,7 +9,7 @@
 
 ### 2. `MessagingService.java` — token now registers with server
 - **Problem**: `onNewToken()` only logged the token (debug line) — no HTTP call to register it with the backend. End-to-end push delivery was impossible.
-- **Fix**: Added `registerTokenWithServer()` that POSTs `{ token, os_version, device_model }` to `https://medsolutionhealthcare.com/api/admin/push/fcm/register` on a background thread.
+- **Fix**: Added `registerTokenWithServer()` that POSTs `{ token, os_version, device_model }` to `https://asianshealthcare.com/api/admin/push/fcm/register` on a background thread.
 - **Status**: Done. File is untracked and will be included when the `medsolution-admin-twa/` directory is staged.
 
 ### 3. FCM send route verified complete

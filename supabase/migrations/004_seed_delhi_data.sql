@@ -762,13 +762,13 @@ ON CONFLICT (slug) DO NOTHING;
 
 -- ─── Testimonials ─────────────────────────────────────────
 INSERT INTO testimonials (id, patient_name, country, treatment, video_url, text_content, rating, is_approved) VALUES
-  ('f0000001-0000-0000-0000-000000000001', 'Grace Mwangi', 'Kenya', 'Knee Replacement', 'https://www.youtube.com/watch?v=oB2GzmHqVBM', 'I had been suffering from knee pain for years. Med Solution Healthcare made everything easy - from my visa to hospital stay. The doctors were exceptional.', 5, true),
-  ('f0000001-0000-0000-0000-000000000002', 'Ahmed Al-Rashid', 'Iraq', 'Liver Transplant', 'https://www.youtube.com/watch?v=3rUulNKF26s', 'Finding a reliable medical tourism facilitator was my biggest concern. Med Solution Healthcare exceeded all expectations and coordinated everything perfectly.', 5, true),
-  ('f0000001-0000-0000-0000-000000000003', 'Fatima Okafor', 'Nigeria', 'IVF Treatment', 'https://www.youtube.com/watch?v=O-Dp9aHZldA', 'After years of trying, Med Solution Healthcare helped us start our family. The entire team was supportive and professional.', 5, true),
-  ('f0000001-0000-0000-0000-000000000004', 'James Mwangi', 'Kenya', 'Cardiac Bypass', NULL, 'My heart surgery at Medanta was life-changing. The coordination by Med Solution Healthcare was flawless from Nairobi to Delhi and back.', 5, true),
-  ('f0000001-0000-0000-0000-000000000005', 'Aisha Mohammed', 'Nigeria', 'Knee Replacement', NULL, 'I can walk without pain for the first time in 10 years. Thank you to the entire team at Med Solution Healthcare for making this possible.', 5, false),
-  ('f0000001-0000-0000-0000-000000000006', 'Raj Patel', 'United Kingdom', 'Hip Replacement', NULL, 'The cost savings were substantial but the quality of care was world-class. I would recommend Med Solution Healthcare to anyone considering treatment in India.', 5, true),
-  ('f0000001-0000-0000-0000-000000000007', 'Nadia Khan', 'Bangladesh', 'Kidney Transplant', NULL, 'My brother received a life-saving kidney transplant through Med Solution Healthcare. The coordination, hospital selection, and follow-up were outstanding.', 5, true),
+  ('f0000001-0000-0000-0000-000000000001', 'Grace Mwangi', 'Kenya', 'Knee Replacement', 'https://www.youtube.com/watch?v=oB2GzmHqVBM', 'I had been suffering from knee pain for years. Asians Healthcare made everything easy - from my visa to hospital stay. The doctors were exceptional.', 5, true),
+  ('f0000001-0000-0000-0000-000000000002', 'Ahmed Al-Rashid', 'Iraq', 'Liver Transplant', 'https://www.youtube.com/watch?v=3rUulNKF26s', 'Finding a reliable medical tourism facilitator was my biggest concern. Asians Healthcare exceeded all expectations and coordinated everything perfectly.', 5, true),
+  ('f0000001-0000-0000-0000-000000000003', 'Fatima Okafor', 'Nigeria', 'IVF Treatment', 'https://www.youtube.com/watch?v=O-Dp9aHZldA', 'After years of trying, Asians Healthcare helped us start our family. The entire team was supportive and professional.', 5, true),
+  ('f0000001-0000-0000-0000-000000000004', 'James Mwangi', 'Kenya', 'Cardiac Bypass', NULL, 'My heart surgery at Medanta was life-changing. The coordination by Asians Healthcare was flawless from Nairobi to Delhi and back.', 5, true),
+  ('f0000001-0000-0000-0000-000000000005', 'Aisha Mohammed', 'Nigeria', 'Knee Replacement', NULL, 'I can walk without pain for the first time in 10 years. Thank you to the entire team at Asians Healthcare for making this possible.', 5, false),
+  ('f0000001-0000-0000-0000-000000000006', 'Raj Patel', 'United Kingdom', 'Hip Replacement', NULL, 'The cost savings were substantial but the quality of care was world-class. I would recommend Asians Healthcare to anyone considering treatment in India.', 5, true),
+  ('f0000001-0000-0000-0000-000000000007', 'Nadia Khan', 'Bangladesh', 'Kidney Transplant', NULL, 'My brother received a life-saving kidney transplant through Asians Healthcare. The coordination, hospital selection, and follow-up were outstanding.', 5, true),
   ('f0000001-0000-0000-0000-000000000008', 'Samuel Ochieng', 'Kenya', 'Spine Surgery', NULL, 'After my spine surgery at Indian Spinal Injuries Centre, I am back to work. The care I received was beyond my expectations.', 5, false)
 ON CONFLICT DO NOTHING;
 
@@ -837,7 +837,7 @@ INSERT INTO site_settings (key, value) VALUES
 ON CONFLICT (key) DO NOTHING;
 
 -- ─── Admin User (first super admin) ──────────────────────
-INSERT INTO admin_users (email, role) VALUES ('admin@medsolutionhealthcare.com', 'super_admin')
+INSERT INTO admin_users (email, role) VALUES ('admin@asianshealthcare.com', 'super_admin')
 ON CONFLICT (email) DO NOTHING;
 
 

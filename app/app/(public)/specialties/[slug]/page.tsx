@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const fb = fallbackSpecialties.find((s) => s.slug === slug);
   const s = raw || fb;
   if (!s) return { title: "Specialty Not Found" };
-  return { title: `${s.name} Treatment in India | Med Solution Healthcare`, description: s.desc || `${s.name} treatment in India at top hospitals.` };
+  return { title: `${s.name} Treatment in India | Asians Healthcare`, description: s.desc || `${s.name} treatment in India at top hospitals.` };
 }
 
 export default async function SpecialtyDetailPage({ params }: { params: Promise<{ slug: string }> }) {

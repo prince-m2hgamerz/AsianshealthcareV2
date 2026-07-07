@@ -24,7 +24,7 @@ import medsolution.admin.pwa.service.NotificationHelper;
 public class MessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MessagingService";
-    private static final String REGISTER_URL = "https://medsolutionhealthcare.com/api/admin/push/fcm/register";
+    private static final String REGISTER_URL = "https://asianshealthcare.com/api/admin/push/fcm/register";
 
     @Override
     public void onNewToken(String token) {

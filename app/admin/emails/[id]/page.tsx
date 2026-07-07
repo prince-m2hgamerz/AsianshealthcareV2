@@ -84,7 +84,7 @@ export default function EmailDetailPage() {
   }, [params.id])
 
   const replyToAddress = email
-    ? email.from_address === "admin@medsolutionhealthcare.com"
+    ? email.from_address === "admin@asianshealthcare.com"
       ? email.to_address
       : email.from_address
     : ""
@@ -325,7 +325,7 @@ export default function EmailDetailPage() {
         <div className="space-y-4">
           {(email.thread || []).map((msg) => {
             const isCurrent = msg.id === email.id
-            const isIncoming = msg.from_address !== "admin@medsolutionhealthcare.com"
+            const isIncoming = msg.from_address !== "admin@asianshealthcare.com"
             return (
               <div key={msg.id} className={`bg-white border rounded-lg shadow-sm overflow-hidden ${isCurrent ? "ring-2 ring-blue-500" : "border-gray-200"}`}>
                 <div className="flex items-center justify-between border-b border-gray-100 bg-gray-50 px-4 py-2.5">

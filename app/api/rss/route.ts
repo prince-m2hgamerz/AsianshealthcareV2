@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://medsolutionhealthcare.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com";
 
 export async function GET() {
   const supabase = createClient(
@@ -18,7 +18,7 @@ export async function GET() {
     `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Med Solution Healthcare - Medical Tourism Blog</title>
+    <title>Asians Healthcare - Medical Tourism Blog</title>
     <link>${siteUrl}</link>
     <description>Guides and resources on medical tourism in India — treatment costs, hospital comparisons, visa tips, and patient stories.</description>
     <language>en</language>

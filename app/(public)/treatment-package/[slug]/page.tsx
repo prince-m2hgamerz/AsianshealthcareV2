@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const name = treatment.name || "Treatment";
   const costMin = Number(treatment.cost_usd_min || treatment.costMin || 0);
   return {
-    title: `${name} Cost in India | Med Solution Healthcare`,
+    title: `${name} Cost in India | Asians Healthcare`,
     description: `Affordable ${name} in India starting at $${costMin.toLocaleString()}. Save 60-80% compared to US costs. Board-accredited surgeons, JCI hospitals.`,
     openGraph: { title: `${name} Cost in India`, description: `Get ${name} in India at top hospitals. Starting from $${costMin.toLocaleString()}.` },
   };
@@ -81,9 +81,9 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
       })} />
       <JsonLd data={faqPageSchema(faqs)} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Treatment Packages", url: "https://medsolutionhealthcare.com/treatment-package" },
-        { name: treatment.name, url: `https://medsolutionhealthcare.com/treatment-package/${slug}` },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Treatment Packages", url: "https://asianshealthcare.com/treatment-package" },
+        { name: treatment.name, url: `https://asianshealthcare.com/treatment-package/${slug}` },
       ])} />
       <section className="relative overflow-hidden bg-canvas-night text-on-primary py-20">
         <div className="absolute inset-0">

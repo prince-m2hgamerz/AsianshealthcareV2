@@ -20,7 +20,7 @@ const existing = existsSync(envPath) ? '' : ''
 const entries = `# PWA Web Push VAPID Keys
 VAPID_PUBLIC_KEY=${vapidKeys.publicKey}
 VAPID_PRIVATE_KEY=${vapidKeys.privateKey}
-VAPID_SUBJECT=mailto:admin@medsolutionhealthcare.com
+VAPID_SUBJECT=mailto:admin@asianshealthcare.com
 `
 
 if (existing) {

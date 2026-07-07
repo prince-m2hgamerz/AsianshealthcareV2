@@ -84,7 +84,7 @@ export default function Footer() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Med Solution Healthcare Location"
+                title="Asians Healthcare Location"
               />
             </div>
 

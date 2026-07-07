@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/json-ld";
 import { fallbackBlogs } from "@/lib/fallback-data";
 import { sanitizeHtml } from "@/lib/sanitize";
 
-const siteUrl = "https://medsolutionhealthcare.com";
+const siteUrl = "https://asianshealthcare.com";
 
 export async function generateStaticParams() {
   const supabase = await createServerSupabaseClient().catch(() => null);
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) post = fallbackBlogs.find((b) => b.slug === slug) || null;
   if (!post) return { title: "Blog Post Not Found" };
   const excerpt = post.content?.replace(/<[^>]+>/g, "").substring(0, 155) || "";
-  const cleanTitle = post.title?.replace(/\s*\|\s*Med Solution Healthcare$/, "") || "Blog Post";
+  const cleanTitle = post.title?.replace(/\s*\|\s*Asians Healthcare$/, "") || "Blog Post";
   return {
     title: cleanTitle,
     description: excerpt || `Read about ${post.title} — a comprehensive guide on medical tourism, treatment options, and healthcare in India.`,
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       publishedTime: post.published_at || undefined,
       modifiedTime: post.updated_at || undefined,
-      authors: [post.author || "Med Solution Healthcare"],
+      authors: [post.author || "Asians Healthcare"],
       images: post.thumbnail_url ? [{ url: post.thumbnail_url, width: 1200, height: 630 }] : undefined,
     },
     twitter: {
@@ -68,8 +68,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     "@type": "Article",
     headline: post.title,
     description: post.content?.replace(/<[^>]+>/g, "").substring(0, 200) || "",
-    author: { "@type": "Person", name: post.author || "Med Solution Healthcare" },
-    publisher: { "@type": "Organization", name: "Med Solution Healthcare", url: siteUrl },
+    author: { "@type": "Person", name: post.author || "Asians Healthcare" },
+    publisher: { "@type": "Organization", name: "Asians Healthcare", url: siteUrl },
     datePublished: post.published_at || undefined,
     dateModified: post.updated_at || post.published_at || undefined,
     image: post.thumbnail_url || undefined,
@@ -92,7 +92,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           <span className="pill-tag mb-4">{post.category}</span>
           <h1 className="font-display text-[42px] leading-tight sm:text-display-xl lg:text-display-lg text-on-primary mb-4 max-w-4xl">{post.title}</h1>
           <div className="flex items-center gap-4 text-caption text-link-cool-2">
-            <span className="flex items-center gap-1"><User size={14} />{post.author || "Med Solution Team"}</span>
+            <span className="flex items-center gap-1"><User size={14} />{post.author || "Asians Team"}</span>
             {date && <span className="flex items-center gap-1"><Calendar size={14} />{date}</span>}
           </div>
         </div>

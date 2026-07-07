@@ -27,7 +27,7 @@ export function configureWebPush(): void {
   if (!keys) return
 
   webpush.setVapidDetails(
-    process.env.VAPID_SUBJECT ?? 'mailto:admin@medsolutionhealthcare.com',
+    process.env.VAPID_SUBJECT ?? 'mailto:admin@asianshealthcare.com',
     keys.publicKey,
     keys.privateKey
   )

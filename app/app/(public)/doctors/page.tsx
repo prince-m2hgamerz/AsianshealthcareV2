@@ -11,7 +11,7 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 export const metadata: Metadata = {
   title: "Specialist Doctors in India | Apollo, Max, Medanta, BLK-Max & More",
   description: `Browse ${allDoctors.length}+ specialist doctors from India's top hospitals — Apollo, Max, Medanta, BLK-Max, Artemis and Paras. Filter by specialty, hospital, and gender.`,
-  alternates: { canonical: "https://medsolutionhealthcare.com/doctors" },
+  alternates: { canonical: "https://asianshealthcare.com/doctors" },
 };
 
 export default async function DoctorsPage() {
@@ -78,8 +78,8 @@ export default async function DoctorsPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://medsolutionhealthcare.com" },
-        { name: "Doctors", url: "https://medsolutionhealthcare.com/doctors" },
+        { name: "Home", url: "https://asianshealthcare.com" },
+        { name: "Doctors", url: "https://asianshealthcare.com/doctors" },
       ])} />
       <BreadcrumbNav items={[
         { label: "Home", href: "/" },

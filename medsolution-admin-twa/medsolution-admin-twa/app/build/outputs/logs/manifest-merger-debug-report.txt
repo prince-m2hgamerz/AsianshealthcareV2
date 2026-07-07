@@ -215,7 +215,7 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
 		ADDED from C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\AndroidManifest.xml:24:27-74
-intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:medsolutionhealthcare.com+data:scheme:https
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:asianshealthcare.com+data:scheme:https
 ADDED from C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\AndroidManifest.xml:27:13-34:29
 action#android.intent.action.VIEW
 ADDED from C:\Users\m2hga\Downloads\medsolutionhealthcare\medsolution-admin-twa\app\src\main\AndroidManifest.xml:28:17-69

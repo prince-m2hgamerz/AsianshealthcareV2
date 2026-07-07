@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:scheme="https"
-                    android:host="medsolutionhealthcare.com" />
+                    android:host="asianshealthcare.com" />
             </intent-filter>
         </activity>
 

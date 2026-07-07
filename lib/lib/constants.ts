@@ -4,7 +4,7 @@ export const SITE = {
   name: DEFAULT_SETTINGS.site_name,
   tagline: "Your Trusted Partner in Medical Tourism",
   description: DEFAULT_SETTINGS.meta_description,
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://medsolutionhealthcare.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com",
   phone: DEFAULT_SETTINGS.contact_phone,
   whatsapp: DEFAULT_SETTINGS.whatsapp_number,
   email: DEFAULT_SETTINGS.contact_email,

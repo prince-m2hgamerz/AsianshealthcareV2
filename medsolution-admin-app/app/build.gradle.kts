@@ -19,7 +19,7 @@ android {
         versionCode = 1
         versionName = "2.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "BASE_URL", "\"https://medsolutionhealthcare.com\"")
+        buildConfigField("String", "BASE_URL", "\"https://asianshealthcare.com\"")
         buildConfigField("String", "EMAIL_WORKER_URL", "\"https://medsolution-email-handler.m2hgamerz.workers.dev\"")
         buildConfigField("String", "EMAIL_WORKER_TOKEN", "\"medsolution-email-token-2025\"")
     }

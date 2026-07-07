@@ -15,10 +15,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing required fields: to, subject, text_body" }, { status: 400 });
     }
 
-    const adminEmail = process.env.ADMIN_EMAIL || "admin@medsolutionhealthcare.com";
+    const adminEmail = process.env.ADMIN_EMAIL || "admin@asianshealthcare.com";
 
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || "medsolutionhealthcare <noreply@medsolutionhealthcare.com>",
+      from: process.env.RESEND_FROM_EMAIL || "medsolutionhealthcare <noreply@asianshealthcare.com>",
       to,
       subject,
       text: text_body,

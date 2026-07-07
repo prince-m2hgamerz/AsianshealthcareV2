@@ -1,8 +1,8 @@
 {
   "project_info": {
     "project_number": "774403749576",
-    "project_id": "med-solution-healthcare",
-    "storage_bucket": "med-solution-healthcare.firebasestorage.app"
+    "project_id": "asians-healthcare",
+    "storage_bucket": "asians-healthcare.firebasestorage.app"
   },
   "client": [
     {
