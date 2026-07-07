@@ -1,7 +1,7 @@
 -- gen_random_uuid() is built into PostgreSQL 13+
 
 -- Hospitals table (must be before doctors due to FK reference)
-CREATE TABLE hospitals (
+CREATE TABLE IF NOT EXISTS hospitals (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE hospitals (
 );
 
 -- Doctors table
-CREATE TABLE doctors (
+CREATE TABLE IF NOT EXISTS doctors (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE doctors (
 );
 
 -- Treatments table
-CREATE TABLE treatments (
+CREATE TABLE IF NOT EXISTS treatments (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -44,14 +44,14 @@ CREATE TABLE treatments (
 );
 
 -- Doctor-Hospital many-to-many
-CREATE TABLE doctor_hospital (
+CREATE TABLE IF NOT EXISTS doctor_hospital (
   doctor_id UUID REFERENCES doctors(id) ON DELETE CASCADE,
   hospital_id UUID REFERENCES hospitals(id) ON DELETE CASCADE,
   PRIMARY KEY (doctor_id, hospital_id)
 );
 
 -- Specialties table
-CREATE TABLE specialties (
+CREATE TABLE IF NOT EXISTS specialties (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -60,14 +60,14 @@ CREATE TABLE specialties (
 );
 
 -- Doctor-Specialty many-to-many
-CREATE TABLE doctor_specialties (
+CREATE TABLE IF NOT EXISTS doctor_specialties (
   doctor_id UUID REFERENCES doctors(id) ON DELETE CASCADE,
   specialty_id UUID REFERENCES specialties(id) ON DELETE CASCADE,
   PRIMARY KEY (doctor_id, specialty_id)
 );
 
 -- Blogs table
-CREATE TABLE blogs (
+CREATE TABLE IF NOT EXISTS blogs (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   title TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE blogs (
 );
 
 -- Insurance Companies table
-CREATE TABLE insurance_companies (
+CREATE TABLE IF NOT EXISTS insurance_companies (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE insurance_companies (
 );
 
 -- Hotels table
-CREATE TABLE hotels (
+CREATE TABLE IF NOT EXISTS hotels (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   address TEXT NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE hotels (
 );
 
 -- Testimonials table
-CREATE TABLE testimonials (
+CREATE TABLE IF NOT EXISTS testimonials (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   patient_name TEXT NOT NULL,
   country TEXT NOT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE testimonials (
 );
 
 -- Leads table
-CREATE TABLE leads (
+CREATE TABLE IF NOT EXISTS leads (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   form_type TEXT NOT NULL,
   name TEXT NOT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE leads (
 );
 
 -- Admin Users table
-CREATE TABLE admin_users (
+CREATE TABLE IF NOT EXISTS admin_users (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   email TEXT UNIQUE NOT NULL,
   role TEXT DEFAULT 'editor' CHECK (role IN ('super_admin', 'editor', 'viewer')),
@@ -143,7 +143,7 @@ CREATE TABLE admin_users (
 );
 
 -- Site Settings table
-CREATE TABLE site_settings (
+CREATE TABLE IF NOT EXISTS site_settings (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   key TEXT UNIQUE NOT NULL,
   value TEXT NOT NULL,
@@ -164,43 +164,61 @@ ALTER TABLE admin_users ENABLE ROW LEVEL SECURITY;
 ALTER TABLE site_settings ENABLE ROW LEVEL SECURITY;
 
 -- Public read policies
+DROP POLICY IF EXISTS "Public can read doctors" ON doctors;
 CREATE POLICY "Public can read doctors" ON doctors FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public can read hospitals" ON hospitals;
 CREATE POLICY "Public can read hospitals" ON hospitals FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public can read treatments" ON treatments;
 CREATE POLICY "Public can read treatments" ON treatments FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public can read specialties" ON specialties;
 CREATE POLICY "Public can read specialties" ON specialties FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public can read published blogs" ON blogs;
 CREATE POLICY "Public can read published blogs" ON blogs FOR SELECT USING (is_published = true);
+DROP POLICY IF EXISTS "Public can read insurance" ON insurance_companies;
 CREATE POLICY "Public can read insurance" ON insurance_companies FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public can read hotels" ON hotels;
 CREATE POLICY "Public can read hotels" ON hotels FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public can read approved testimonials" ON testimonials;
 CREATE POLICY "Public can read approved testimonials" ON testimonials FOR SELECT USING (is_approved = true);
 
 -- Admin policies (authenticated admin users)
+DROP POLICY IF EXISTS "Admin full access doctors" ON doctors;
 CREATE POLICY "Admin full access doctors" ON doctors FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access hospitals" ON hospitals;
 CREATE POLICY "Admin full access hospitals" ON hospitals FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access treatments" ON treatments;
 CREATE POLICY "Admin full access treatments" ON treatments FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access specialties" ON specialties;
 CREATE POLICY "Admin full access specialties" ON specialties FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access blogs" ON blogs;
 CREATE POLICY "Admin full access blogs" ON blogs FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access insurance" ON insurance_companies;
 CREATE POLICY "Admin full access insurance" ON insurance_companies FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access hotels" ON hotels;
 CREATE POLICY "Admin full access hotels" ON hotels FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access testimonials" ON testimonials;
 CREATE POLICY "Admin full access testimonials" ON testimonials FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access leads" ON leads;
 CREATE POLICY "Admin full access leads" ON leads FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
+DROP POLICY IF EXISTS "Admin full access site_settings" ON site_settings;
 CREATE POLICY "Admin full access site_settings" ON site_settings FOR ALL USING (
   auth.uid() IN (SELECT id FROM admin_users)
 );
@@ -214,10 +232,12 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS leads_updated_at ON leads;
 CREATE TRIGGER leads_updated_at
   BEFORE UPDATE ON leads
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
+DROP TRIGGER IF EXISTS site_settings_updated_at ON site_settings;
 CREATE TRIGGER site_settings_updated_at
   BEFORE UPDATE ON site_settings
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();

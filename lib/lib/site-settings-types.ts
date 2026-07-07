@@ -1,5 +1,9 @@
 export interface SiteSettings {
   site_name: string;
+  site_url: string;
+  meta_tagline: string;
+  favicon_icon: string;
+  favicon_apple: string;
   whatsapp_number: string;
   contact_phone: string;
   contact_email: string;
@@ -44,6 +48,10 @@ export interface SiteSettings {
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   site_name: "Asians Healthcare",
+  site_url: "https://asianshealthcare.com",
+  meta_tagline: "Your Trusted Healthcare Partner in India",
+  favicon_icon: "/newlogo/logo-mark.png",
+  favicon_apple: "/newlogo/logo-mark.png",
   whatsapp_number: "918285068544",
   contact_phone: "+918285068544",
   contact_email: "info@asianshealthcare.com",

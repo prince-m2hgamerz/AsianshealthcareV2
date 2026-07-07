@@ -1,1 +1,1 @@
-ALTER TABLE admin_users ADD COLUMN name text;
+ALTER TABLE admin_users ADD COLUMN IF NOT EXISTS name text;
