@@ -5,7 +5,7 @@ const WORKER_URL = process.env.EMAIL_WORKER_URL || "https://medsolution-email-ha
 const WORKER_TOKEN = process.env.EMAIL_WORKER_TOKEN || "";
 
 export async function GET(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   try {
@@ -36,7 +36,7 @@ export async function GET(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   try {

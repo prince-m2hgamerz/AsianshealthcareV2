@@ -15,7 +15,7 @@ function timeAgo(dateStr: string): string {
 }
 
 export async function GET(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   const supabase = createClient(

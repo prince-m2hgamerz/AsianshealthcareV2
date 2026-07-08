@@ -5,7 +5,7 @@ import { checkAdmin } from "@/lib/admin-auth";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   try {

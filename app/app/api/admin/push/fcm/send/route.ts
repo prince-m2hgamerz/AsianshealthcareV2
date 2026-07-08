@@ -5,7 +5,7 @@ import { sendToAllDevices } from '@/lib/fcm/send'
 import type { FcmPayload } from '@/lib/fcm/send'
 
 export async function POST(request: Request) {
-  const authError = await checkAdmin(request)
+  const authError = await checkAdmin()
   if (authError) return authError
 
   try {

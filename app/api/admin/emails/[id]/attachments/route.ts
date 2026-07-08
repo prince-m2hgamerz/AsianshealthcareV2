@@ -8,7 +8,7 @@ export async function GET(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const unauthorized = await checkAdmin(_request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   try {

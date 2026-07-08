@@ -8,7 +8,7 @@ import { createClient } from '@supabase/supabase-js'
 import type { NotificationPayload } from '@/types/pwa'
 
 export async function POST(request: Request) {
-  const authError = await checkAdmin(request)
+  const authError = await checkAdmin()
   if (authError) return authError
 
   try {

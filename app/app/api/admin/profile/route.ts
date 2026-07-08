@@ -3,7 +3,7 @@ import { checkAdmin, getAdminUser } from "@/lib/admin-auth";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
 export async function GET(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   const admin = await getAdminUser();
@@ -15,7 +15,7 @@ export async function GET(request: Request) {
 }
 
 export async function PUT(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   const admin = await getAdminUser();

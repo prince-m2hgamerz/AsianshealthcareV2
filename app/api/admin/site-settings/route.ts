@@ -4,7 +4,7 @@ import { checkAdmin, requireAdminRole } from "@/lib/admin-auth";
 import { getEnvOverriddenKeys } from "@/lib/site-settings";
 
 export async function GET(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   const supabase = createClient(
@@ -22,7 +22,7 @@ export async function GET(request: Request) {
 }
 
 export async function PUT(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   const forbidden = await requireAdminRole("super_admin");

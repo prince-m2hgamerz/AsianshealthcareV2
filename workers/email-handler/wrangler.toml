@@ -2,10 +2,9 @@ name = "asianshealthcare-email-handler"
 main = "src/index.ts"
 compatibility_date = "2025-02-14"
 
+vars = { API_TOKEN = "asianshealthcare-email-token-dvr8l3fenxsk416w" }
+
 [[d1_databases]]
 binding = "DB"
 database_name = "asianshealthcare-emails"
 database_id = "53057a02-9bfb-418c-89f0-49ac9b098d68"
-
-[env.production]
-vars = { API_TOKEN = "asianshealthcare-email-token-dvr8l3fenxsk416w" }

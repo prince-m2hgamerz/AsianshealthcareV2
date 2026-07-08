@@ -3,7 +3,7 @@ import { checkAdmin } from '@/lib/admin-auth'
 import { sendTelegramAlert } from '@/lib/telegram'
 
 export async function POST(request: Request) {
-  const authError = await checkAdmin(request)
+  const authError = await checkAdmin()
   if (authError) return authError
 
   const token = process.env.TELEGRAM_BOT_TOKEN

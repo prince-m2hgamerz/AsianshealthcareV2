@@ -13,7 +13,7 @@ async function sendBatch(resend: Resend, from: string, batch: string[], subject:
 }
 
 export async function POST(request: Request) {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   try {

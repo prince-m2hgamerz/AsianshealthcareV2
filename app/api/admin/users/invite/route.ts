@@ -29,7 +29,7 @@ function escapeHtml(val: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-  const unauthorized = await checkAdmin(request);
+  const unauthorized = await checkAdmin();
   if (unauthorized) return unauthorized;
 
   const body = await request.json();
