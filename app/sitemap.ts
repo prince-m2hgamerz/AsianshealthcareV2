@@ -8,19 +8,25 @@ import { fallbackSpecialties } from "@/lib/fallback-data";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://asianshealthcare.com";
 
-  const staticPages = [
-    { url: baseUrl, priority: 1 },
-    "/about-us", "/doctors", "/hospitals", "/treatment-package",
-    "/speciality", "/specialties", "/contact-us", "/testimonials",
-    "/blogs", "/insurance-company", "/hotels", "/tourism",
-    "/search", "/find-cost", "/guides", "/cost-calculator",
-    "/terms", "/privacy-policy", "/refund-policy", "/disclaimer", "/project-overview",
-  ].map((page) => ({
-    url: `${baseUrl}${page}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: page === "" ? 1 : 0.8,
-  }));
+  const staticPages: MetadataRoute.Sitemap = [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 1,
+    },
+    ...["/about-us", "/doctors", "/hospitals", "/treatment-package",
+      "/speciality", "/specialties", "/contact-us", "/testimonials",
+      "/blogs", "/insurance-company", "/hotels", "/tourism",
+      "/search", "/find-cost", "/guides", "/cost-calculator",
+      "/terms", "/privacy-policy", "/refund-policy", "/disclaimer", "/project-overview",
+    ].map((page) => ({
+      url: `${baseUrl}${page}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
