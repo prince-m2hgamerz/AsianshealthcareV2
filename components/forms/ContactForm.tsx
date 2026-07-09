@@ -65,10 +65,10 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-16">
-        <div className="w-16 h-16 rounded-full bg-aloe-10 flex items-center justify-center mx-auto mb-4">
-          <Send size={28} className="text-ink" />
+        <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+          <Send size={28} className="text-text" />
         </div>
-        <h3 className="font-display text-heading-xl text-ink mb-2">Thank You!</h3>
+        <h3 className="font-display text-heading-xl text-text mb-2">Thank You!</h3>
         <p className="text-body-lg text-shade-50">
           We&apos;ve received your{doctorParam ? ` enquiry for ${doctorParam}` : ""}. Our team will reach out shortly.
         </p>
@@ -79,13 +79,13 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       {hasDoctorInfo && (
-        <div className="rounded-lg border border-link-mint/30 bg-aloe-5 p-4">
+        <div className="rounded-lg border border-accent/30 bg-accent/5 p-4">
           <div className="flex items-start justify-between gap-3">
             <div className="space-y-1.5">
-              <p className="text-caption font-semibold text-ink uppercase tracking-wider text-[11px]">You are enquiring about</p>
+              <p className="text-caption font-semibold text-text uppercase tracking-wider text-[11px]">You are enquiring about</p>
               {doctorParam && (
-                <p className="text-body-md text-ink flex items-center gap-2">
-                  <Stethoscope size={15} className="shrink-0 text-link-mint" />
+                <p className="text-body-md text-text flex items-center gap-2">
+                  <Stethoscope size={15} className="shrink-0 text-accent" />
                   {doctorParam}
                 </p>
               )}
@@ -114,7 +114,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
           />
         </div>
         <div>
@@ -123,7 +123,7 @@ export default function ContactForm() {
             placeholder="Email Address"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
           />
         </div>
         <div>
@@ -133,7 +133,7 @@ export default function ContactForm() {
             required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
           />
         </div>
         <div>
@@ -143,7 +143,7 @@ export default function ContactForm() {
             required
             value={formData.country}
             onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+            className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
           />
         </div>
       </div>
@@ -153,7 +153,7 @@ export default function ContactForm() {
           placeholder="Treatment Needed"
           value={formData.treatment}
           onChange={(e) => setFormData({ ...formData, treatment: e.target.value })}
-          className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+          className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
         />
       </div>
       <div>
@@ -162,7 +162,7 @@ export default function ContactForm() {
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors resize-none"
+          className="w-full border border-hairline-light rounded-md px-4 py-3 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors resize-none"
         />
       </div>
       <button

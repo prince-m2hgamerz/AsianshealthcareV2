@@ -66,14 +66,14 @@ export default async function DoctorDetailPage({ params }: { params: Promise<{ s
         { name: "Doctors", url: "https://asianshealthcare.com/doctors" },
         { name: doctor.name, url: `https://asianshealthcare.com/doctors/${slug}` },
       ])} />
-      <section className="bg-canvas-night text-on-primary py-20">
+      <section className="bg-primary text-white py-20">
         <div className="container-cinematic">
-          <Link href="/doctors" className="inline-flex items-center gap-2 text-link-cool-2 hover:text-on-primary mb-6 transition-colors">
+          <Link href="/doctors" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
             <ArrowLeft size={18} />
             Back to Doctors
           </Link>
           <div className="flex flex-col lg:flex-row gap-10 items-start">
-            <div className="relative w-36 h-36 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-4 ring-aloe-10/30 shrink-0 mx-auto lg:mx-0">
+            <div className="relative w-36 h-36 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-4 ring-accent/30 shrink-0 mx-auto lg:mx-0">
               <Image
                 src={doctor.photo_url}
                 alt={doctor.name}
@@ -85,25 +85,25 @@ export default async function DoctorDetailPage({ params }: { params: Promise<{ s
             <div>
               <span className="pill-tag mb-3">Doctor Profile</span>
               <h1 className="font-display text-display-md lg:text-display-lg text-on-primary mb-3">{doctor.name}</h1>
-              <p className="text-body-lg text-link-cool-2 mb-2">{doctor.specialty}</p>
-              <div className="flex flex-wrap items-center gap-4 text-caption text-link-cool-1">
+              <p className="text-body-lg text-white/70 mb-2">{doctor.specialty}</p>
+              <div className="flex flex-wrap items-center gap-4 text-caption text-white/60">
                 <span className="flex items-center gap-1"><MapPin size={14} />{doctor.hospital}</span>
                 <span className="flex items-center gap-1"><Award size={14} />{doctor.experience}</span>
-                <span className="flex items-center gap-1"><BadgeCheck size={14} className="text-aloe-40" />Verified Specialist</span>
+                <span className="flex items-center gap-1"><BadgeCheck size={14} className="text-accent" />Verified Specialist</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="max-w-reading-col mx-auto">
-            <h2 className="font-display text-heading-xl text-ink mb-4">About</h2>
+            <h2 className="font-display text-heading-xl text mb-4">About</h2>
             <p className="text-body-lg text-shade-50 leading-relaxed mb-8">{doctor.about}</p>
             {doctor.qualifications && (
               <>
-                <h2 className="font-display text-heading-xl text-ink mb-4">Qualifications</h2>
+                <h2 className="font-display text-heading-xl text mb-4">Qualifications</h2>
                 <p className="text-body-lg text-shade-50 leading-relaxed mb-8">{doctor.qualifications}</p>
               </>
             )}

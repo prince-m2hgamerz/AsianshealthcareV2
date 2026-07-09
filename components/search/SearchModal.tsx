@@ -12,7 +12,7 @@ const categoryColors: Record<string, string> = {
   Doctor: "bg-accent/10 text-accent border-accent/20",
   Hospital: "bg-primary/10 text-primary border-primary/20",
   Treatment: "bg-pistachio/10 text-pistachio border-pistachio/20",
-  Specialty: "bg-aloe/10 text-aloe border-aloe/20",
+  Specialty: "bg-accent/10 text-accent border-accent/20",
   Blog: "bg-gold/10 text-gold border-gold/20",
   Hotel: "bg-primary/10 text-primary border-primary/20",
   Testimonial: "bg-accent/10 text-accent border-accent/20",
@@ -134,7 +134,7 @@ export default function SearchModal({ open, onClose }: { open: boolean; onClose:
               <X size={18} />
             </button>
           )}
-          <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs text-shade-40 bg-canvas-light rounded border border-hairline-light">
+          <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs text-shade-40 bg-surface rounded border border-hairline-light">
             ESC
           </kbd>
         </div>
@@ -169,7 +169,7 @@ export default function SearchModal({ open, onClose }: { open: boolean; onClose:
                   onClick={() => navigate(item)}
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`w-full flex items-start gap-3 sm:gap-4 px-3 sm:px-5 py-2.5 sm:py-3 text-left transition-colors ${
-                    idx === selectedIndex ? "bg-canvas-light" : "hover:bg-canvas-light"
+                    idx === selectedIndex ? "bg-surface" : "hover:bg-surface"
                   }`}
                 >
                   {item.image ? (
@@ -183,7 +183,7 @@ export default function SearchModal({ open, onClose }: { open: boolean; onClose:
                       />
                     </div>
                   ) : (
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-canvas-light flex items-center justify-center shrink-0 border border-hairline-light">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-surface flex items-center justify-center shrink-0 border border-hairline-light">
                       <Search size={16} className="sm:size-20 text-shade-40" />
                     </div>
                   )}
@@ -209,13 +209,13 @@ export default function SearchModal({ open, onClose }: { open: boolean; onClose:
         {results.length > 0 && (
           <div className="hidden sm:flex items-center gap-4 px-5 py-3 border-t border-hairline-light text-[11px] text-shade-40">
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 bg-canvas-light rounded border border-hairline-light">↑↓</kbd> Navigate
+              <kbd className="px-1.5 py-0.5 bg-surface rounded border border-hairline-light">↑↓</kbd> Navigate
             </span>
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 bg-canvas-light rounded border border-hairline-light">Enter</kbd> Open
+              <kbd className="px-1.5 py-0.5 bg-surface rounded border border-hairline-light">Enter</kbd> Open
             </span>
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 bg-canvas-light rounded border border-hairline-light">Esc</kbd> Close
+              <kbd className="px-1.5 py-0.5 bg-surface rounded border border-hairline-light">Esc</kbd> Close
             </span>
           </div>
         )}

@@ -25,27 +25,27 @@ export default function GuidesPage() {
         { label: "Home", href: "/" },
         { label: "Free Guides", href: "/guides" },
       ]} />
-      <section className="bg-canvas-night text-on-primary py-16 sm:py-20">
+      <section className="bg-primary text-on-primary py-16 sm:py-20">
         <div className="container-cinematic text-center">
           <span className="pill-tag mb-4">Free Resources</span>
           <h1 className="font-display text-display-md lg:text-display-lg text-on-primary mb-3">Free Medical Tourism Guides</h1>
-          <p className="text-body-lg text-link-cool-2 max-w-2xl mx-auto">Download our comprehensive guides to plan your medical treatment journey to India with confidence.</p>
+          <p className="text-body-lg text-text-muted max-w-2xl mx-auto">Download our comprehensive guides to plan your medical treatment journey to India with confidence.</p>
         </div>
       </section>
 
-      <section className="bg-canvas-light py-12 sm:py-huge">
+      <section className="bg-surface py-12 sm:py-huge">
         <div className="container-cinematic">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {guides.map((guide) => (
-              <div key={guide.title} className="group bg-canvas-cream rounded-xl border border-hairline-light p-5 sm:p-6 hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-aloe-10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <guide.icon size={22} className="sm:size-[24] text-ink" />
+              <div key={guide.title} className="group bg-surface rounded-xl border border-hairline-light p-5 sm:p-6 hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <guide.icon size={22} className="sm:size-[24] text-text" />
                 </div>
-                <h2 className="font-display text-heading-md text-ink mb-2 group-hover:text-shade-60 transition-colors">{guide.title}</h2>
+                <h2 className="font-display text-heading-md text-text mb-2 group-hover:text-shade-60 transition-colors">{guide.title}</h2>
                 <p className="text-body-md text-shade-50 mb-5 flex-1">{guide.description}</p>
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-pill text-body-md font-medium border border-aloe-10/40 text-ink hover:bg-aloe-10 hover:text-ink transition-colors"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-pill text-body-md font-medium border border-accent/40 text-text hover:bg-accent/10 hover:text-text transition-colors"
                 >
                   <Download size={16} /> Download Free <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
@@ -54,10 +54,10 @@ export default function GuidesPage() {
           </div>
 
           <div className="text-center mt-10 sm:mt-12 bg-gradient-to-br from-canvas-cream to-canvas-light rounded-xl border border-hairline-light p-6 sm:p-8">
-            <div className="w-14 h-14 rounded-full bg-aloe-10/15 flex items-center justify-center mx-auto mb-4">
-              <CheckCircle size={28} className="text-aloe-10" />
+            <div className="w-14 h-14 rounded-full bg-accent/15 flex items-center justify-center mx-auto mb-4">
+              <CheckCircle size={28} className="text-accent" />
             </div>
-            <h2 className="font-display text-heading-lg text-ink mb-2">Need a personalized guide?</h2>
+            <h2 className="font-display text-heading-lg text-text mb-2">Need a personalized guide?</h2>
             <p className="text-body-md text-shade-50 mb-6 max-w-md mx-auto">Our team can create a custom treatment plan with cost estimates matched to your medical needs.</p>
             <Link href="/contact-us" className="btn-primary inline-flex items-center gap-2">
               Get Your Free Custom Plan <ArrowRight size={16} />

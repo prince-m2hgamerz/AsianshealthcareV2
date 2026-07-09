@@ -13,6 +13,7 @@ const config: Config = {
         "primary-tint": "#E8F4F9",
         "primary-foreground": "#FFFFFF",
         accent: "#C9963A",
+        gold: "#C9963A",
         "accent-light": "#FEF3CD",
         "accent-text": "#92680A",
         "accent-foreground": "#FFFFFF",

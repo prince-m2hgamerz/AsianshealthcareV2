@@ -275,7 +275,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center gap-2 px-3 py-2 text-text-muted bg-canvas-light border border-border rounded-lg hover:border-primary-mid/30 transition-colors text-[13px] font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+              className="flex items-center gap-2 px-3 py-2 text-text-muted bg-surface border border-border rounded-lg hover:border-primary-mid/30 transition-colors text-[13px] font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
               aria-label="Search"
             >
               <Search size={16} />

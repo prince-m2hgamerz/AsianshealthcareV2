@@ -51,7 +51,7 @@ export default async function BlogsPage({ searchParams }: { searchParams?: Promi
         description="Stay informed with the latest in medical tourism, treatment guides, and healthcare tips."
        />
 
-      <section className="bg-canvas-cream py-6 sm:py-8 border-b border-hairline-light sticky top-16 lg:top-20 z-30">
+      <section className="bg-surface py-6 sm:py-8 border-b border-hairline-light sticky top-16 lg:top-20 z-30">
         <div className="container-cinematic">
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none -mx-2 px-2 snap-x">
             {categories.map((cat) => {
@@ -64,7 +64,7 @@ export default async function BlogsPage({ searchParams }: { searchParams?: Promi
                   className={`shrink-0 snap-start px-4 sm:px-5 py-2.5 sm:py-2 rounded-pill text-body-md font-medium transition-all duration-200 ${
                     isActive
                       ? "bg-ink text-on-primary shadow-elevation-2"
-                      : "bg-canvas-light text-shade-50 hover:bg-shade-20 border border-hairline-light"
+                      : "bg-surface text-shade-50 hover:bg-shade-20 border border-hairline-light"
                   }`}
                 >
                   {cat}
@@ -75,19 +75,19 @@ export default async function BlogsPage({ searchParams }: { searchParams?: Promi
         </div>
       </section>
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           {filteredBlogs.length === 0 ? (
-            <div className="text-center border border-hairline-light rounded-lg p-10 bg-canvas-cream">
-              <h2 className="font-display text-heading-lg text-ink">No posts in this category</h2>
+            <div className="text-center border border-hairline-light rounded-xl p-10 bg-white">
+              <h2 className="font-display text-heading-lg text">No posts in this category</h2>
               <p className="text-body-md text-shade-50 mt-2">Check back soon for new content.</p>
               <Link href="/blogs" className="btn-primary mt-6 inline-block">View All Posts</Link>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredBlogs.map((blog) => (
-                <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group bg-canvas-cream rounded-xl border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-aloe-10 to-pistachio-10">
+                <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group bg-white rounded-xl border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden bg-accent/10">
                     <Image
                       src={blog.thumbnail_url}
                       alt={blog.title}
@@ -98,8 +98,8 @@ export default async function BlogsPage({ searchParams }: { searchParams?: Promi
                     />
                   </div>
                   <div className="p-6">
-                    <span className="pill-tag-shade !text-micro !px-2 !py-0.5 mb-3 bg-aloe-10/80">{blog.category}</span>
-                    <h2 className="font-display text-heading-lg text-ink group-hover:text-shade-60 transition-colors mb-3">{blog.title}</h2>
+                    <span className="pill-tag !text-micro !px-2 !py-0.5 mb-3">{blog.category}</span>
+                    <h2 className="font-display text-heading-lg text group-hover:text-accent transition-colors mb-3">{blog.title}</h2>
                     <p className="text-body-md text-shade-50 mb-4 line-clamp-2">{blog.excerpt}</p>
                     <div className="flex items-center gap-4 text-caption text-shade-40">
                       <span className="flex items-center gap-1"><User size={14} />{blog.author}</span>

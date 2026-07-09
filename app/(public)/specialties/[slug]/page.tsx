@@ -33,7 +33,7 @@ export default async function SpecialtyDetailPage({ params }: { params: Promise<
 
   return (
     <>
-      <section className="bg-canvas-night text-on-primary py-16">
+      <section className="bg-primary text-on-primary py-16">
         <div className="max-w-7xl mx-auto px-4">
           <Link href="/specialties" className="inline-flex items-center gap-2 text-on-primary/60 hover:text-on-primary mb-6 transition"><ArrowLeft size={18} /> Back to Specialties</Link>
           <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Specialty</span>

@@ -30,11 +30,11 @@ export default function CostCalculatorPage() {
         { label: "Home", href: "/" },
         { label: "Cost Calculator", href: "/cost-calculator" },
       ]} />
-      <section className="bg-canvas-night text-on-primary py-16">
+      <section className="bg-primary text-on-primary py-16">
         <div className="container-cinematic text-center">
           <span className="pill-tag mb-4">Cost Comparison</span>
           <h1 className="font-display text-display-md lg:text-display-lg text-on-primary mb-3">Treatment Cost Calculator</h1>
-          <p className="text-body-lg text-link-cool-2 max-w-2xl mx-auto">
+          <p className="text-body-lg text-text-muted max-w-2xl mx-auto">
             See how much you can save by choosing India for your medical treatment.
             Slide to compare costs with your country.
           </p>

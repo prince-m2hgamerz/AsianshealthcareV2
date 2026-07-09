@@ -39,7 +39,7 @@ export default async function HotelsPage({
         description="Comfortable accommodation options near our partner hospitals for your medical stay."
        />
 
-      <section className="bg-canvas-cream py-12 border-b border-hairline-light">
+      <section className="bg-surface py-12 border-b border-hairline-light">
         <div className="container-cinematic">
           <SearchInput
             placeholder="Search hotels by area or hospital..."
@@ -49,11 +49,11 @@ export default async function HotelsPage({
         </div>
       </section>
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           {hotels.length === 0 ? (
-            <div className="text-center border border-hairline-light rounded-lg p-10 bg-canvas-cream">
-              <h2 className="font-display text-heading-lg text-ink">No hotels found</h2>
+            <div className="text-center border border-hairline-light rounded-lg p-10 bg-surface">
+              <h2 className="font-display text-heading-lg text-text">No hotels found</h2>
               <p className="text-body-md text-shade-50 mt-2">Try a different area, hospital, or hotel name.</p>
               <Link href="/hotels" className="btn-primary mt-6">
                 Clear Search
@@ -62,8 +62,8 @@ export default async function HotelsPage({
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {hotels.map((hotel) => (
-                <div key={`${hotel.name}-${hotel.address}`} className="overflow-hidden bg-canvas-cream rounded-lg border border-hairline-light hover:shadow-elevation-3 transition-all">
-                  <div className="relative h-44 bg-canvas-light">
+                <div key={`${hotel.name}-${hotel.address}`} className="overflow-hidden bg-surface rounded-lg border border-hairline-light hover:shadow-elevation-3 transition-all">
+                  <div className="relative h-44 bg-surface">
                     <Image
                       src={hotel.photo_url}
                       alt={hotel.name}
@@ -78,14 +78,14 @@ export default async function HotelsPage({
                         <Star key={index} size={14} className="fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <h2 className="font-display text-heading-md text-ink mb-2">{hotel.name}</h2>
+                    <h2 className="font-display text-heading-md text-text mb-2">{hotel.name}</h2>
                     {hotel.description && (
                       <p className="text-caption text-shade-50 mb-2 line-clamp-2">{hotel.description}</p>
                     )}
                     <div className="flex items-center gap-1 text-caption text-shade-40 mb-2">
                       <MapPin size={14} /><span>{hotel.address}</span>
                     </div>
-                    <span className="text-body-md text-ink font-medium">{hotel.price}</span>
+                    <span className="text-body-md text-text font-medium">{hotel.price}</span>
                     {hotel.near && <p className="text-caption text-shade-40 mt-2">Near {hotel.near}</p>}
                   </div>
                 </div>

@@ -4,7 +4,7 @@ const cspDirectives = [
   `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
   `img-src 'self' data: blob: https: https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com`,
   `font-src 'self' https://fonts.gstatic.com https://vercel.live data:`,
-  `connect-src 'self' https://vercel.live https://va.vercel-scripts.com https://imhukfivfelxfltzqxtx.supabase.co https://api.rollbar.com https://*.resend.com https://o160049.ingest.sentry.io https://www.google-analytics.com https://analytics.google.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net wss://*.pusher.com ${process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://imhukfivfelxfltzqxtx.supabase.co'}`,
+  `connect-src 'self' https://vercel.live https://va.vercel-scripts.com https://imhukfivfelxfltzqxtx.supabase.co https://api.rollbar.com https://*.resend.com https://o160049.ingest.sentry.io https://www.google-analytics.com https://analytics.google.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://*.adtrafficquality.google wss://*.pusher.com ${process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://imhukfivfelxfltzqxtx.supabase.co'}`,
   `frame-src 'self' https://www.google.com https://vercel.live https://www.youtube.com https://googleads.g.doubleclick.net`,
   `frame-ancestors 'self'`,
   `media-src 'self' https: data: blob:`,

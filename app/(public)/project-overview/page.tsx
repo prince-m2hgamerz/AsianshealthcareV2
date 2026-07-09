@@ -333,7 +333,7 @@ export default function ProjectOverviewPage() {
       </button>
 
       {/* ── HERO ── */}
-      <section className="relative bg-canvas-night overflow-hidden">
+      <section className="relative bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_#0B3954_30%,_transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#C9963A15_0%,_transparent_50%)]" />
         <div className="hidden lg:block absolute top-20 right-20 w-72 h-72 border border-accent/10 rounded-full blur-3xl" />
@@ -525,7 +525,7 @@ export default function ProjectOverviewPage() {
 
       {/* ── CODEBASE STATISTICS ── */}
       <FadeInSection delay={200}>
-        <section className="bg-canvas-night px-6 py-20">
+        <section className="bg-primary px-6 py-20">
         <div className="max-w-cinematic mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-pill bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -559,7 +559,7 @@ export default function ProjectOverviewPage() {
                 {[
                   { label: "TypeScript React (.tsx)", value: 125, color: "bg-accent" },
                   { label: "TypeScript (.ts)", value: 53, color: "bg-primary-mid" },
-                  { label: "JavaScript (.mjs / .js)", value: 9, color: "bg-aloe-50" },
+                  { label: "JavaScript (.mjs / .js)", value: 9, color: "bg-accent/10" },
                   { label: "SQL migrations", value: 10, color: "bg-link-cool-2" },
                   { label: "CSS", value: 1, color: "bg-pistachio-10" },
                 ].map((item) => {
@@ -757,7 +757,7 @@ export default function ProjectOverviewPage() {
 
       {/* ── COMPARISON / CONTEXT ── */}
       <FadeInSection delay={600}>
-        <section className="bg-canvas-night px-6 py-20">
+        <section className="bg-primary px-6 py-20">
         <div className="max-w-cinematic mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-pill bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -776,7 +776,7 @@ export default function ProjectOverviewPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
               <h3 className="font-heading text-heading-sm text-white mb-4 flex items-center gap-2">
-                <CheckCircle size={16} className="text-aloe-50" />
+                <CheckCircle size={16} className="text-accent" />
                 Included
               </h3>
               <ul className="space-y-2.5">
@@ -804,7 +804,7 @@ export default function ProjectOverviewPage() {
                   "Responsive design (mobile + desktop)",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
-                    <CheckCircle size={15} className="text-aloe-50 shrink-0 mt-0.5" />
+                    <CheckCircle size={15} className="text-accent shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}

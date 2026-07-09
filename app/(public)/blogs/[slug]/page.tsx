@@ -84,21 +84,21 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         { name: "Blog", url: `${siteUrl}/blogs` },
         { name: post.title, url: `${siteUrl}/blogs/${slug}` },
       ])} />
-      <section className="bg-canvas-night text-on-primary py-20">
+      <section className="bg-primary text-on-primary py-20">
         <div className="container-cinematic">
-          <Link href="/blogs" className="inline-flex items-center gap-2 text-link-cool-2 hover:text-on-primary mb-6 transition-colors">
+          <Link href="/blogs" className="inline-flex items-center gap-2 text-text-muted hover:text-on-primary mb-6 transition-colors">
             <ArrowLeft size={18} /> Back to Blogs
           </Link>
           <span className="pill-tag mb-4">{post.category}</span>
           <h1 className="font-display text-[42px] leading-tight sm:text-display-xl lg:text-display-lg text-on-primary mb-4 max-w-4xl">{post.title}</h1>
-          <div className="flex items-center gap-4 text-caption text-link-cool-2">
+          <div className="flex items-center gap-4 text-caption text-text-muted">
             <span className="flex items-center gap-1"><User size={14} />{post.author || "Asians Team"}</span>
             {date && <span className="flex items-center gap-1"><Calendar size={14} />{date}</span>}
           </div>
         </div>
       </section>
 
-      <article className="bg-canvas-light py-huge">
+      <article className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="max-w-reading-col mx-auto">
             {post.thumbnail_url && (

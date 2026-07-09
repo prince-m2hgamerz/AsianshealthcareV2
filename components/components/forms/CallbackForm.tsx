@@ -46,10 +46,10 @@ export default function CallbackForm({ onSuccess }: CallbackFormProps) {
   if (submitted) {
     return (
       <div className="text-center py-8">
-        <div className="w-16 h-16 rounded-full bg-aloe-10 flex items-center justify-center mx-auto mb-4">
-          <Phone size={28} className="text-ink" />
+        <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+          <Phone size={28} className="text-text" />
         </div>
-        <h3 className="font-display text-heading-md text-ink mb-2">We&apos;ll Call You Back!</h3>
+        <h3 className="font-display text-heading-md text-text mb-2">We&apos;ll Call You Back!</h3>
         <p className="text-body-md text-shade-50">
           Our team will contact you within 24 hours.
         </p>
@@ -59,7 +59,7 @@ export default function CallbackForm({ onSuccess }: CallbackFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <h3 id="callback-title" className="font-display text-heading-md text-ink mb-4">Request a Call Back</h3>
+      <h3 id="callback-title" className="font-display text-heading-md text-text mb-4">Request a Call Back</h3>
       <div>
         <input
           type="text"
@@ -67,7 +67,7 @@ export default function CallbackForm({ onSuccess }: CallbackFormProps) {
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
         />
       </div>
       <div>
@@ -76,7 +76,7 @@ export default function CallbackForm({ onSuccess }: CallbackFormProps) {
           placeholder="Email Address"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
         />
       </div>
       <div>
@@ -86,7 +86,7 @@ export default function CallbackForm({ onSuccess }: CallbackFormProps) {
           required
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
         />
       </div>
       <div>
@@ -96,14 +96,14 @@ export default function CallbackForm({ onSuccess }: CallbackFormProps) {
           required
           value={formData.country}
           onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-ink placeholder:text-shade-40 focus:outline-none focus:border-ink transition-colors"
+          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-text placeholder:text-shade-40 focus:outline-none focus:border-text transition-colors"
         />
       </div>
       <div>
         <select
           value={formData.bestTime}
           onChange={(e) => setFormData({ ...formData, bestTime: e.target.value })}
-          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-ink focus:outline-none focus:border-ink transition-colors"
+          className="w-full border border-hairline-light rounded-md px-3 py-2.5 text-body-md text-text focus:outline-none focus:border-text transition-colors"
         >
           <option value="">Best time to call</option>
           <option value="morning">Morning (9AM-12PM)</option>

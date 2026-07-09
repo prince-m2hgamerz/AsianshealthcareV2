@@ -58,7 +58,7 @@ export default function HorizontalSlider({ children, className = "", showDots = 
       {canScrollLeft && (
         <button
           onClick={() => scroll("left")}
-          className="absolute -left-2.5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/95 shadow-elevation-3 flex items-center justify-center text-ink hover:bg-aloe-10 hover:text-ink hover:scale-105 active:scale-95 transition-all md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-sm"
+          className="absolute -left-2.5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/95 shadow-elevation-3 flex items-center justify-center text-text hover:bg-accent/10 hover:text-text hover:scale-105 active:scale-95 transition-all md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-sm"
           aria-label="Scroll left"
         >
           <ChevronLeft size={22} />
@@ -67,7 +67,7 @@ export default function HorizontalSlider({ children, className = "", showDots = 
       {canScrollRight && (
         <button
           onClick={() => scroll("right")}
-          className="absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/95 shadow-elevation-3 flex items-center justify-center text-ink hover:bg-aloe-10 hover:text-ink hover:scale-105 active:scale-95 transition-all md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-sm"
+          className="absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/95 shadow-elevation-3 flex items-center justify-center text-text hover:bg-accent/10 hover:text-text hover:scale-105 active:scale-95 transition-all md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-sm"
           aria-label="Scroll right"
         >
           <ChevronRight size={22} />
@@ -109,7 +109,7 @@ export default function HorizontalSlider({ children, className = "", showDots = 
               }}
               className={`rounded-full transition-all ${
                 i === currentIndex
-                  ? "w-6 h-2 bg-aloe-10"
+                  ? "w-6 h-2 bg-accent"
                   : "w-2 h-2 bg-shade-30 hover:bg-shade-50"
               }`}
               aria-label={`Go to slide ${i + 1}`}

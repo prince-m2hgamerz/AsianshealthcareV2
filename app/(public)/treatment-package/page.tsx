@@ -115,7 +115,7 @@ export default async function TreatmentPackagesPage({
         description="Compare 218+ treatment costs in India vs. Western countries. Save 60-80% without compromising on quality at JCI/NABH accredited hospitals."
        />
 
-      <section className="bg-canvas-cream py-8 sm:py-12 border-b border-hairline-light">
+      <section className="bg-surface py-8 sm:py-12 border-b border-hairline-light">
         <div className="container-cinematic">
           <SearchInput
             placeholder="Search 218+ treatments by name or category..."
@@ -127,7 +127,7 @@ export default async function TreatmentPackagesPage({
             <Link
               href="/treatment-package"
               className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
-                !categoryFilter ? "bg-ink text-on-primary border-ink" : "bg-canvas-light text-shade-50 border-hairline-light hover:border-ink"
+                !categoryFilter ? "bg-ink text-on-primary border-ink" : "bg-surface text-shade-50 border-hairline-light hover:border-ink"
               }`}
             >
               All ({allTreatments.length})
@@ -137,7 +137,7 @@ export default async function TreatmentPackagesPage({
                 key={cat}
                 href={`/treatment-package?category=${encodeURIComponent(cat)}`}
                 className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
-                  categoryFilter === cat ? "bg-ink text-on-primary border-ink" : "bg-canvas-light text-shade-50 border-hairline-light hover:border-ink"
+                  categoryFilter === cat ? "bg-ink text-on-primary border-ink" : "bg-surface text-shade-50 border-hairline-light hover:border-ink"
                 }`}
               >
                 {cat} ({allTreatments.filter((t) => t.category === cat).length})
@@ -147,11 +147,11 @@ export default async function TreatmentPackagesPage({
         </div>
       </section>
 
-      <section className="bg-canvas-light py-12 sm:py-huge">
+      <section className="bg-surface py-12 sm:py-huge">
         <div className="container-cinematic">
           {treatments.length === 0 ? (
-            <div className="text-center border border-hairline-light rounded-lg p-10 bg-canvas-cream">
-              <h2 className="font-display text-heading-lg text-ink">No treatments found</h2>
+            <div className="text-center border border-hairline-light rounded-lg p-10 bg-surface">
+              <h2 className="font-display text-heading-lg text-text">No treatments found</h2>
               <p className="text-body-md text-shade-50 mt-2">Try a different procedure, specialty, or category.</p>
               <Link href="/treatment-package" className="btn-primary mt-6">
                 Clear Search
@@ -161,12 +161,12 @@ export default async function TreatmentPackagesPage({
             <>
               <p className="text-body-md text-shade-50 mb-6">
                 Showing {treatments.length} treatment{treatments.length !== 1 ? "s" : ""}
-                {categoryFilter && <> in <strong className="text-ink">{categoryFilter}</strong></>}
-                {normalizedQuery && <> matching &ldquo;<strong className="text-ink">{query}</strong>&rdquo;</>}
+                {categoryFilter && <> in <strong className="text-text">{categoryFilter}</strong></>}
+                {normalizedQuery && <> matching &ldquo;<strong className="text-text">{query}</strong>&rdquo;</>}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                 {treatments.map((treatment) => (
-                  <Link key={treatment.slug} href={`/treatment-package/${treatment.slug}`} className="group overflow-hidden bg-canvas-cream rounded-xl border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300">
+                  <Link key={treatment.slug} href={`/treatment-package/${treatment.slug}`} className="group overflow-hidden bg-surface rounded-xl border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300">
                     <div className="relative h-36">
                       <Image
                         src={treatment.image_url || "/images/placeholder.svg"}
@@ -176,15 +176,15 @@ export default async function TreatmentPackagesPage({
                         className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute top-2 left-2">
-                        <span className="inline-flex items-center bg-white/90 backdrop-blur-sm text-ink text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                        <span className="inline-flex items-center bg-white/90 backdrop-blur-sm text-text text-[10px] font-semibold px-2 py-0.5 rounded-full">
                           {treatment.category}
                         </span>
                       </div>
                     </div>
                     <div className="p-4">
-                      <h2 className="font-display text-heading-sm text-ink group-hover:text-shade-60 transition-colors line-clamp-2 min-h-[2.5rem]">{treatment.name}</h2>
+                      <h2 className="font-display text-heading-sm text-text group-hover:text-shade-60 transition-colors line-clamp-2 min-h-[2.5rem]">{treatment.name}</h2>
                       <div className="mt-3 flex items-baseline gap-1.5">
-                        <span className="font-display text-heading-lg text-ink">${treatment.costMin.toLocaleString()}</span>
+                        <span className="font-display text-heading-lg text-text">${treatment.costMin.toLocaleString()}</span>
                         <span className="text-caption text-shade-40">- ${treatment.costMax.toLocaleString()}</span>
                       </div>
                       <p className="text-micro text-shade-40 mt-0.5">In India</p>

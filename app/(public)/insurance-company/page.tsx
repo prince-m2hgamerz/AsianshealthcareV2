@@ -36,19 +36,19 @@ export default async function InsurancePage() {
         description="We work with leading international insurance providers to ensure your treatment is covered."
        />
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {companies.map((c) => (
-              <Link key={c.slug} href={`/insurance-company/${c.slug}`} className="group bg-canvas-cream rounded-lg p-8 border border-hairline-light hover:shadow-elevation-3 transition-all text-center">
-                <div className="relative w-16 h-16 rounded-full bg-aloe-10 flex items-center justify-center mx-auto mb-4 overflow-hidden">
+              <Link key={c.slug} href={`/insurance-company/${c.slug}`} className="group bg-surface rounded-lg p-8 border border-hairline-light hover:shadow-elevation-3 transition-all text-center">
+                <div className="relative w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 overflow-hidden">
                   {c.logo_url ? (
                     <Image src={c.logo_url} alt={c.name} fill sizes="64px" className="object-contain p-2" />
                   ) : (
-                    <Shield size={32} className="text-ink" />
+                    <Shield size={32} className="text-text" />
                   )}
                 </div>
-                <h2 className="font-display text-heading-md text-ink group-hover:text-shade-60 transition-colors">{c.name}</h2>
+                <h2 className="font-display text-heading-md text-text group-hover:text-shade-60 transition-colors">{c.name}</h2>
               </Link>
             ))}
           </div>

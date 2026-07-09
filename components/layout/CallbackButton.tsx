@@ -38,12 +38,12 @@ export default function CallbackButton() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-canvas-light rounded-xl max-w-md w-full p-6 relative max-h-[90vh] overflow-y-auto"
+              className="bg-surface rounded-xl max-w-md w-full p-6 relative max-h-[90vh] overflow-y-auto"
             >
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="absolute top-4 right-4 text-shade-50 hover:text-ink"
+                className="absolute top-4 right-4 text-shade-50 hover:text-text"
                 aria-label="Close"
               >
                 <X size={20} />

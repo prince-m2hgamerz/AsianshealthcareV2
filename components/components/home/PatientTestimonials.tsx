@@ -57,7 +57,7 @@ export default function PatientTestimonials({ testimonials = [] }: { testimonial
         <div className="text-center mt-10">
           <Link
             href="/testimonials"
-            className="inline-flex items-center gap-2 text-button-md font-semibold text-aloe-60 hover:text-aloe-70 transition-colors"
+            className="inline-flex items-center gap-2 text-button-md font-semibold text-aloe-50 hover:text-aloe-50 transition-colors"
           >
             View All Stories
             <ArrowRight size={20} />

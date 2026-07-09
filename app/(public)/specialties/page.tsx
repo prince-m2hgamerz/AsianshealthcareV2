@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { fallbackSpecialties } from "@/lib/fallback-data";
+import PageHero from "@/components/layout/PageHero";
+import BreadcrumbNav from "@/components/shared/BreadcrumbNav";
+import { Stethoscope, Heart, Brain, Activity, Eye, Baby, Sparkles, Bone, Smile } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Medical Specialties in India | Asians Healthcare",
@@ -9,18 +12,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://asianshealthcare.com/specialties" },
 };
 
-const specialtyIcons: Record<string, string> = {
-  cardiology: "❤️", orthopedics: "🦴", neurology: "🧠", oncology: "🎗️",
-  gastroenterology: "🫁", nephrology: "🫘", urology: "🔬", fertility: "👶",
-  transplant: "🔄", dental: "🦷", ophthalmology: "👁️", "cosmetic-surgery": "✨",
-  "cardiac-surgery": "🫀", neurosurgery: "🧠", pediatrics: "👶", gynecology: "👩",
-  pulmonology: "🫁", endocrinology: "⚖️", rheumatology: "🦵", hematology: "🩸",
-  ent: "👂", dermatology: "🧴", psychiatry: "🧠", "plastic-surgery": "🪞",
-  proctology: "🩺", "vascular-surgery": "🩸", "nuclear-medicine": "☢️",
-  "pain-management": "💊", "sleep-medicine": "🌙", "sports-medicine": "⚽",
-  "emergency-medicine": "🚑", "spine-surgery": "💪", "bariatric-surgery": "⚖️",
-  "pediatric-surgery": "👶", "liver-transplant": "🫁", "kidney-transplant": "🫘",
-  "bone-marrow-transplant": "🩸",
+const lucideIconMap: Record<string, typeof Heart> = {
+  cardiology: Heart, orthopedics: Bone, neurology: Brain, oncology: Activity,
+  gastroenterology: Activity, nephrology: Activity, urology: Activity, fertility: Baby,
+  transplant: Activity, dental: Smile, ophthalmology: Eye, "cosmetic-surgery": Sparkles,
+  "cardiac-surgery": Heart, neurosurgery: Brain, pediatrics: Baby, gynecology: Heart,
+  pulmonology: Activity, endocrinology: Activity, rheumatology: Bone, hematology: Activity,
+  ent: Eye, dermatology: Smile, psychiatry: Brain, "plastic-surgery": Sparkles,
+  proctology: Stethoscope, "vascular-surgery": Activity, "nuclear-medicine": Activity,
+  "pain-management": Activity, "sleep-medicine": Activity, "sports-medicine": Activity,
+  "emergency-medicine": Activity, "spine-surgery": Bone, "bariatric-surgery": Activity,
+  "pediatric-surgery": Baby, "liver-transplant": Activity, "kidney-transplant": Activity,
+  "bone-marrow-transplant": Activity,
 };
 
 export default async function SpecialtiesPage() {
@@ -32,25 +35,35 @@ export default async function SpecialtiesPage() {
 
   return (
     <>
-      <section className="bg-canvas-night text-on-primary py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Our Expertise</span>
-          <h1 className="text-4xl font-bold mb-4">Medical Specialties</h1>
-          <p className="text-on-primary/70 text-lg max-w-2xl">Find the right specialty, compare doctors, and plan treatment with accredited hospitals in India.</p>
-        </div>
-      </section>
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {specialties.map((s) => (
-              <Link key={s.slug} href={`/specialties/${s.slug}`} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition overflow-hidden group">
-                <div className="p-6 text-center">
-                  <div className="text-4xl mb-3">{specialtyIcons[s.slug] || "🩺"}</div>
-                  <h2 className="font-semibold text-lg text-text-primary group-hover:text-primary transition">{s.name}</h2>
-                  <p className="text-text-secondary text-sm mt-2">{s.desc}</p>
-                </div>
-              </Link>
-            ))}
+      <BreadcrumbNav items={[
+        { label: "Home", href: "/" },
+        { label: "Specialties", href: "/specialties" },
+      ]} />
+      <PageHero
+        eyebrow="Our Expertise"
+        title="Medical Specialties"
+        description="Find the right specialty, compare doctors, and plan treatment with accredited hospitals in India."
+      />
+
+      <section className="bg-surface py-huge">
+        <div className="container-cinematic">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {specialties.map((s) => {
+              const Icon = lucideIconMap[s.slug] || Stethoscope;
+              return (
+                <Link
+                  key={s.slug}
+                  href={`/specialties/${s.slug}`}
+                  className="group bg-surface rounded-xl border border-hairline-light p-6 hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Icon size={24} className="text-accent" />
+                  </div>
+                  <h2 className="font-display text-heading-md text-text group-hover:text-shade-60 transition-colors mb-2">{s.name}</h2>
+                  <p className="text-body-sm text-shade-50 leading-relaxed">{s.desc}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

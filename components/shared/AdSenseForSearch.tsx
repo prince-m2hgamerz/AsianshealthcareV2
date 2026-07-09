@@ -28,7 +28,6 @@ interface AFSAdBlock {
   maxTop?: number;
   number?: number;
   width?: string | number;
-  adLoadedCallback?: (containerName: string, adsLoaded: boolean) => void;
 }
 
 interface AFSRelatedSearchBlock {
@@ -91,12 +90,6 @@ export default function AdSenseForSearch({
     script.async = true;
     script.onload = () => {
       // Call AFS after the script loads
-      const args: unknown[] = ["ads", pageOptions];
-      if (adBlocks) {
-        for (const block of adBlocks) {
-          args.push(block);
-        }
-      }
       try {
         (window._googCsa as (...args: unknown[]) => void)("ads", pageOptions, ...(adBlocks || []));
       } catch {
@@ -115,6 +108,17 @@ export default function AdSenseForSearch({
           // AFS may not be available in dev
         }
       }
+
+      // Hide empty containers (ads did not load)
+      setTimeout(() => {
+        for (const id of containerIds.current) {
+          const el = document.getElementById(id);
+          if (el && !el.hasChildNodes()) {
+            el.style.display = "none";
+            el.style.minHeight = "0";
+          }
+        }
+      }, 3000);
     };
     document.head.appendChild(script);
 

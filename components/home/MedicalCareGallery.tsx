@@ -106,7 +106,7 @@ export default function MedicalCareGallery({ images }: { images: ImageMap }) {
         <div className="mt-16">
           <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <span className="pill-tag-shade mb-4 inline-block">Common Treatments</span>
+              <span className="pill-tag mb-4 inline-block">Common Treatments</span>
               <h2 className="font-display text-display-md text">High-demand care categories</h2>
             </div>
             <Link href="/treatment-package" className="btn-outline inline-flex gap-2 self-start lg:self-auto">

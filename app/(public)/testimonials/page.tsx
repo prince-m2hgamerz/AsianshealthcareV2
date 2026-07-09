@@ -40,12 +40,12 @@ export default async function TestimonialsPage() {
         description="Hear from patients around the world who transformed their health through medical treatment in India."
        />
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-canvas-cream rounded-xl p-8 border border-hairline-light relative hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300">
-                <Quote className="absolute top-6 right-6 text-aloe-10/20" size={40} />
+              <div key={i} className="bg-surface rounded-xl p-8 border border-hairline-light relative hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300">
+                <Quote className="absolute top-6 right-6 text-accent/20" size={40} />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 {(t.imageUrl || t.videoUrl) && (
                   <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden mb-4">
@@ -69,7 +69,7 @@ export default async function TestimonialsPage() {
                 </div>
                 <p className="text-body-md text-shade-50 mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
                 <div className="border-t border-hairline-light pt-4">
-                  <p className="font-display text-heading-sm text-ink">{t.name}</p>
+                  <p className="font-display text-heading-sm text-text">{t.name}</p>
                   <p className="text-caption text-shade-40">{t.country} &middot; {t.treatment}</p>
                 </div>
               </div>

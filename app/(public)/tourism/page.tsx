@@ -60,7 +60,7 @@ export default async function TourismPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-canvas-night text-on-primary">
+      <section className="relative overflow-hidden bg-primary text-on-primary">
         <div className="absolute inset-0">
           <Image
             src={images.image_tourism_hero}
@@ -71,13 +71,13 @@ export default async function TourismPage() {
             className="object-cover opacity-35"
           />
         </div>
-        <div className="absolute inset-0 bg-canvas-night/75" />
+        <div className="absolute inset-0 bg-primary/75" />
         <div className="container-cinematic relative z-10 py-24 lg:py-32">
           <span className="pill-tag mb-4 inline-block">Medical Tourism</span>
           <h1 className="font-display text-[44px] leading-[0.98] sm:text-display-xl lg:text-display-xxl text-on-primary">
             Treatment in India, planned around recovery
           </h1>
-          <p className="mt-6 max-w-3xl text-body-lg leading-relaxed text-link-cool-2">
+          <p className="mt-6 max-w-3xl text-body-lg leading-relaxed text-text-muted">
             Asians Healthcare helps international patients combine high-quality medical care with practical travel
             support: visa documentation, airport pickup, interpreter support, accommodation, hospital
             transfers, and optional recovery-safe sightseeing after doctor approval.
@@ -85,11 +85,11 @@ export default async function TourismPage() {
         </div>
       </section>
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="mb-12 max-w-3xl">
-            <span className="pill-tag-shade mb-4 inline-block">Trip Planning</span>
-            <h2 className="font-display text-display-md text-ink">What we coordinate for patients</h2>
+            <span className="pill-tag mb-4 inline-block">Trip Planning</span>
+            <h2 className="font-display text-display-md text-text">What we coordinate for patients</h2>
             <p className="mt-4 text-body-lg leading-relaxed text-shade-50">
               A medical trip needs different planning from a vacation. We keep comfort, hospital proximity,
               documentation, caregiver needs, and recovery restrictions at the center of the itinerary.
@@ -98,11 +98,11 @@ export default async function TourismPage() {
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {planningSteps.map((step) => (
-              <div key={step.title} className="rounded-lg border border-hairline-light bg-canvas-cream p-6">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-aloe-10">
-                  <step.icon size={22} className="text-ink" />
+              <div key={step.title} className="rounded-lg border border-hairline-light bg-surface p-6">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10">
+                  <step.icon size={22} className="text-text" />
                 </div>
-                <h3 className="font-display text-heading-md text-ink">{step.title}</h3>
+                <h3 className="font-display text-heading-md text-text">{step.title}</h3>
                 <p className="mt-2 text-body-md leading-relaxed text-shade-50">{step.text}</p>
               </div>
             ))}
@@ -110,12 +110,12 @@ export default async function TourismPage() {
         </div>
       </section>
 
-      <section className="bg-canvas-cream py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <span className="pill-tag mb-4 inline-block">Recovery Extensions</span>
-              <h2 className="font-display text-display-md text-ink">Popular patient-friendly routes</h2>
+              <h2 className="font-display text-display-md text-text">Popular patient-friendly routes</h2>
             </div>
             <p className="max-w-xl text-body-md leading-relaxed text-shade-50">
               Destinations are suggested only after medical clearance and are adjusted for mobility,
@@ -125,7 +125,7 @@ export default async function TourismPage() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {destinations.map((destination) => (
-              <div key={destination.name} className="group overflow-hidden rounded-lg border border-hairline-light bg-canvas-light">
+              <div key={destination.name} className="group overflow-hidden rounded-lg border border-hairline-light bg-surface">
                 <div className="relative h-52 overflow-hidden">
                   <Image
                     src={destination.image}
@@ -140,7 +140,7 @@ export default async function TourismPage() {
                     <MapPinned size={15} />
                     Recovery route
                   </div>
-                  <h3 className="font-display text-heading-md text-ink">{destination.name}</h3>
+                  <h3 className="font-display text-heading-md text-text">{destination.name}</h3>
                   <p className="mt-2 text-body-md leading-relaxed text-shade-50">{destination.desc}</p>
                 </div>
               </div>
@@ -149,11 +149,11 @@ export default async function TourismPage() {
         </div>
       </section>
 
-      <section className="bg-canvas-night py-huge text-on-primary">
+      <section className="bg-primary py-huge text-on-primary">
         <div className="container-content text-center">
-          <HeartPulse size={42} className="mx-auto mb-5 text-aloe-10" />
+          <HeartPulse size={42} className="mx-auto mb-5 text-accent" />
           <h2 className="font-display text-display-md text-on-primary">Medical decisions come first</h2>
-          <p className="mt-4 text-body-lg leading-relaxed text-link-cool-2">
+          <p className="mt-4 text-body-lg leading-relaxed text-text-muted">
             Tourism plans are optional and always secondary to your treatment plan. Our team coordinates
             recovery stays and local travel around your doctor&apos;s advice, not the other way around.
           </p>

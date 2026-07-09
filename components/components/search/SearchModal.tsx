@@ -12,7 +12,7 @@ const categoryColors: Record<string, string> = {
   Doctor: "bg-accent/10 text-accent border-accent/20",
   Hospital: "bg-primary/10 text-primary border-primary/20",
   Treatment: "bg-pistachio/10 text-pistachio border-pistachio/20",
-  Specialty: "bg-aloe/10 text-aloe border-aloe/20",
+  Specialty: "bg-accent/10 text-accent border-accent/20",
   Blog: "bg-gold/10 text-gold border-gold/20",
   Hotel: "bg-primary/10 text-primary border-primary/20",
   Testimonial: "bg-accent/10 text-accent border-accent/20",

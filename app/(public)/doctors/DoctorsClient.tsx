@@ -31,8 +31,8 @@ function getInitials(name: string): string {
 function hashColor(name: string): string {
   const colors = [
     "bg-primary", "bg-accent", "bg-pistachio",
-    "bg-aloe", "bg-gold", "bg-primary/80",
-    "bg-accent/80", "bg-pistachio/80", "bg-aloe/80",
+    "bg-accent/10", "bg-gold", "bg-primary/80",
+    "bg-accent/80", "bg-pistachio/80", "bg-accent/10",
   ];
   let hash = 0;
   for (let i = 0; i < name.length; i++) hash = Math.trunc(hash * 31 + name.codePointAt(i)!);
@@ -45,7 +45,7 @@ function AvatarPhoto({ doctor }: { readonly doctor: Doctor }) {
   const [err, setErr] = useState(false);
   if (!doctor.photo_url || err) {
     return (
-      <div className={`w-full h-full flex items-center justify-center text-ink font-bold text-2xl ${hashColor(doctor.name)}`}>
+      <div className={`w-full h-full flex items-center justify-center text font-bold text-2xl ${hashColor(doctor.name)}`}>
         {getInitials(doctor.name)}
       </div>
     );
@@ -69,10 +69,10 @@ function DoctorCard({ doctor, index }: { readonly doctor: Doctor; readonly index
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.4) }}
-      className="group bg-canvas-light rounded-xl border border-hairline-light overflow-hidden hover:shadow-elevation-3 transition-all duration-300 flex flex-col"
+      className="group bg-white rounded-xl border border-hairline-light overflow-hidden hover:shadow-elevation-3 transition-all duration-300 flex flex-col"
     >
       {/* Photo */}
-      <div className="relative h-48 bg-canvas-cream overflow-hidden">
+      <div className="relative h-48 bg-surface overflow-hidden">
         <AvatarPhoto doctor={doctor} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         {/* Hospital badge */}
@@ -86,14 +86,14 @@ function DoctorCard({ doctor, index }: { readonly doctor: Doctor; readonly index
 
       {/* Info */}
       <div className="p-4 flex flex-col flex-1 gap-2">
-        <h3 className="font-display text-heading-sm text-ink leading-tight group-hover:text-shade-60 transition-colors line-clamp-2">
+        <h3 className="font-display text-heading-sm text leading-tight group-hover:text-accent transition-colors line-clamp-2">
           {doctor.name}
         </h3>
 
         {doctor.specialty && doctor.specialty !== "Specialist" && doctor.expertise.length === 0 && (
           <div className="flex items-center gap-1.5 text-caption text-shade-50">
-            <Stethoscope size={13} className="shrink-0 text-link-mint" />
-            <span className="truncate">{doctor.specialty}</span>
+            <Stethoscope size={13} className="shrink-0 text-accent" />
+            <span className="truncate text-shade-60">{doctor.specialty}</span>
           </div>
         )}
 
@@ -158,7 +158,7 @@ function FilterSection({
         onClick={() => setOpen(!open)}
         className="flex items-center justify-between w-full text-left mb-3"
       >
-        <span className="flex items-center gap-2 text-caption font-semibold text-ink uppercase tracking-[0.08em]">
+        <span className="flex items-center gap-2 text-caption font-semibold text uppercase tracking-[0.08em]">
           {icon}
           {title}
         </span>
@@ -316,10 +316,10 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
             value={localQ}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="Name, specialty, expertise..."
-            className="w-full pl-8 pr-8 py-2.5 rounded-lg border border-hairline-light bg-canvas-cream text-caption text-ink placeholder:text-shade-40 focus:outline-none focus:ring-2 focus:ring-link-mint transition"
+            className="w-full pl-8 pr-8 py-2.5 rounded-lg border border-hairline-light bg-surface text-caption text placeholder:text-shade-40 focus:outline-none focus:ring-2 focus:ring-accent transition"
           />
           {localQ && (
-            <button onClick={() => handleSearch("")} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-shade-40 hover:text-ink">
+            <button onClick={() => handleSearch("")} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-shade-40 hover:text">
               <X size={14} />
             </button>
           )}
@@ -338,7 +338,7 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
                 onChange={() => pushParams({ hospital: selectedHospital === h.slug ? "" : h.slug })}
                 className="accent-black w-4 h-4 cursor-pointer"
               />
-              <span className="text-caption text-shade-60 group-hover:text-ink transition-colors flex-1 leading-tight">{h.name}</span>
+              <span className="text-caption text-shade-60 group-hover:text transition-colors flex-1 leading-tight">{h.name}</span>
               <span className="text-micro text-shade-40 tabular-nums">{hospitalCounts[h.slug] ?? 0}</span>
             </label>
           ))}
@@ -356,7 +356,7 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
                 onChange={() => toggleSpecialty(label)}
                 className="accent-black w-4 h-4 cursor-pointer"
               />
-              <span className="text-caption text-shade-60 group-hover:text-ink transition-colors flex-1 leading-tight">{label}</span>
+              <span className="text-caption text-shade-60 group-hover:text transition-colors flex-1 leading-tight">{label}</span>
               <span className="text-micro text-shade-40 tabular-nums">{count}</span>
             </label>
           ))}
@@ -364,7 +364,7 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
         {ALL_SPECIALTIES.length > 14 && (
           <button
             onClick={() => setShowAllSpecialties(!showAllSpecialties)}
-            className="mt-2 text-micro text-link-mint hover:underline flex items-center gap-1"
+            className="mt-2 text-micro text-accent hover:underline flex items-center gap-1"
           >
             {showAllSpecialties ? <><ChevronUp size={12} /> Show less</> : <><ChevronDown size={12} /> Show {ALL_SPECIALTIES.length - 14} more</>}
           </button>
@@ -381,7 +381,7 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
               className={`px-3 py-1.5 rounded-full text-caption border transition-all ${
                 selectedGender === g.value
                   ? "bg-ink text-on-primary border-ink"
-                  : "bg-canvas-cream text-shade-60 border-hairline-light hover:border-ink hover:text-ink"
+                  : "bg-surface text-shade-60 border-hairline-light hover:text"
               }`}
             >
               {g.label}
@@ -406,7 +406,7 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
     <>
       {/* ── Active filter chips ── */}
       {hasFilters && (
-        <section className="bg-canvas-cream border-b border-hairline-light py-3">
+        <section className="bg-surface border-b border-hairline-light py-3">
           <div className="container-cinematic flex items-center gap-2 flex-wrap">
             <span className="text-micro text-shade-40 uppercase tracking-wider">Active:</span>
             {q && (
@@ -432,18 +432,18 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
       )}
 
       {/* ── Main layout ── */}
-      <section className="bg-canvas-light py-10">
+      <section className="bg-surface py-10">
         <div className="container-cinematic flex gap-8">
 
           {/* Desktop sidebar */}
           <aside className="hidden lg:block w-64 shrink-0">
-            <div className="sticky top-24 bg-canvas-cream rounded-xl border border-hairline-light p-5">
+            <div className="sticky top-24 bg-surface rounded-xl border border-hairline-light p-5">
               <div className="flex items-center justify-between mb-5">
-                <span className="font-display text-heading-sm text-ink flex items-center gap-2">
+                <span className="font-display text-heading-sm text flex items-center gap-2">
                   <SlidersHorizontal size={16} /> Filters
                 </span>
                 {hasFilters && (
-                  <button onClick={clearAll} className="text-micro text-shade-40 hover:text-ink underline">
+                  <button onClick={clearAll} className="text-micro text-shade-40 hover:text underline">
                     Reset
                   </button>
                 )}
@@ -457,7 +457,7 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
             {/* Top bar */}
             <div className="flex items-center justify-between mb-6 gap-3 flex-wrap">
               <div>
-                <p className="text-body-md text-ink font-medium">
+                <p className="text-body-md text font-medium">
                   {filtered.length.toLocaleString()} doctor{filtered.length === 1 ? "" : "s"}
                   {hasFilters && " found"}
                 </p>
@@ -484,8 +484,8 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
 
             {/* Grid */}
             {pageItems.length === 0 ? (
-              <div className="text-center py-20 border border-hairline-light rounded-xl bg-canvas-cream">
-                <p className="font-display text-heading-lg text-ink mb-2">No doctors found</p>
+              <div className="text-center py-20 border border-hairline-light rounded-xl bg-white">
+                <p className="font-display text-heading-lg text mb-2">No doctors found</p>
                 <p className="text-body-md text-shade-50 mb-6">Try adjusting your filters or search terms.</p>
                 <button onClick={clearAll} className="btn-primary">Clear Filters</button>
               </div>
@@ -524,8 +524,8 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
                         onClick={() => goPage(item)}
                         className={`w-10 h-10 rounded-lg text-caption border transition-all ${
                           safePage === item
-                            ? "bg-ink text-on-primary border-ink"
-                            : "border-hairline-light text-shade-60 hover:border-ink hover:text-ink"
+                  ? "bg-primary text-white border-primary"
+                            : "border-hairline-light text-shade-60 hover:text"
                         }`}
                       >
                         {item}
@@ -564,14 +564,14 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.25 }}
-              className="fixed left-0 top-0 bottom-0 z-50 w-80 max-w-full bg-canvas-light overflow-y-auto lg:hidden"
+              className="fixed left-0 top-0 bottom-0 z-50 w-80 max-w-full bg-surface overflow-y-auto lg:hidden"
             >
               <div className="p-5">
                 <div className="flex items-center justify-between mb-6">
-                  <span className="font-display text-heading-sm text-ink flex items-center gap-2">
+                <span className="font-display text-heading-sm text flex items-center gap-2">
                     <SlidersHorizontal size={16} /> Filters
                   </span>
-                  <button onClick={() => setMobileOpen(false)} className="text-shade-40 hover:text-ink p-1">
+                  <button onClick={() => setMobileOpen(false)} className="text-shade-40 hover:text p-1">
                     <X size={20} />
                   </button>
                 </div>
@@ -593,7 +593,7 @@ export default function DoctorsClient({ doctors: doctorsProp }: { readonly docto
 
 function FilterChip({ label, onRemove }: { readonly label: string; readonly onRemove: () => void }) {
   return (
-    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-canvas-night text-on-primary text-caption">
+    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/90 text-white text-caption">
       {label}
       <button onClick={onRemove} className="hover:text-red-400 transition-colors">
         <X size={12} />

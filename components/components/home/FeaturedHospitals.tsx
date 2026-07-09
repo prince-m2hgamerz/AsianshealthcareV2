@@ -30,7 +30,7 @@ export default function FeaturedHospitals({ hospitals = [] }: { hospitals?: Hosp
           className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-4"
         >
           <div>
-            <span className="pill-tag-shade mb-4 inline-block">Top Facilities</span>
+            <span className="pill-tag mb-4 inline-block">Top Facilities</span>
             <h2 className="font-display text-display-md lg:text-display-lg text mt-4">Featured Hospitals</h2>
             <p className="text-body-lg text-shade-50 max-w-xl mt-4">India&apos;s most trusted healthcare institutions with international accreditation.</p>
           </div>

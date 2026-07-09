@@ -24,13 +24,13 @@ export default function CostCalculatorClient({ treatments }: {
   const savingsPercent = Math.round((savings / homeCost) * 100);
 
   return (
-    <section className="bg-canvas-light py-12 sm:py-huge">
+    <section className="bg-surface py-12 sm:py-huge">
       <div className="container-cinematic">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
 
           {/* Left Column: Treatment List */}
           <div className="lg:col-span-2 space-y-4">
-            <h2 className="font-display text-heading-lg sm:text-heading-xl text-ink">Choose Treatment</h2>
+            <h2 className="font-display text-heading-lg sm:text-heading-xl text-text">Choose Treatment</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 max-h-none lg:max-h-[520px] lg:overflow-y-auto lg:pr-2">
               {treatments.map((t) => {
                 const active = selected.name === t.name;
@@ -40,13 +40,13 @@ export default function CostCalculatorClient({ treatments }: {
                     onClick={() => setSelected(t)}
                     className={`w-full text-left px-4 py-3.5 rounded-xl border-2 transition-all duration-200 text-body-md ${
                       active
-                        ? "border-aloe-10 bg-aloe-10/10 text-ink shadow-elevation-2"
-                        : "border-hairline-light text-shade-50 hover:border-shade-30 bg-canvas-cream/50 hover:bg-canvas-cream"
+                        ? "border-accent bg-accent/10 text-text shadow-elevation-2"
+                        : "border-hairline-light text-shade-50 hover:border-shade-30 bg-surface/50 hover:bg-surface"
                     }`}
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className={active ? "font-medium" : ""}>{t.name}</span>
-                      {active && <Check size={16} className="text-aloe-10 shrink-0" />}
+                      {active && <Check size={16} className="text-accent shrink-0" />}
                     </div>
                   </button>
                 );
@@ -56,7 +56,7 @@ export default function CostCalculatorClient({ treatments }: {
 
           {/* Right Column: Results */}
           <div className="lg:col-span-3 space-y-5">
-            <h2 className="font-display text-heading-lg sm:text-heading-xl text-ink">Your Savings</h2>
+            <h2 className="font-display text-heading-lg sm:text-heading-xl text-text">Your Savings</h2>
 
             {/* Country Tabs */}
             <div className="flex flex-wrap gap-2">
@@ -77,18 +77,18 @@ export default function CostCalculatorClient({ treatments }: {
 
             {/* Cost Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-              <div className="bg-canvas-cream rounded-xl border border-hairline-light p-5 sm:p-6 text-center hover:shadow-elevation-2 transition-shadow">
+              <div className="bg-surface rounded-xl border border-hairline-light p-5 sm:p-6 text-center hover:shadow-elevation-2 transition-shadow">
                 <p className="text-caption text-shade-40 mb-1">Cost in {country.label}</p>
                 <p className="font-display text-display-sm sm:text-display-md text-shade-50">${homeCost.toLocaleString()}</p>
               </div>
-              <div className="bg-canvas-cream rounded-xl border border-hairline-light p-5 sm:p-6 text-center hover:shadow-elevation-2 transition-shadow">
+              <div className="bg-surface rounded-xl border border-hairline-light p-5 sm:p-6 text-center hover:shadow-elevation-2 transition-shadow">
                 <p className="text-caption text-shade-40 mb-1">Cost in India</p>
-                <p className="font-display text-display-sm sm:text-display-md text-aloe-10">${selected.costIndia.toLocaleString()}</p>
+                <p className="font-display text-display-sm sm:text-display-md text-accent">${selected.costIndia.toLocaleString()}</p>
               </div>
-              <div className="rounded-xl border-2 border-aloe-10/40 p-5 sm:p-6 text-center bg-gradient-to-br from-aloe-10/10 to-aloe-10/5 hover:shadow-elevation-2 transition-shadow">
+              <div className="rounded-xl border-2 border-accent/40 p-5 sm:p-6 text-center bg-gradient-to-br from-accent/10 to-accent/5 hover:shadow-elevation-2 transition-shadow">
                 <p className="text-caption text-shade-50 mb-1 font-medium">You Save</p>
-                <p className="font-display text-display-sm sm:text-display-md text-ink">${savings.toLocaleString()}</p>
-                <p className="text-caption text-aloe-10 font-semibold mt-1 flex items-center justify-center gap-1">
+                <p className="font-display text-display-sm sm:text-display-md text-text">${savings.toLocaleString()}</p>
+                <p className="text-caption text-accent font-semibold mt-1 flex items-center justify-center gap-1">
                   <TrendingDown size={16} /> {savingsPercent}% less
                 </p>
               </div>
@@ -101,13 +101,13 @@ export default function CostCalculatorClient({ treatments }: {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="relative h-14 sm:h-12 bg-canvas-cream rounded-full border border-hairline-light overflow-hidden"
+                className="relative h-14 sm:h-12 bg-surface rounded-full border border-hairline-light overflow-hidden"
               >
                 <div
-                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-aloe-10 to-aloe-10/70 rounded-full flex items-center justify-start pl-4 pr-2 transition-all duration-500"
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-accent to-accent/70 rounded-full flex items-center justify-start pl-4 pr-2 transition-all duration-500"
                   style={{ width: `${100 - savingsPercent}%` }}
                 >
-                  <span className="text-micro font-bold text-ink whitespace-nowrap">
+                  <span className="text-micro font-bold text-text whitespace-nowrap">
                     India ${selected.costIndia.toLocaleString()}
                   </span>
                 </div>

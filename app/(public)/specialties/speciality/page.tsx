@@ -54,11 +54,11 @@ export default async function SpecialtiesPage() {
         description="Find the right specialty, compare doctors, and plan treatment with accredited hospitals in India."
        />
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {specialties.map((specialty) => (
-              <Link key={specialty.slug} href={`/speciality/${specialty.slug}`} className="group overflow-hidden rounded-lg border border-hairline-light bg-canvas-cream transition-all hover:-translate-y-1 hover:shadow-elevation-3">
+              <Link key={specialty.slug} href={`/speciality/${specialty.slug}`} className="group overflow-hidden rounded-lg border border-hairline-light bg-surface transition-all hover:-translate-y-1 hover:shadow-elevation-3">
                 <div className="relative h-44 overflow-hidden">
                   <Image
                     src={getSpecialtyImage(images, specialty.slug)}
@@ -68,12 +68,12 @@ export default async function SpecialtiesPage() {
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-canvas-night/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg bg-aloe-10 text-ink shadow-elevation-2">
+                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-text shadow-elevation-2">
                     <specialty.icon size={24} />
                   </div>
                 </div>
                 <div className="p-6">
-                  <h2 className="font-display text-heading-lg text-ink group-hover:text-shade-60 transition-colors">{specialty.name}</h2>
+                  <h2 className="font-display text-heading-lg text-text group-hover:text-shade-60 transition-colors">{specialty.name}</h2>
                   <p className="text-body-md text-shade-50 mt-2 leading-relaxed">{specialty.desc}</p>
                 </div>
               </Link>

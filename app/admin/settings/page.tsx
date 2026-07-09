@@ -180,7 +180,7 @@ export default function AdminSettingsPage() {
       )}
 
       {saved && (
-        <div className="bg-aloe-10/20 border border-aloe-10 text-text rounded-md px-4 py-3 text-body-md mb-6">
+        <div className="bg-accent/20 border border-accent text-text rounded-md px-4 py-3 text-body-md mb-6">
           Settings saved successfully!
         </div>
       )}

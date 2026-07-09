@@ -26,7 +26,7 @@ const categoryColors: Record<string, string> = {
   Doctor: "bg-accent/10 text-accent border-accent/20",
   Hospital: "bg-primary/10 text-primary border-primary/20",
   Treatment: "bg-pistachio/10 text-pistachio border-pistachio/20",
-  Specialty: "bg-aloe/10 text-aloe border-aloe/20",
+  Specialty: "bg-accent/10 text-accent border-accent",
   Blog: "bg-gold/10 text-gold border-gold/20",
   Hotel: "bg-primary/10 text-primary border-primary/20",
   Testimonial: "bg-accent/10 text-accent border-accent/20",
@@ -110,7 +110,12 @@ function buildResults(query: string): SearchResult[] {
     }
   }
 
-  return results;
+  const seen = new Set<string>();
+  return results.filter((r) => {
+    if (seen.has(r.id)) return false;
+    seen.add(r.id);
+    return true;
+  });
 }
 
 export default async function SearchPage({
@@ -139,7 +144,7 @@ export default async function SearchPage({
         description={query ? `Showing results for "${query}"` : "Search across all content"}
       />
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-surface">
         <div className="container-cinematic">
           <form method="GET" action="/search" className="max-w-2xl mx-auto mb-8 sm:mb-12">
             <div className="bg-white border border-hairline-light rounded-xl shadow-sm p-1.5 sm:p-2 flex items-center gap-2">
@@ -185,20 +190,13 @@ export default async function SearchPage({
                   channel: "site_search_results",
                   linkTarget: "_blank",
                 }}
-                adBlocks={[
-                  {
-                    container: "afscontainer1",
-                    maxTop: 3,
-                    width: "100%",
-                    adLoadedCallback: (containerName, adsLoaded) => {
-                      const container = document.getElementById(containerName);
-                      if (!adsLoaded && container) {
-                        container.style.display = "none";
-                        container.style.minHeight = "0";
-                      }
+                  adBlocks={[
+                    {
+                      container: "afscontainer1",
+                      maxTop: 3,
+                      width: "100%",
                     },
-                  },
-                ]}
+                  ]}
               />
             </div>
           )}
@@ -235,12 +233,12 @@ export default async function SearchPage({
                               />
                             </div>
                           ) : (
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl bg-canvas-night flex items-center justify-center shrink-0">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl bg-primary flex items-center justify-center shrink-0">
                               <Search size={18} className="sm:size-24 text-shade-40" />
                             </div>
                           )}
                           <div className="min-w-0">
-                            <p className="text-body-sm sm:text-body text-on-primary font-medium group-hover:text-link-mint transition-colors truncate">
+                            <p className="text-body-sm sm:text-body text-on-primary font-medium group-hover:text-accent transition-colors truncate">
                               {item.title}
                             </p>
                             <p className="text-shade-40 text-xs sm:text-sm mt-0.5 sm:mt-1 line-clamp-2">{item.description}</p>

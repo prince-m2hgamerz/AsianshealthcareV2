@@ -66,7 +66,7 @@ export default function DoctorsGrid({ doctors }: { doctors: DoctorItem[] }) {
                 />
               ) : (
                 <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-aloe-10 to-pistachio-10">
-                  <span className="text-4xl sm:text-5xl font-bold text-aloe-30/50 select-none">
+                  <span className="text-4xl sm:text-5xl font-bold text-aloe-40/50 select-none">
                     {getInitials(doctor.name)}
                   </span>
                 </div>

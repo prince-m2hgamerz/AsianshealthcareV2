@@ -52,7 +52,7 @@ export default async function SpecialtyDetailPage({ params }: { params: Promise<
 
   return (
     <>
-      <section className="relative overflow-hidden bg-canvas-night text-on-primary py-20">
+      <section className="relative overflow-hidden bg-primary text-on-primary py-20">
         <div className="absolute inset-0">
           <Image
             src={getSpecialtyImage(images, slug)}
@@ -63,29 +63,29 @@ export default async function SpecialtyDetailPage({ params }: { params: Promise<
             className="object-cover opacity-25"
           />
         </div>
-        <div className="absolute inset-0 bg-canvas-night/80" />
+        <div className="absolute inset-0 bg-primary/80" />
         <div className="container-cinematic relative z-10">
-          <Link href="/speciality" className="inline-flex items-center gap-2 text-link-cool-2 hover:text-on-primary mb-6 transition-colors">
+          <Link href="/speciality" className="inline-flex items-center gap-2 text-text-muted hover:text-on-primary mb-6 transition-colors">
             <ArrowLeft size={18} /> Back to Specialties
           </Link>
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-lg bg-aloe-10 flex items-center justify-center">
-              <Heart size={28} className="text-ink" />
+            <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center">
+              <Heart size={28} className="text-text" />
             </div>
             <span className="pill-tag">Specialty</span>
           </div>
           <h1 className="font-display text-[42px] leading-tight sm:text-display-xl lg:text-display-lg text-on-primary mb-4">{specialty.name}</h1>
-          <p className="text-body-lg text-link-cool-2 max-w-3xl">{specialty.description}</p>
+          <p className="text-body-lg text-text-muted max-w-3xl">{specialty.description}</p>
         </div>
       </section>
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="max-w-reading-col mx-auto">
-            <h2 className="font-display text-heading-xl text-ink mb-6">Available Treatments</h2>
+            <h2 className="font-display text-heading-xl text-text mb-6">Available Treatments</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link href="/treatment-package" className="bg-canvas-cream rounded-lg p-5 border border-hairline-light hover:shadow-elevation-3 transition-all flex items-center justify-between group">
-                <span className="text-body-md text-ink">View all treatments</span>
+              <Link href="/treatment-package" className="bg-surface rounded-lg p-5 border border-hairline-light hover:shadow-elevation-3 transition-all flex items-center justify-between group">
+                <span className="text-body-md text-text">View all treatments</span>
                 <ArrowLeft size={18} className="text-shade-40 rotate-180 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

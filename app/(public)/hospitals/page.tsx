@@ -66,7 +66,7 @@ export default async function HospitalsPage({
         description="Internationally accredited hospitals equipped with advanced technology and world-class infrastructure."
        />
 
-      <section className="bg-canvas-cream py-12 border-b border-hairline-light">
+      <section className="bg-surface py-12 border-b border-hairline-light">
         <div className="container-cinematic">
           <SearchInput
             placeholder="Search hospitals by city or name..."
@@ -76,11 +76,11 @@ export default async function HospitalsPage({
         </div>
       </section>
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           {hospitals.length === 0 ? (
-            <div className="text-center border border-hairline-light rounded-lg p-10 bg-canvas-cream">
-              <h2 className="font-display text-heading-lg text-ink">No hospitals found</h2>
+            <div className="text-center border border-hairline-light rounded-lg p-10 bg-surface">
+              <h2 className="font-display text-heading-lg text-text">No hospitals found</h2>
               <p className="text-body-md text-shade-50 mt-2">Try a different hospital name, city, or accreditation.</p>
               <Link href="/hospitals" className="btn-primary mt-6">
                 Clear Search
@@ -89,7 +89,7 @@ export default async function HospitalsPage({
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {hospitals.map((hospital) => (
-                <Link key={hospital.slug} href={`/hospitals/${hospital.slug}`} className="group bg-canvas-light rounded-lg border border-hairline-light overflow-hidden hover:shadow-elevation-3 transition-all duration-300">
+                <Link key={hospital.slug} href={`/hospitals/${hospital.slug}`} className="group bg-surface rounded-lg border border-hairline-light overflow-hidden hover:shadow-elevation-3 transition-all duration-300">
                   <div className="relative h-44 sm:h-48 overflow-hidden">
                     <Image
                       src={hospital.photo_url}
@@ -104,7 +104,7 @@ export default async function HospitalsPage({
                     </div>
                   </div>
                   <div className="p-5">
-                    <h2 className="font-display text-heading-lg text-ink group-hover:text-shade-60 transition-colors">{hospital.name}</h2>
+                    <h2 className="font-display text-heading-lg text-text group-hover:text-shade-60 transition-colors">{hospital.name}</h2>
                     <div className="flex items-center gap-1 text-caption text-shade-40 mt-1">
                       <MapPin size={14} /><span>{hospital.location}</span>
                     </div>

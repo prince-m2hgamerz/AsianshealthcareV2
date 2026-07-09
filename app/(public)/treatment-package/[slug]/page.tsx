@@ -85,7 +85,7 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
         { name: "Treatment Packages", url: "https://asianshealthcare.com/treatment-package" },
         { name: treatment.name, url: `https://asianshealthcare.com/treatment-package/${slug}` },
       ])} />
-      <section className="relative overflow-hidden bg-canvas-night text-on-primary py-20">
+      <section className="relative overflow-hidden bg-primary text-on-primary py-20">
         <div className="absolute inset-0">
           <Image
             src={getTreatmentImage(images, slug, treatment.category)}
@@ -96,51 +96,51 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
             className="object-cover opacity-25"
           />
         </div>
-        <div className="absolute inset-0 bg-canvas-night/80" />
+        <div className="absolute inset-0 bg-primary" />
         <div className="container-cinematic relative z-10">
-          <Link href="/treatment-package" className="inline-flex items-center gap-2 text-link-cool-2 hover:text-on-primary mb-6 transition-colors">
+          <Link href="/treatment-package" className="inline-flex items-center gap-2 text-text-muted hover:text-on-primary mb-6 transition-colors">
             <ArrowLeft size={18} /> Back to Treatments
           </Link>
           <span className="pill-tag mb-4">{treatment.category}</span>
           <h1 className="font-display text-[42px] leading-tight sm:text-display-xl lg:text-display-lg text-on-primary mb-4">{treatment.name}</h1>
           <div className="flex items-baseline gap-2 mb-2">
-            <span className="font-display text-display-md text-aloe-10">${treatment.costMin.toLocaleString()}</span>
-            <span className="text-body-lg text-link-cool-2">- ${treatment.costMax.toLocaleString()}</span>
+            <span className="font-display text-display-md text-accent">${treatment.costMin.toLocaleString()}</span>
+            <span className="text-body-lg text-text-muted">- ${treatment.costMax.toLocaleString()}</span>
           </div>
-          <p className="text-caption text-link-cool-1 mb-4">In India</p>
-          <div className="inline-flex items-center gap-2 bg-aloe-10/15 text-aloe-10 rounded-pill px-4 py-2 mt-4">
-            <DollarSign size={18} className="text-aloe-10" />
+          <p className="text-caption text-text-light mb-4">In India</p>
+          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-pill px-4 py-2 mt-4">
+            <DollarSign size={18} className="text-accent" />
             <span className="text-body-md">Typical overseas comparison: ${usCost.toLocaleString()}</span>
           </div>
         </div>
       </section>
 
-      <section className="bg-canvas-light py-huge">
+      <section className="bg-surface py-huge">
         <div className="container-cinematic">
           <div className="max-w-reading-col mx-auto">
-            <h2 className="font-display text-heading-xl text-ink mb-4">About This Treatment</h2>
+            <h2 className="font-display text-heading-xl text-text mb-4">About This Treatment</h2>
             <p className="text-body-lg text-shade-50 leading-relaxed mb-8">{treatment.description}</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              <div className="bg-canvas-cream rounded-lg p-6 text-center border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-0.5 transition-all duration-300">
-                <div className="font-display text-heading-xl text-ink">3-5 days</div>
+              <div className="bg-surface rounded-lg p-6 text-center border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="font-display text-heading-xl text-text">3-5 days</div>
                 <p className="text-caption text-shade-50 mt-1">Hospital Stay</p>
               </div>
-              <div className="bg-canvas-cream rounded-lg p-6 text-center border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-0.5 transition-all duration-300">
-                <div className="font-display text-heading-xl text-ink">6-8 weeks</div>
+              <div className="bg-surface rounded-lg p-6 text-center border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="font-display text-heading-xl text-text">6-8 weeks</div>
                 <p className="text-caption text-shade-50 mt-1">Recovery Time</p>
               </div>
-              <div className="bg-canvas-cream rounded-lg p-6 text-center border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-0.5 transition-all duration-300">
-                <div className="font-display text-heading-xl text-ink">95%</div>
+              <div className="bg-surface rounded-lg p-6 text-center border border-hairline-light hover:shadow-elevation-3 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="font-display text-heading-xl text-text">95%</div>
                 <p className="text-caption text-shade-50 mt-1">Success Rate</p>
               </div>
             </div>
 
-            <h3 className="font-display text-heading-lg text-ink mb-4">Typical Coordination</h3>
+            <h3 className="font-display text-heading-lg text-text mb-4">Typical Coordination</h3>
             <ul className="space-y-3 mb-8">
               {["Specialist opinion", "Hospital estimate", "Visa invitation support", "Admission coordination", "Interpreter support", "Discharge and follow-up guidance"].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-body-md text-shade-50">
-                  <Check size={18} className="text-aloe-10 shrink-0" /> {item}
+                  <Check size={18} className="text-accent shrink-0" /> {item}
                 </li>
               ))}
             </ul>
