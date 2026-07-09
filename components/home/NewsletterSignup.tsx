@@ -21,6 +21,7 @@ export default function NewsletterSignup() {
       if (!res.ok) throw new Error("Failed");
       setStatus("success");
       setEmail("");
+      window.gtag?.("event", "generate_lead", { method: "website_form", lead_type: "newsletter" });
     } catch {
       setStatus("error");
     }

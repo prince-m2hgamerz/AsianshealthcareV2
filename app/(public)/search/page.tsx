@@ -13,6 +13,8 @@ import { allTreatmentPackages } from "@/lib/treatment-packages-data";
 import { stripHtml } from "@/lib/utils";
 import PageHero from "@/components/layout/PageHero";
 import BreadcrumbNav from "@/components/shared/BreadcrumbNav";
+import SearchEventTracker from "@/components/shared/SearchEventTracker";
+import AdSenseForSearch from "@/components/shared/AdSenseForSearch";
 
 export const metadata: Metadata = {
   title: "Search Results - Asians Healthcare",
@@ -129,6 +131,7 @@ export default async function SearchPage({
 
   return (
     <>
+      <SearchEventTracker />
       <BreadcrumbNav items={[{ label: "Search", href: "/search" }]} />
       <PageHero
         eyebrow="Search"
@@ -168,6 +171,35 @@ export default async function SearchPage({
               <p className="text-shade-50 text-sm sm:text-body">
                 No results matching &quot;{query}&quot;. Try different keywords.
               </p>
+            </div>
+          )}
+
+          {/* AdSense for Search - top ads when there are results */}
+          {query && (
+            <div className="max-w-4xl mx-auto mb-6">
+              <AdSenseForSearch
+                pageOptions={{
+                  pubId: "partner-pub-8492704974936957",
+                  query,
+                  styleId: "YOUR_STYLE_ID_HERE", // Replace with actual style ID from AdSense > Ads for search > Search styles
+                  channel: "site_search_results",
+                  linkTarget: "_blank",
+                }}
+                adBlocks={[
+                  {
+                    container: "afscontainer1",
+                    maxTop: 3,
+                    width: "100%",
+                    adLoadedCallback: (containerName, adsLoaded) => {
+                      const container = document.getElementById(containerName);
+                      if (!adsLoaded && container) {
+                        container.style.display = "none";
+                        container.style.minHeight = "0";
+                      }
+                    },
+                  },
+                ]}
+              />
             </div>
           )}
 

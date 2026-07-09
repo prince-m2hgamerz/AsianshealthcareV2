@@ -5,6 +5,9 @@ import AppShell from "@/components/layout/AppShell";
 import CookieConsent from "@/components/shared/CookieConsent";
 import RollbarProvider from "@/components/shared/RollbarProvider";
 import PwaProvider from "@/components/shared/PwaProvider";
+import GoogleAnalyticsWrapper from "@/components/shared/GoogleAnalyticsWrapper";
+import ConsentModeInitializer from "@/components/shared/ConsentModeInitializer";
+import AdSenseWrapper from "@/components/shared/AdSenseWrapper";
 import { DEFAULT_SETTINGS } from "@/lib/site-settings-types";
 
 const inter = Inter({
@@ -51,7 +54,6 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.png"],
   },
   other: {
-    "google-site-verification": "G-CD5HKSSMK1",
     "geo.region": "IN-DL",
     "geo.placename": "New Delhi",
   },
@@ -76,10 +78,6 @@ export default function RootLayout({
         }} />
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL?.split("/").slice(0, 3).join("/") || "https://imhukfivfelxfltzqxtx.supabase.co"} />
         <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL?.split("/").slice(0, 3).join("/") || "https://imhukfivfelxfltzqxtx.supabase.co"} />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CD5HKSSMK1" />
-        <script dangerouslySetInnerHTML={{
-          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CD5HKSSMK1');`
-        }} />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="alternate" type="application/rss+xml" title="Asians Healthcare Blog" href="/api/rss" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -88,11 +86,15 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content={DEFAULT_SETTINGS.site_name} />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png" />
         <link rel="apple-touch-startup-image" href="/newlogo/logo-mark-badge.png" />
+        <meta name="google-adsense-account" content="ca-pub-8492704974936957" />
       </head>
       <body className="font-sans antialiased">
         <RollbarProvider>
           <AppShell>{children}</AppShell>
           <CookieConsent />
+          <ConsentModeInitializer />
+          <GoogleAnalyticsWrapper />
+          <AdSenseWrapper />
           <PwaProvider />
         </RollbarProvider>
         <script dangerouslySetInnerHTML={{

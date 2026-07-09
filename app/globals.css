@@ -17,6 +17,45 @@ html {
 }
 
 @layer components {
+  /* ===== Ad Placement Styles (CLS Prevention) ===== */
+  .ad-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    contain: layout;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .ad-slot ins {
+    display: block;
+  }
+
+  .afs-ad-slot,
+  .afs-related-search-slot {
+    width: 100%;
+    contain: layout;
+    margin: 1rem 0;
+  }
+
+  .afs-ad-slot {
+    min-height: 200px;
+  }
+
+  .afs-related-search-slot {
+    min-height: 60px;
+  }
+
+  /* Hide empty AFS containers gracefully */
+  .afs-ad-slot[style*="display: none"],
+  .afs-related-search-slot[style*="display: none"] {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===== End Ad Styles ===== */
+
   .btn-primary {
     @apply inline-flex items-center justify-center bg-primary text-white text-body-md rounded-md px-3 sm:px-4 py-3 transition-all hover:bg-primary-mid font-medium;
   }

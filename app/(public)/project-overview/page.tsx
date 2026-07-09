@@ -924,7 +924,7 @@ export default function ProjectOverviewPage() {
               </a>
             </div>
             <div className="mt-6 pt-4 border-t border-hairline-light text-xs text-neutral-500">
-              <span className="font-medium">Asians Healthcare</span> &nbsp;·&nbsp; Unit No. 36, Living Style Mall, Jasola, New Delhi - 110025 &nbsp;·&nbsp; +91-8285068544
+              <span className="font-medium">Asians Healthcare</span> &nbsp;·&nbsp; Unit No. 36, Living Style Mall, Jasola, New Delhi - 110025 &nbsp;·&nbsp; +91-9650928250
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ const responseSteps = [
 export default async function ContactPage() {
   const settings = await getSiteSettings();
   const { contact_phone, contact_email, whatsapp_number, images, site_name, meta_description, address_street, address_city, address_state, address_pin_code, facebook_url, twitter_url, instagram_url, linkedin_url, youtube_url } = settings;
-  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "918285068544";
+  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "919650928250";
 
   const contactInfo = [
     { icon: MapPin, title: "Address", value: "Unit No. 36 living style mall Jasola New Delhi 110025", href: null },

@@ -122,7 +122,7 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
                 <button className="btn-primary w-full">Get Free Consultation</button>
               </div>
               <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
-                <a href="tel:+918285068544" className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary"><Phone size={14} /> +91-8285068544</a>
+                <a href="tel:+919650928250" className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary"><Phone size={14} /> +91-9650928250</a>
                 <a href="mailto:info@asianshealthcare.com" className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary"><Mail size={14} /> info@asianshealthcare.com</a>
               </div>
             </div>

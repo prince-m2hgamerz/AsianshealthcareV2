@@ -5,8 +5,8 @@ import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 export default function FloatingButtons() {
   const { whatsapp_number, contact_phone, whatsapp_message_default } = useSiteSettings();
-  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "918285068544";
-  const phoneNumber = contact_phone || "+918285068544";
+  const waNumber = whatsapp_number?.replace(/[^0-9]/g, "") || "919650928250";
+  const phoneNumber = contact_phone || "+919650928250";
   const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(whatsapp_message_default)}`;
 
   return (

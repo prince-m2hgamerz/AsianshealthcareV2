@@ -44,6 +44,8 @@ export default function AdminLoginPage() {
       return;
     }
 
+    window.gtag?.("event", "login", { method: "password" });
+
     // Request notification permission after successful login
     if ("Notification" in window && Notification.permission === "default") {
       Notification.requestPermission().catch(() => {});

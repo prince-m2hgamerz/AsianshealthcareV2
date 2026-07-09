@@ -32,7 +32,7 @@ export default function RefundPolicyPage() {
             <p>To request a refund, please contact our support team at info@asianshealthcare.com with your full name, booking reference number, and reason for cancellation. Our team will review your request and respond within 5-7 business days with the refund decision and timeline.</p>
 
             <h2 className="font-display text-heading-xl text-ink">Contact Information</h2>
-            <p>For any questions regarding this refund policy, reach out to us at info@asianshealthcare.com or call +91 82850 68544. We are here to assist you with any concerns.</p>
+            <p>For any questions regarding this refund policy, reach out to us at info@asianshealthcare.com or call +91 96509 28250. We are here to assist you with any concerns.</p>
           </div>
         </div>
       </section>
